@@ -93,7 +93,9 @@
             </div>
             <div>
                 <label class="mb-2 text-light">Sexo</label>
+                
                 <select class="form-select" id="selectSexo">
+                    <option selected>Seleccione una opcion</option>
                     <option value="F">F</option>
                     <option value="M">M</option>
                     <option value="Otro">Otro</option>
@@ -103,6 +105,7 @@
                 <label class="mb-2 text-light">Obra Social</label>
                 <select class="form-select" id="selectObraSocial">
                     <option value="Subsidio de Salud">Subsidio de Salud</option>
+                    <option selected>Seleccione una opcion</option>
                     <option value="OSDE">OSDE</option>
                     <option value="PRENSA">PRENSA</option>
                     <option value="Particular">Particular</option>
@@ -161,13 +164,12 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Imagen</th>
               <th scope="col">Nombre</th>
-              <th scope="col">Telefono</th>
-              <th scope="col">Email</th>
-              <th scope="col">Notas</th>
-              <th scope="col">Acciones</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">DNI</th>
+              <th scope="col">Obra Social</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Sexo</th>
             </tr>
           </thead>
           <tbody id="tbody__admin"></tbody>

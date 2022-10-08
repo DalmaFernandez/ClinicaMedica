@@ -1,3 +1,4 @@
+import { cargarPacienteTabla } from "./cargarPaciente.js";
 import { Paciente } from "./Paciente.js";
 import { validateEmail, validateName, validateNumber } from "./validators.js";
 
@@ -29,6 +30,21 @@ let domicilio = "";
 let email = "";
 let descripcion = "";
 
+let pacientesLSJSON = localStorage.getItem("Lista de pacientes");
+
+let pacientesLS = JSON.parse(pacientesLSJSON);
+//console.log(contactosLS)
+
+let pacientes = [];
+
+if (pacientesLS !== null) {
+  pacientes = pacientesLS;
+
+  pacientes.forEach((elemento) => {
+    cargarPacienteTabla(elemento);
+  });
+}
+
 //const paciente1= new Paciente(nombre, apellido, dni, fn, sexo, os, telefono, domicilio, email, descripcion);
 //console.log(paciente1);
 campoNombre.addEventListener("blur", (e) => {
@@ -54,11 +70,11 @@ campoFecha.addEventListener("blur", (e) => {
 });
 
 campoSexo.addEventListener("blur", (e) => {
-  sexo =campoSexo.value;
+  sexo =e.target.value;
 });
 
 campoObraSocial.addEventListener("blur", (e) => {
-  os = campoObraSocial.value;
+  os = e.target.value;
 });
 
 campoTelefono.addEventListener("blur", (e) => {
@@ -84,20 +100,69 @@ campoDescripcion.addEventListener("blur", (e) => {
   descripcion = e.target.value;
 });
 
+
+
+const agregarPacienteALS = (paciente) => {
+    // agrego contacto a la lista
+    pacientes.unshift(paciente);
+    //console.log(contactos)
+  
+    // JavaScript Object Notation
+    const pacientesJSON = JSON.stringify(pacientes);
+    //console.log(contactosJSON);
+  
+    localStorage.setItem("Lista de pacientes", pacientesJSON);
+  };
+
+
+
 formularioPaciente.addEventListener("submit", (e) => {
   e.preventDefault();
-  const paciente1 = new Paciente(
-    nombre,
-    apellido,
-    dni,
-    fn,
-    sexo,
-    os,
-    telefono,
-    domicilio,
-    email,
-    descripcion
-  );
 
-  console.log(paciente1);
+ if ( 
+    validateName(nombre, campoNombre) &&
+    validateName(apellido, campoApellido) &&
+    validateNumber(dni, campoDNI) &&
+    validateNumber(telefono, campoTelefono) &&
+    validateName(domicilio, campoDomicilio) &&
+    validateEmail(email, campoEmail) 
+    ){
+        const paciente = new Paciente(
+            nombre,
+            apellido,
+            dni,
+            fn,
+            sexo,
+            os,
+            telefono,
+            domicilio,
+            email,
+            descripcion
+          );
+
+          
+          agregarPacienteALS(paciente);
+          recargarDatos();
+        
+          console.log(paciente);
+    } else {
+        console.log("Algun dato no es valido");
+    }
+
+
+  
 });
+
+export const recargarDatos = () => {
+    const pacientesLS = JSON.parse(localStorage.getItem("Lista de pacientes"));
+  
+    //vaciar tabla
+    const tbody = document.getElementById("tbody__admin");
+  
+    tbody.innerHTML = "";
+  
+    // crear nuevas filas
+    pacientesLS.forEach((elemento) => {
+        cargarPacienteTabla(elemento);
+    });
+  };
