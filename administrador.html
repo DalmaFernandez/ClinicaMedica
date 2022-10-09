@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cargar Pacientes</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/24cc370bda.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="shadow">
+      <nav
+        class="navbar navbar-expand-lg bg-dark navbar-dark shadow d-flex justify-content-center"
+      >
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="./index.html">
+            <img
+              src="./assets/logo.png"
+              alt="logo de la clinica"
+              class="me-2 logo"
+            />
+            <h3 class="clinicaTitulo my-auto">Clínica Médica</h3>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarClinica"
+            aria-controls="navbarClinica"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarClinica">
+            <ul
+              class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 d-flex align-items-center"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">TURNOS PROGRAMADOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link linkActivo" aria-current="page" href="#"
+                  >PACIENTES</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">MEDICOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#"
+                  >GESTION DE TURNOS</a
+                >
+              </li>
+            </ul>
+            <button
+              type="button"
+              id="botonAdmin"
+              class="btn btn-secondary text-light rounded-0"
+              data-bs-toggle="modal"
+              data-bs-target="#accederAdmin"
+              disabled
+            >
+              ADMINISTRADOR
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <footer class="bg-dark opacity-75 text-light   py-4">
+      <section class="container">
+        <div class="bg-dark row">
+          <article class="col-sm-12 col-md-4 mt-2">
+            <a
+              class="navbar-brand d-flex align-items-center"
+              href="./index.html"
+            >
+              <img
+                src="./assets/logo.png"
+                alt="logo de la clinica"
+                class="me-2 logo"
+              />
+              <h3 class="clinicaTitulo my-auto me-5">Clínica Médica</h3>
+            </a>
+
+            
+          </article>
+          <article class="col-sm-12 col-md-4 mt-2">
+            
+            <div class="d-flex align-items-start">
+              <div>
+                <i
+                  class="fa-solid fa-location-dot fa-1x  mb-1"
+                ></i>
+              </div>
+              <div class="mx-2">
+                <p class="mb-1">Gral. Paz 576 - CP:4000 - San Miguel de Tucumán</p>
+                
+              </div>
+            </div>
+            
+            <div class="d-flex align-items-start">
+              <div>
+                <i class="fa-solid fa-phone fa-1x  mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <p class="">(+54) 381 987 6543</p>
+              </div>
+            </div>
+            
+            <div class="d-flex align-items-start">
+              <div>
+                <i class="fa-solid fa-envelope fa-1x  mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <a href="../views/error404.html" class="nav-link mb-1"
+                  >contacto@clinicamedica.com</a
+                >
+              </div>
+            </div>
+            
+          </article>
+          <article class="col-sm-12 col-md-4 mt-2">
+            <div class="RedesFooter mt-1 ">
+              <a  href="https://www.facebook.com"
+                ><i class="fa-brands text-secondary fa-square-facebook icons"></i
+              ></a>
+              <a  href="https://www.twitter.com"
+                ><i class="fa-brands text-secondary fa-square-twitter icons"></i
+              ></a>
+              <a  href="https://www.instagram.com"
+                ><i class="fa-brands text-secondary fa-square-instagram icons"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+        
+      </section>
+      <!-- <section class="footer py-2" >
+        <p class="text-center text-light mb-0">
+          &copy; Todos los derechos reservados
+        </p>
+      </section> -->
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./js/adminPaciente.js"></script>
+  </body>
+</html>
