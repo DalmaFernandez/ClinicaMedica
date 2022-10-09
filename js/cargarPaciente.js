@@ -1,3 +1,6 @@
+import { cargarDatosEnFormulario } from "./editarPac.js";
+import { deletePaciente } from "./eliminarPac.js";
+
 export const cargarPacienteTabla = (paciente) => {
     const tbody = document.getElementById("tbody__admin");
   
@@ -44,30 +47,31 @@ export const cargarPacienteTabla = (paciente) => {
     td6.innerText = paciente.sexo;
   
     tr.appendChild(td6);
+
     //
-   // const td7 = document.createElement("td");
-   // const buttonEditar = document.createElement("button");
-   // const buttonEliminar = document.createElement("button");
+    const td7 = document.createElement("td");
+    const buttonEditar = document.createElement("button");
+    const buttonEliminar = document.createElement("button");
   
-   // buttonEditar.classList = "btn btn-warning mb-2 me-2"
-   // buttonEliminar.classList = "btn btn-danger mb-2"
+    buttonEditar.classList = "btn btn-warning mb-2 me-2"
+    buttonEliminar.classList = "btn btn-danger mb-2"
   
-   // buttonEditar.innerText = "Editar"
-   // buttonEliminar.innerText = "Eliminar"
+    buttonEditar.innerText = "Editar"
+    buttonEliminar.innerText = "Eliminar"
   
-   // buttonEditar.onclick = () => {
-   //   cargarDatosEnFormulario(contacto.codigo)
-   // }
+    buttonEditar.onclick = () => {
+      cargarDatosEnFormulario(paciente.dni);
+    }
   
-    //buttonEliminar.onclick = () => {
-    //  deleteContacto(contacto.codigo)
-   // }
+    buttonEliminar.onclick = () => {
+      deletePaciente(paciente.dni);
+    }
   
-   // td7.appendChild(buttonEditar)
-  //  td7.appendChild(buttonEliminar)
+    td7.appendChild(buttonEditar)
+    td7.appendChild(buttonEliminar)
   
-   // tr.appendChild(td7);
+    tr.appendChild(td7);
     //
-  
+   
     tbody.appendChild(tr);
   };
