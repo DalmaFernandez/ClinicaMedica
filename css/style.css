@@ -1,7 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Acme&family=Bebas+Neue&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bebas+Neue&family=Quicksand:wght@500&display=swap');
+*{
+  font-family: 'Quicksand', sans-serif;
+}
 .clinicaTitulo {
-  font-family: "Acme", sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 .logo {
   width: 50px;
