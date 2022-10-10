@@ -128,7 +128,16 @@ formularioPaciente.addEventListener("submit", (e) => {
   if (buttonCargar.innerText === "Guardar cambios") {
     isEditando = true;
   } else isEditando = false;
-
+  nombre = campoNombre.value;
+  apellido = campoApellido.value;
+  dni = campoDNI.value;
+  fn = campoFecha.value;
+  sexo = campoSexo.value;
+  os = campoObraSocial.value;
+  telefono = campoTelefono.value;
+  domicilio = campoDomicilio.value;
+  email = campoEmail.value;
+  descripcion = campoDescripcion.value;
   
   if (
     validateName(nombre, campoNombre) &&
@@ -163,16 +172,7 @@ formularioPaciente.addEventListener("submit", (e) => {
     } else {
       //esta editando el paciente y ya tenemos valores cargados en el formulario
 
-      nombre = campoNombre.value;
-  apellido = campoApellido.value;
-  dni = campoDNI.value;
-  fn = campoFecha.value;
-  sexo = campoSexo.value;
-  os = campoObraSocial.value;
-  telefono = campoTelefono.value;
-  domicilio = campoDomicilio.value;
-  email = campoEmail.value;
-  descripcion = campoDescripcion.value;
+      
 
 
       const dniEdit = sessionStorage.getItem("dni del paciente a editar");

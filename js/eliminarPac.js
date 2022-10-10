@@ -14,7 +14,7 @@ export const deletePaciente = (dni) => {
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
-    confirmButtonText: "Si, eliminar contacto",
+    confirmButtonText: "Si, eliminar paciente",
     cancelButtonText: "Cancelar",
   }).then((result) => {
     if (result.isConfirmed) {
