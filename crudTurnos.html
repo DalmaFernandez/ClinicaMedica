@@ -29,11 +29,11 @@
           <h2>Formulario de turnos</h2>
           <hr />
         </div>
-        <form id="formPaciente">
+        <form id="formTurno">
           <div class="mb-3">
             <label class="mb-2 text-dark">Paciente</label>
             <select class="form-select" id="selectPaciente">
-              <option selected>Seleccione un paciente</option>
+              <option value="0">Seleccione un paciente</option>
             </select>
             <div id="selectPaciente__feedback" class="invalid-feedback">
               Por favor, seleccione un paciente
@@ -42,11 +42,11 @@
           <div class="mb-3">
             <label class="mb-2 text-dark">Especialidad</label>
             <select class="form-select" id="selectEspecialidad">
-              <option selected>Seleccione una especialidad</option>
-              <option value="Cardioligía">Cardiología</option>
+              <option value="0">Seleccione una especialidad</option>
+              <option value="Cardiología">Cardiología</option>
               <option value="Dermatología">Dermatología</option>
               <option value="Ginecología">Ginecología</option>
-              <option value="Oftalmología">Oftalmología</option>
+              <option value="Odontología">Odontología</option>
               <option value="Pediatría">Pediatría</option>
               <option value="Traumatología">Traumatología</option>
             </select>
@@ -57,7 +57,7 @@
           <div class="mb-3">
             <label class="mb-2 text-dark">Médico</label>
             <select class="form-select" id="selectMedico">
-              <option selected>Seleccione un médico</option>
+              <option value="0">Seleccione un médico</option>
             </select>
             <div id="selectMedico__feedback" class="invalid-feedback">
               Por favor, seleccione un médico
@@ -74,7 +74,12 @@
           <div class="mb-3">
             <label class="mb-2 text-dark">Horario</label>
             <select class="form-select" id="selectHorario">
-              <option selected>Seleccione el horario</option>
+              <option value="0">Seleccione el horario</option>
+              <!-- <option value="9:00">9:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option> -->
+
             </select>
             <div id="selectHorario__feedback" class="invalid-feedback">
               Por favor, seleccione un horario
@@ -91,7 +96,7 @@
             ></textarea>
           </div>
           <div class="text-end">
-            <button id="buttonCargar" class="btn-verde" type="submit">
+            <button id="cargarTurno" class="btn-verde" type="submit">
               Cargar
             </button>
           </div>
@@ -103,15 +108,17 @@
         <table class="table align-middle ">
           <thead>
             <tr>
-              <th scope="col">Nombre</th>
-              <th scope="col">Apellido</th>
-              <th scope="col">DNI</th>
-              <th scope="col">Obra Social</th>
-              <th scope="col">Edad</th>
-              <th scope="col">Sexo</th>
+              <th scope="col">N°</th>
+              <th scope="col">Paciente</th>
+              <th scope="col">Especialidad</th>
+              <th scope="col">Médico</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Horario</th>
+              <th scope="col">Notas</th>
+              <th scope="col">Acciones</th>
             </tr>
           </thead>
-          <tbody id="tbody__admin"></tbody>
+          <tbody id="tbody_turnos"></tbody>
         </table>
       </section>
     </main>
@@ -126,6 +133,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="./js/adminPaciente.js"></script>
+    <script type="module" src="./js/adminTurnos.js"></script>
   </body>
 </html>
