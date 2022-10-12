@@ -20,7 +20,6 @@ const campoObraSocial = document.getElementById("selectObraSocial");
 const campoTelefono = document.getElementById("telefonoPaciente");
 const campoDomicilio = document.getElementById("domicilioPaciente");
 const campoEmail = document.getElementById("emailPaciente");
-const campoDescripcion = document.getElementById("descripcionPaciente");
 
 const buttonCargar = document.getElementById("buttonCargar");
 
@@ -33,7 +32,6 @@ let os = "";
 let telefono = "";
 let domicilio = "";
 let email = "";
-let descripcion = "";
 
 let pacientesLSJSON = localStorage.getItem("Lista de pacientes");
 
@@ -50,8 +48,8 @@ if (pacientesLS !== null) {
   });
 }
 
-//const paciente1= new Paciente(nombre, apellido, dni, fn, sexo, os, telefono, domicilio, email, descripcion);
-//console.log(paciente1);
+
+
 campoNombre.addEventListener("blur", (e) => {
   validateName(e.target.value, campoNombre);
   if (validateName(e.target.value, campoNombre)) {
@@ -104,9 +102,6 @@ campoEmail.addEventListener("blur", (e) => {
   }
 });
 
-campoDescripcion.addEventListener("blur", (e) => {
-  descripcion = e.target.value;
-});
 
 const agregarPacienteALS = (paciente) => {
   // agrego contacto a la lista
@@ -137,7 +132,7 @@ formularioPaciente.addEventListener("submit", (e) => {
   telefono = campoTelefono.value;
   domicilio = campoDomicilio.value;
   email = campoEmail.value;
-  descripcion = campoDescripcion.value;
+  
   
   if (
     validateName(nombre, campoNombre) &&
@@ -160,7 +155,7 @@ formularioPaciente.addEventListener("submit", (e) => {
         telefono,
         domicilio,
         email,
-        descripcion
+        
       );
 
       agregarPacienteALS(paciente);
@@ -193,7 +188,7 @@ formularioPaciente.addEventListener("submit", (e) => {
       pacientes[pacienteIndice].telefono = telefono;
       pacientes[pacienteIndice].domicilio = domicilio;
       pacientes[pacienteIndice].email = email;
-      pacientes[pacienteIndice].descripcion = descripcion;
+      
 
       localStorage.setItem("Lista de pacientes", JSON.stringify(pacientes));
 
@@ -217,7 +212,7 @@ formularioPaciente.addEventListener("submit", (e) => {
     campoTelefono.value = "";
     campoDomicilio.value = "";
     campoEmail.value = "";
-    campoDescripcion.value = "";
+    
 
     nombre = "";
     apellido = "";
@@ -228,7 +223,19 @@ formularioPaciente.addEventListener("submit", (e) => {
     telefono = "";
     domicilio = "";
     email = "";
-    descripcion = "";
+    
+
+    campoNombre.classList.remove("is-valid");
+    campoApellido.classList.remove("is-valid");
+    campoDNI.classList.remove("is-valid");
+    campoFecha.classList.remove("is-valid");
+    campoSexo.classList.remove("is-valid");
+    campoObraSocial.classList.remove("is-valid");
+    campoTelefono.classList.remove("is-valid");
+    campoDomicilio.classList.remove("is-valid");
+    campoEmail.classList.remove("is-valid");
+   
+
   } else {
     Swal.fire({
       title: "Error",

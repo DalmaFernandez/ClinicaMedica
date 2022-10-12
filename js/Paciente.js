@@ -1,5 +1,5 @@
 export class Paciente {
-    constructor(nombre, apellido, dni, fn, sexo, os, telefono, domicilio, email, desc) {
+    constructor(nombre, apellido, dni, fn, sexo, os, telefono, domicilio, email ) {
       this.nombre = nombre;
       this.apellido = apellido;
       this.dni= dni;
@@ -9,6 +9,6 @@ export class Paciente {
       this.telefono = telefono;
       this.domicilio = domicilio;
       this.email = email;
-      this.desc = desc;
+      
     }
   }

@@ -7,7 +7,7 @@ const campoObraSocial = document.getElementById("selectObraSocial");
 const campoTelefono = document.getElementById("telefonoPaciente");
 const campoDomicilio = document.getElementById("domicilioPaciente");
 const campoEmail = document.getElementById("emailPaciente");
-const campoDescripcion = document.getElementById("descripcionPaciente");
+
 
 export const cargarDatosEnFormulario = (dni) => {
   // console.log(codigo)
@@ -28,7 +28,7 @@ export const cargarDatosEnFormulario = (dni) => {
   campoTelefono.value = pacienteAModificar.telefono;
   campoDomicilio.value = pacienteAModificar.domicilio;
   campoEmail.value = pacienteAModificar.email;
-  campoDescripcion.value = pacienteAModificar.descripcion;
+  
 
   buttonCargar.innerText = "Guardar cambios";
 //guardar el dni del paciente a editar en el SS
