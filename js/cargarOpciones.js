@@ -6,8 +6,8 @@ export const opcionesPaciente = () => {
     const campoPaciente = document.getElementById("selectPaciente");
     pacientes.forEach((paciente) => {
         const opcionPaciente = document.createElement("option");
-        opcionPaciente.value = paciente.nombre;
-        opcionPaciente.innerText = paciente.nombre;
+        opcionPaciente.value = paciente.apellido + ", " + paciente.nombre;
+        opcionPaciente.innerText = paciente.apellido + ", " + paciente.nombre;
         campoPaciente.appendChild(opcionPaciente);
     });
 };

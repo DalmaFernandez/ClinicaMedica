@@ -15,7 +15,7 @@ export const cargarTurnoTabla = (turno) => {
     tdEspecialidad.innerText = turno.especialidad;
     tr.appendChild(tdEspecialidad);
     const tdMedico = document.createElement("td");
-    tdMedico.innerText = turno.medico;
+    tdMedico.innerText ="Dr/a. " + turno.medico;
     tr.appendChild(tdMedico);
     const tdFecha = document.createElement("td");
     tdFecha.innerText = turno.fecha;
