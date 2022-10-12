@@ -15,7 +15,7 @@ export const opcionesPaciente = () => {
 export const cargarMedicos = ()=> {
     const campoMedico = document.getElementById("selectMedico");
     const campoEspecialidad = document.getElementById("selectEspecialidad");
-    campoMedico.innerHTML = "";
+    campoMedico.innerHTML = `<option value="0">Seleccione un médico</option>`;
     let medico;
     let especialidad= campoEspecialidad.value;
     const cardiologo = new Medico("123456", "Juan Perez", "Cardiología", "123456789");
@@ -63,7 +63,7 @@ export const opcionHorario = () => {
     const campoHora = document.getElementById("selectHorario");
     const campoFecha= document.getElementById("fechaTurno");
     const campoMedico = document.getElementById("selectMedico");
-     campoHora.innerHTML = "";
+     
      let horarios = ["8:00", "9:00", "10:00", "11:00", "17:00", "18:00", "19:00"]; 
      let horariosOcupados = [];
      let horariosDisponibles = [];

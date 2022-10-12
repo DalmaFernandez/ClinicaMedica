@@ -1,3 +1,6 @@
+import { cargarDatosEnFormulario } from "./editarTurno.js";
+import { eliminarTurno } from "./eliminarTurno.js";
+
 export const cargarTurnoTabla = (turno) => {
     const tablaTurnos= document.getElementById("tbody_turnos");
 
@@ -30,12 +33,12 @@ export const cargarTurnoTabla = (turno) => {
     botonEliminar.classList.add("btn", "btn-danger", "btn-sm");
     botonEditar.innerText = "Editar";
     botonEliminar.innerText = "Eliminar";
-    // botonEditar.addEventListener("click", () => {
-    //     editarTurno(turno.id);
-    // });
-    // botonEliminar.addEventListener("click", () => {
-    //     eliminarTurno(turno.id);
-    // });
+    botonEditar.addEventListener("click", () => {
+        cargarDatosEnFormulario(turno.id);
+    });
+    botonEliminar.addEventListener("click", () => {
+        eliminarTurno(turno.id);
+    });
     tdAcciones.appendChild(botonEditar);
     tdAcciones.appendChild(botonEliminar);
     tr.appendChild(tdAcciones); 

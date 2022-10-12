@@ -63,11 +63,13 @@ campoFecha.addEventListener("change", () => {
     console.log(campoFecha.value);
     if(validateDate(campoFecha.value, campoFecha)) {
         fecha = campoFecha.value;
-       opcionHorario();
+        opcionHorario();
     }
 });
 
+
 campoHora.addEventListener("blur", () => {
+    
     validateDate(campoHora.value, campoHora);
    
     if(validateSelector(campoHora.value, campoHora)) {
@@ -98,7 +100,9 @@ formularioTurno.addEventListener("submit", (e) => {
     especialidad = campoEspecialidad.value;
     medico = campoMedico.value;
     fecha = campoFecha.value;
+    
     hora = campoHora.value;
+    nota = campoNota.value;
 
 
     if (
@@ -122,15 +126,18 @@ formularioTurno.addEventListener("submit", (e) => {
             });
         } else {
             
-            const turnoId = sessionStorage.getItem("turnoId");
+            console.log(isEditando);
+            
+            const turnoId =Number(sessionStorage.getItem("idTurno"));
             sessionStorage.removeItem("turnoId");
 
             const turnoIndice = turnos.findIndex((turno) => {
-                turno.id === turnoId;
+              return  turno.id === turnoId;
 
 
         
             });
+            console.log(turnos[turnoIndice]);
             turnos[turnoIndice].paciente = paciente;
             turnos[turnoIndice].especialidad = especialidad;
             turnos[turnoIndice].medico = medico;
@@ -157,6 +164,13 @@ formularioTurno.addEventListener("submit", (e) => {
         campoFecha.value = "";
         campoHora.value = "";
         campoNota.value = "";
+
+        campoPaciente.classList.remove("is-valid");
+        campoEspecialidad.classList.remove("is-valid");
+        campoMedico.classList.remove("is-valid");
+        campoFecha.classList.remove("is-valid");
+        campoHora.classList.remove("is-valid");
+        
 
         paciente = "";
         especialidad = "";
