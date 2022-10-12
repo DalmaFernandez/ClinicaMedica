@@ -5,6 +5,7 @@ import {
   validateEmail,
   validateName,
   validateNumber,
+  validateSelector,
 } from "./validators.js";
 
 //const paciente1 = new Paciente ("Dalma", "Fernandez", "5451564652","15/2/96", "F", "SS", "64982564","Buenos Aires 500", "dalma@gmail.com","nada");
@@ -76,11 +77,15 @@ campoFecha.addEventListener("blur", (e) => {
 });
 
 campoSexo.addEventListener("blur", (e) => {
-  sexo = e.target.value;
+  if (validateSelector(e.target.value, campoSexo)) {
+sexo = e.target.value;
+  }
 });
 
 campoObraSocial.addEventListener("blur", (e) => {
-  os = e.target.value;
+  if (validateSelector(e.target.value, campoObraSocial)) {
+    os = e.target.value;
+  }
 });
 
 campoTelefono.addEventListener("blur", (e) => {
@@ -91,7 +96,6 @@ campoTelefono.addEventListener("blur", (e) => {
 
 campoDomicilio.addEventListener("blur", (e) => {
   if (validateName(e.target.value, campoDomicilio)) {
-    //  console.log(e);
     domicilio = e.target.value;
   }
 });
@@ -101,6 +105,8 @@ campoEmail.addEventListener("blur", (e) => {
     email = e.target.value;
   }
 });
+
+
 
 
 const agregarPacienteALS = (paciente) => {
@@ -157,6 +163,7 @@ formularioPaciente.addEventListener("submit", (e) => {
         email,
         
       );
+
 
       agregarPacienteALS(paciente);
       Swal.fire({

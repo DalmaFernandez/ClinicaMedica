@@ -69,27 +69,36 @@
           <div class="mb-3">
             <label for="" class="d-block">Fecha de nacimiento</label>
             <input id="fechaNacimiento" type="date" class="form-control" />
+            <div id="fechaNacimiento__feedback" class="invalid-feedback">
+              Seleccione una fecha
+            </div>
           </div>
           <div>
             <label class="mb-2 text-dark">Sexo</label>
 
             <select class="form-select" id="selectSexo">
-              <option selected>Seleccione una opcion</option>
+              <option value = "0">Seleccione una opcion</option>
               <option value="F">F</option>
               <option value="M">M</option>
               <option value="Otro">Otro</option>
             </select>
+            <div id="selectSexo__feedback" class="invalid-feedback">
+              Seleccione una opción
+            </div>
           </div>
           <div>
             <label class="mb-2 text-dark">Obra Social</label>
 
             <select class="form-select" id="selectObraSocial">
-              <option selected>Seleccione una opcion</option>
+              <option value = "0">Seleccione una opcion</option>
               <option value="Subsidio de Salud">Subsidio de Salud</option>
               <option value="OSDE">OSDE</option>
               <option value="PRENSA">PRENSA</option>
               <option value="Particular">Particular</option>
             </select>
+            <div id="selectObraSocial__feedback" class="invalid-feedback">
+              Seleccione una opción
+            </div>
           </div>
           <div class="mb-3">
             <label for="telefonoPaciente" class="form-label">Telefono</label>
@@ -140,12 +149,11 @@
         <table class="table align-middle ">
           <thead>
             <tr>
-              <th scope="col">Nombre</th>
-              <th scope="col">Apellido</th>
+              <th scope="col">Apellido y nombre</th>
               <th scope="col">DNI</th>
-              <th scope="col">Obra Social</th>
               <th scope="col">Edad</th>
-              <th scope="col">Sexo</th>
+              <th scope="col">Obra Social</th>
+              <th scope="col">Opciones</th>
             </tr>
           </thead>
           <tbody id="tbody__admin"></tbody>
