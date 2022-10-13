@@ -12,6 +12,7 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+    <script src="https://kit.fontawesome.com/24cc370bda.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <script
       src="https://kit.fontawesome.com/24cc370bda.js"
@@ -29,8 +30,8 @@
           <h2>Formulario de pacientes</h2>
           <hr />
         </div>
-        <form id="formPaciente">
-          <div class="mb-3">
+        <form class="row" id="formPaciente">
+          <div class="mb-3 col-6">
             <label for="nombrePaciente" class="form-label">Nombre</label>
             <input
               type="text"
@@ -42,7 +43,7 @@
               Ingrese un nombre válido
             </div>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 col-6">
             <label for="apellidoPaciente" class="form-label">Apellido</label>
             <input
               type="text"
@@ -54,8 +55,8 @@
               Ingrese un apellido válido
             </div>
           </div>
-          <div class="mb-3">
-            <label for="dniPaciente" class="form-label">DNI</label>
+          <div class="mb-3 col-6" >
+            <label for="dniPaciente" class="form-label">DNI (sin puntos) </label>
             <input
               type="text"
               class="form-control"
@@ -66,15 +67,15 @@
               Ingrese un DNI válido
             </div>
           </div>
-          <div class="mb-3">
-            <label for="" class="d-block">Fecha de nacimiento</label>
+          <div class="mb-3 col-6">
+            <label for="" class="form-label">Fecha de nacimiento</label>
             <input id="fechaNacimiento" type="date" class="form-control" />
             <div id="fechaNacimiento__feedback" class="invalid-feedback">
               Seleccione una fecha
             </div>
           </div>
-          <div>
-            <label class="mb-2 text-dark">Sexo</label>
+          <div class="mb-3 col-6">
+            <label class="form-label">Sexo</label>
 
             <select class="form-select" id="selectSexo">
               <option value = "0">Seleccione una opcion</option>
@@ -86,8 +87,8 @@
               Seleccione una opción
             </div>
           </div>
-          <div>
-            <label class="mb-2 text-dark">Obra Social</label>
+          <div class="mb-3 col-6">
+            <label class="form-label">Obra Social</label>
 
             <select class="form-select" id="selectObraSocial">
               <option value = "0">Seleccione una opcion</option>
@@ -100,19 +101,19 @@
               Seleccione una opción
             </div>
           </div>
-          <div class="mb-3">
-            <label for="telefonoPaciente" class="form-label">Telefono</label>
+          <div class="mb-3 col-6">
+            <label for="telefonoPaciente" class="form-label">Teléfono</label>
             <input
               type="text"
               class="form-control"
               id="telefonoPaciente"
-              placeholder="381 123 4567"
+              placeholder="3811234567"
             />
             <div id="telefonoPaciente__feedback" class="invalid-feedback">
               Ingrese un telefono válido
             </div>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 col-6">
             <label for="domicilioPaciente" class="form-label">Domicilio</label>
             <input
               type="text"
@@ -123,10 +124,11 @@
             <div id="nombrePaciente__feedback" class="invalid-feedback">
               Ingrese un domicilio válido
             </div>
-            <div class="mb-3">
+          </div>
+          <div class="mb-3 col-6">
               <label for="emailPaciente" class="form-label">Email</label>
               <input
-                type="text"
+                type="email"
                 class="form-control"
                 id="emailPaciente"
                 placeholder="juanperez@gmail.com"
@@ -134,29 +136,29 @@
               <div id="emailPaciente__feedback" class="invalid-feedback">
                 Ingrese un email válido
               </div>
-            </div>
           </div>
-          <div class="text-end">
-            <button id="buttonCargar" class="btn-verde" type="submit">
+         
+          <div class="text-center ">
+            <button id="buttonCargar" class="btn-verde text-light" type="submit">
               Cargar
             </button>
           </div>
         </form>
       </section>
       <hr />
-      <section class="table-responsive">
+      <section class="container table-responsive">
 
-        <table class="table align-middle ">
-          <thead>
+        <table class="table table-sm table-light table-striped table-bordered text-center">
+          <thead class="px-5">
             <tr>
-              <th scope="col">Apellido y nombre</th>
+              <th  scope="col">Apellido y nombre</th>
               <th scope="col">DNI</th>
               <th scope="col">Edad</th>
               <th scope="col">Obra Social</th>
               <th scope="col">Opciones</th>
             </tr>
           </thead>
-          <tbody id="tbody__admin"></tbody>
+          <tbody  id="tbody__admin"></tbody>
         </table>
       </section>
     </main>

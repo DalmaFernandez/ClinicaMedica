@@ -50,13 +50,13 @@ export const cargarPacienteTabla = (paciente) => {
     const buttonEditar = document.createElement("button");
     const buttonEliminar = document.createElement("button");
   
-    buttonInfo.classList = "btn btn-info mb-2 me-2";
-    buttonEditar.classList = "btn btn-warning mb-2"
-    buttonEliminar.classList = "btn btn-danger mb-2"
+    buttonInfo.classList = "botonTarea";
+    buttonEditar.classList = "botonTarea"
+    buttonEliminar.classList = "botonTarea"
   
-    buttonInfo.innerText = "Ver más";
-    buttonEditar.innerText = "Editar"
-    buttonEliminar.innerText = "Eliminar"
+    buttonInfo.title= "Más información";
+    buttonEditar.title = "Editar"
+    buttonEliminar.title= "Eliminar"
   
     buttonInfo.onclick = () => {
       mostrarInfo(paciente);
@@ -69,9 +69,24 @@ export const cargarPacienteTabla = (paciente) => {
     buttonEliminar.onclick = () => {
       deletePaciente(paciente.dni);
     }
+
+    const iconInfo = document.createElement("i");
+    const iconEditar = document.createElement("i");
+    const iconEliminar = document.createElement("i");
+    iconInfo.classList = "fa-solid fa-circle-info";
+    iconInfo.style.color = "#3085d6";
+    iconEditar.classList = "fa-solid fa-pencil ms-2";
+    iconEditar.style.color = "#ffa500";
+    iconEliminar.classList = "fa-solid fa-trash ms-2";
+    iconEliminar.style.color = "#d33";
+
+    buttonInfo.appendChild(iconInfo);
+    buttonEditar.appendChild(iconEditar);
+    buttonEliminar.appendChild(iconEliminar);
+
     td7.appendChild(buttonInfo);
-    td7.appendChild(buttonEditar)
-    td7.appendChild(buttonEliminar)
+    td7.appendChild(buttonEditar);
+    td7.appendChild(buttonEliminar);
   
     tr.appendChild(td7);
     //

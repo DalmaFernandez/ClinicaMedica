@@ -20,3 +20,8 @@ background-color:  rgb(1, 144, 176);
   /* background-color:rgba(0, 166, 203, 0.874) ; */
   width:50vw ;
 }
+.botonTarea{
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
