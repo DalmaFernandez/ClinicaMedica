@@ -20,7 +20,8 @@ formularioAcceso.addEventListener("submit",(e)=>{
     sessionStorage.setItem("acceso", acceso);
     window.open("./administrador.html");
     sessionStorage.removeItem("acceso");
-   window.location.reload();  
+  // window.location.reload();  
+  window.close();
     
     //    botonAdmin.style.visibility = "hidden"
     //     administrador.style.visibility= "visible"; //"visible"
