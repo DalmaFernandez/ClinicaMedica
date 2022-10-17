@@ -21,14 +21,16 @@
   <body>
     <header class="shadow">
       <nav
-        class="navbar navbar-expand-lg bg-dark navbar-dark shadow d-flex justify-content-center"
+        class="navbar navbar-expand-lg bg-dark navbar-dark " 
       >
         <div class="container">
-          <a class="navbar-brand d-flex align-items-center" href="./index.html">
+          
+          <a id="" class="navbar-brand d-flex align-items-center volverAinicio" href="">
             <img
               src="./assets/logo.png"
               alt="logo de la clinica"
               class="me-2 logo"
+              
             />
             <h3 class="clinicaTitulo my-auto">Clínica Médica</h3>
           </a>
@@ -64,7 +66,8 @@
                 >
               </li>
             </ul>
-            <button
+            <div class="d-flex justify-content-center">
+              <button
               type="button"
               id="botonAdmin"
               class="btn btn-secondary text-light rounded-0"
@@ -74,17 +77,21 @@
             >
               ADMINISTRADOR
             </button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
+    <main id="mainAdmin" class="">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quas repellat, necessitatibus non quidem asperiores quis quod, atque, accusamus odit quaerat praesentium voluptate ipsum explicabo dolorem omnis reiciendis culpa illum?</p>
+    </main>
     
-    <footer class="bg-dark opacity-75 text-light   py-4">
+    <footer class="bg-dark opacity-75 text-light  pt-4">
       <section class="container">
-        <div class="bg-dark row">
-          <article class="col-sm-12 col-md-4 mt-2">
+        <div class=" row mx-auto">
+          <article class="col-sm-12 col-md-4 mt-2  ">
             <a
-              class="navbar-brand d-flex align-items-center"
+              class="navbar-brand d-flex align-items-center  justify-content-center volverAinicio"
               href="./index.html"
             >
               <img
@@ -92,67 +99,76 @@
                 alt="logo de la clinica"
                 class="me-2 logo"
               />
-              <h3 class="clinicaTitulo my-auto me-5">Clínica Médica</h3>
+              <h3 class="clinicaTitulo my-auto fs-4">Clínica Médica</h3>
             </a>
+            <div class="RedesFooter mt-1 d-flex  justify-content-center">
+              <h5 class="my-auto ms-1 me-3">¡Seguinos!</h6>
+              <a  href="https://www.facebook.com"
+                ><i class="fa-brands text-secondary fa-square-facebook icons me-2 "></i
+              ></a>
+              <a  href="https://www.twitter.com"
+                ><i class="fa-brands text-secondary fa-square-twitter icons me-2"></i
+              ></a>
+              <a  href="https://www.instagram.com"
+                ><i class="fa-brands text-secondary fa-square-instagram icons me-2"></i
+              ></a>
+            </div>
+
+
 
             
           </article>
-          <article class="col-sm-12 col-md-4 mt-2">
+          <article class="col-sm-12 col-md-4 mt-2 text-center">
+            <h5 class="footerTitulo">Contacto</h6>
             
-            <div class="d-flex align-items-start">
+            <div class="d-flex justify-content-center">
               <div>
                 <i
                   class="fa-solid fa-location-dot fa-1x  mb-1"
                 ></i>
               </div>
               <div class="mx-2">
-                <p class="mb-1">Gral. Paz 576 - CP:4000 - San Miguel de Tucumán</p>
+                <p class="mb-1 ">Gral. Paz 576 - San Miguel de Tucumán</p>
                 
               </div>
             </div>
             
-            <div class="d-flex align-items-start">
+            <div class="d-flex justify-content-center">
               <div>
                 <i class="fa-solid fa-phone fa-1x  mb-1"></i>
               </div>
               <div class="mx-2">
-                <p class="">(+54) 381 987 6543</p>
+                <p class="mb-1">(+54) 381 987 6543</p>
               </div>
             </div>
             
-            <div class="d-flex align-items-start">
+            <div class="d-flex justify-content-center ">
               <div>
                 <i class="fa-solid fa-envelope fa-1x  mb-1"></i>
               </div>
               <div class="mx-2">
                 <a href="../views/error404.html" class="nav-link mb-1"
-                  >contacto@clinicamedica.com</a
+                  >contacto@clinmed.com</a
                 >
               </div>
             </div>
             
           </article>
-          <article class="col-sm-12 col-md-4 mt-2">
-            <div class="RedesFooter mt-1 ">
-              <a  href="https://www.facebook.com"
-                ><i class="fa-brands text-secondary fa-square-facebook icons"></i
-              ></a>
-              <a  href="https://www.twitter.com"
-                ><i class="fa-brands text-secondary fa-square-twitter icons"></i
-              ></a>
-              <a  href="https://www.instagram.com"
-                ><i class="fa-brands text-secondary fa-square-instagram icons"></i
-              ></a>
-            </div>
+          <article class="col-sm-12 col-md-4 mt-2 text-center">
+            <h5 class="footerTitulo">Información</h6>
+            
+            <a class="nav-link" href="">Preguntas frecuentes</a>
+            <a class="nav-link" href="">Horarios de atención</a>
+            <a class="nav-link" href="">Solicitar turno</a>
           </article>
         </div>
         
       </section>
-      <!-- <section class="footer py-2" >
+      <section class="footer py-1 mt-2" >
         <p class="text-center text-light mb-0">
           &copy; Todos los derechos reservados
         </p>
-      </section> -->
+      </section>
     </footer>
 
     <!-- JavaScript Bundle with Popper -->
@@ -162,6 +178,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="./js/adminPaciente.js"></script>
+    <!-- <script type="module" src="./js/adminPaciente.js"></script> -->
+  <script type="module" src="./js/appAdmin.js"></script>
   </body>
 </html>
