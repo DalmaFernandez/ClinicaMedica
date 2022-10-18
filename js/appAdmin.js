@@ -55,16 +55,26 @@ if (turnosLS != null) {
 //     return 0;
 //     });
 
-turnos.sort((a, b) => Number(a.hora) - Number(b.hora));
+turnos.sort((a,b)=>a.hora.split(":")[0]-b.hora.split(":")[0]);
 
-  
-
+turnos.sort((a, b) => {
+    if (a.fecha > b.fecha) {
+      return 1;
+    }
+    if  (a.fecha < b.fecha) {
+      return -1;
+    }
+   
+    return 0;
+    });
 
 const tablaTurnos = document.getElementById("turnosPrincipal");
 
 turnos.forEach((turno) => {
+    const divCard = document.createElement("div");
+    divCard.classList.add("p-1", "col-4");
     const card = document.createElement("div");
-    card.classList = "card px-0 col-4";
+    card.classList = "card px-0";
     const cardHeader = document.createElement("div");
     cardHeader.classList = "card-header";
     cardHeader.innerText = "Fecha: " + turno.fecha + " Hora: " + turno.hora;
@@ -77,7 +87,7 @@ turnos.forEach((turno) => {
     lista.appendChild(item1);
     const item2 = document.createElement("li");
     item2.classList = "list-group-item";
-    item2.innerText = "Médico: " + turno.medico;
+    item2.innerText = "Médico: Dr/a. " + turno.medico;
     lista.appendChild(item2);
     const item3 = document.createElement("li");
     item3.classList = "list-group-item";
@@ -92,7 +102,8 @@ turnos.forEach((turno) => {
     item5.innerText = "ID: " + turno.id;
     lista.appendChild(item5);
     card.appendChild(lista);
-    tablaTurnos.appendChild(card);
+    divCard.appendChild(card);
+    tablaTurnos.appendChild(divCard);
 });
 
 

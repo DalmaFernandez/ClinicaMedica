@@ -214,12 +214,12 @@ formularioPaciente.addEventListener("submit", (e) => {
     campoApellido.value = "";
     campoDNI.value = "";
     campoFecha.value = "";
-    campoSexo.value = "";
-    campoObraSocial.value = "";
+    campoSexo.value = "0";
+    campoObraSocial.value = "0";
     campoTelefono.value = "";
     campoDomicilio.value = "";
     campoEmail.value = "";
-    
+
 
     nombre = "";
     apellido = "";

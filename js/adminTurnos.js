@@ -157,13 +157,23 @@ formularioTurno.addEventListener("submit", (e) => {
         }
         
         actualizarTabla();
+// Resetear formulario
+        paciente = "";
+        especialidad = "";
+        medico = "";
+        fecha = "";
+        hora = "";
+        nota = "";
 
-        campoPaciente.value = "";
-        campoEspecialidad.value = "";
-        campoMedico.value = "";
+        campoPaciente.value = "0";
+        campoEspecialidad.value = "0";
+        campoMedico.value = "0";
         campoFecha.value = "";
-        campoHora.value = "";
+        campoHora.value = "0";
         campoNota.value = "";
+
+        campoMedico.innerHTML = `<option value="0">Seleccione un médico</option>`;
+        campoHora.innerHTML = `<option value="0">Seleccione una hora</option>`;
 
         campoPaciente.classList.remove("is-valid");
         campoEspecialidad.classList.remove("is-valid");
@@ -172,12 +182,7 @@ formularioTurno.addEventListener("submit", (e) => {
         campoHora.classList.remove("is-valid");
         
 
-        paciente = "";
-        especialidad = "";
-        medico = "";
-        fecha = "";
-        hora = "";
-        nota = "";
+        
 }else{
     console.log(campoFecha.value);
     Swal.fire({
