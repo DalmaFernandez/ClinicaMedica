@@ -8,7 +8,7 @@ export const eliminarTurno = (turnoId) => {
     });
 
     Swal.fire({
-        title: "¿Estás seguro que desea eliminar el turno?",
+        title: "¿Estás seguro?",
         text: "No podrás deshacer esta acción",
         icon: "warning",
         showCancelButton: true,

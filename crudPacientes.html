@@ -21,17 +21,75 @@
   </head>
   <body>
     <header class="shadow">
-      
+      <nav
+        class="navbar navbar-expand-lg bg-dark navbar-dark " 
+      >
+        <div class="container">
+          
+          <a id="" class="navbar-brand d-flex align-items-center volverAinicio" href="">
+            <img
+              src="./assets/logo.png"
+              alt="logo de la clinica"
+              class="me-2 logo"
+              
+            />
+            <h3 class="clinicaTitulo my-auto">Clínica Médica</h3>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarClinica"
+            aria-controls="navbarClinica"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarClinica">
+            <ul
+              class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 d-flex align-items-center"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="adminPrincipal.html">TURNOS PROGRAMADOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link linkActivo" aria-current="page" href="#"
+                  >PACIENTES</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="crudTurnos.html"
+                  >GESTION DE TURNOS</a
+                >
+              </li>
+            </ul>
+            <div class="d-flex justify-content-center">
+              <button
+              type="button"
+              id="botonAdmin"
+              
+              class="btn btn-secondary text-light rounded-0"
+              data-bs-toggle="modal"
+              data-bs-target="#accederAdmin"
+              disabled
+            >
+              ADMINISTRADOR
+            </button>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
-    <main class="py-4 mainAdmin ">
+    <main id="mainAdmin" class="py-4 mainAdmin ">
       
-      <section class="bg-white formulario container text-dark py-3 px-5 rounded-0 shadow-lg">
+      <section class="bg-white formulario container text-dark py-3 px-4 rounded-0 shadow-lg">
         <div class="text-center">
           <h2>Formulario de pacientes</h2>
           <hr />
         </div>
         <form class="row" id="formPaciente">
-          <div class="mb-3 col-6">
+          <div class="mb-3 col-md-6 col-sm-12">
             <label for="nombrePaciente" class="form-label">Nombre</label>
             <input
               type="text"
@@ -43,7 +101,7 @@
               Ingrese un nombre válido
             </div>
           </div>
-          <div class="mb-3 col-6">
+          <div class="mb-3 col-md-6 col-sm-12">
             <label for="apellidoPaciente" class="form-label">Apellido</label>
             <input
               type="text"
@@ -55,7 +113,7 @@
               Ingrese un apellido válido
             </div>
           </div>
-          <div class="mb-3 col-6" >
+          <div class="mb-3 col-md-6 col-sm-12" >
             <label for="dniPaciente" class="form-label">DNI (sin puntos) </label>
             <input
               type="text"
@@ -67,14 +125,14 @@
               Ingrese un DNI válido
             </div>
           </div>
-          <div class="mb-3 col-6">
+          <div class="mb-3 col-md-6 col-sm-12">
             <label for="" class="form-label">Fecha de nacimiento</label>
             <input id="fechaNacimiento" type="date" class="form-control" />
             <div id="fechaNacimiento__feedback" class="invalid-feedback">
               Seleccione una fecha
             </div>
           </div>
-          <div class="mb-3 col-6">
+          <div class="mb-3 col-md-6 col-sm-12">
             <label class="form-label">Sexo</label>
 
             <select class="form-select" id="selectSexo">
@@ -87,7 +145,7 @@
               Seleccione una opción
             </div>
           </div>
-          <div class="mb-3 col-6">
+          <div class="mb-3 col-md-6 col-sm-12">
             <label class="form-label">Obra Social</label>
 
             <select class="form-select" id="selectObraSocial">
@@ -101,7 +159,7 @@
               Seleccione una opción
             </div>
           </div>
-          <div class="mb-3 col-6">
+          <div class="mb-3 col-md-6 col-sm-12">
             <label for="telefonoPaciente" class="form-label">Teléfono</label>
             <input
               type="text"
@@ -113,7 +171,7 @@
               Ingrese un telefono válido
             </div>
           </div>
-          <div class="mb-3 col-6">
+          <div class="mb-3 col-md-6 col-sm-12">
             <label for="domicilioPaciente" class="form-label">Domicilio</label>
             <input
               type="text"
@@ -125,7 +183,7 @@
               Ingrese un domicilio válido
             </div>
           </div>
-          <div class="mb-3 col-6">
+          <div class="mb-3 col-md-6 col-sm-12">
               <label for="emailPaciente" class="form-label">Email</label>
               <input
                 type="email"
@@ -145,11 +203,13 @@
           </div>
         </form>
       </section>
-      <hr />
+      
       <section class="container table-responsive">
+        <h2 class="text-center my-3">Lista de pacientes</h2>
+        <hr class="mx-auto">
 
-        <table class="table table-sm table-light table-striped table-bordered text-center">
-          <thead class="px-5">
+        <table class="table table-sm table-light table-striped table-bordered ">
+          <thead class=" ">
             <tr>
               <th  scope="col">Apellido y nombre</th>
               <th scope="col">DNI</th>
@@ -162,8 +222,89 @@
         </table>
       </section>
     </main>
-    <footer>
-      
+    <footer class="bg-dark opacity-75 text-light  pt-4">
+      <section class="container">
+        <div class=" row mx-auto">
+          <article class="col-sm-12 col-md-4 mt-2  ">
+            <a
+              class="navbar-brand d-flex align-items-center  justify-content-center volverAinicio"
+              href="./index.html"
+            >
+              <img
+                src="./assets/logo.png"
+                alt="logo de la clinica"
+                class="me-2 logo"
+              />
+              <h3 class="clinicaTitulo my-auto fs-4">Clínica Médica</h3>
+            </a>
+            <div class="RedesFooter mt-1 d-flex  justify-content-center">
+              <h5 class="my-auto ms-1 me-3">¡Seguinos!</h6>
+              <a  href="https://www.facebook.com"
+                ><i class="fa-brands text-secondary fa-square-facebook icons me-2 "></i
+              ></a>
+              <a  href="https://www.twitter.com"
+                ><i class="fa-brands text-secondary fa-square-twitter icons me-2"></i
+              ></a>
+              <a  href="https://www.instagram.com"
+                ><i class="fa-brands text-secondary fa-square-instagram icons me-2"></i
+              ></a>
+            </div>
+
+
+
+            
+          </article>
+          <article class="col-sm-12 col-md-4 mt-2 text-center">
+            <h5 class="footerTitulo">Contacto</h6>
+            
+            <div class="d-flex justify-content-center">
+              <div>
+                <i
+                  class="fa-solid fa-location-dot fa-1x  mb-1"
+                ></i>
+              </div>
+              <div class="mx-2">
+                <p class="mb-1 ">Gral. Paz 576 - San Miguel de Tucumán</p>
+                
+              </div>
+            </div>
+            
+            <div class="d-flex justify-content-center">
+              <div>
+                <i class="fa-solid fa-phone fa-1x  mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <p class="mb-1">(+54) 381 987 6543</p>
+              </div>
+            </div>
+            
+            <div class="d-flex justify-content-center ">
+              <div>
+                <i class="fa-solid fa-envelope fa-1x  mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <a href="../views/error404.html" class="nav-link mb-1"
+                  >contacto@clinmed.com</a
+                >
+              </div>
+            </div>
+            
+          </article>
+          <article class="col-sm-12 col-md-4 mt-2 text-center">
+            <h5 class="footerTitulo">Información</h6>
+            
+            <a class="nav-link" href="">Preguntas frecuentes</a>
+            <a class="nav-link" href="">Horarios de atención</a>
+            <a class="nav-link" href="">Solicitar turno</a>
+          </article>
+        </div>
+        
+      </section>
+      <section class="footer py-1 mt-2" >
+        <p class="text-center text-light mb-0">
+          &copy; Todos los derechos reservados
+        </p>
+      </section>
     </footer>
 
     <!-- JavaScript Bundle with Popper -->
@@ -174,5 +315,6 @@
     ></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="./js/adminPaciente.js"></script>
+    <script type="module" src="./js/appAdmin.js"></script>
   </body>
 </html>

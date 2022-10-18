@@ -46,6 +46,7 @@ export const cargarPacienteTabla = (paciente) => {
 
     //
     const td7 = document.createElement("td");
+    
     const buttonInfo = document.createElement("button");
     const buttonEditar = document.createElement("button");
     const buttonEliminar = document.createElement("button");
@@ -73,11 +74,11 @@ export const cargarPacienteTabla = (paciente) => {
     const iconInfo = document.createElement("i");
     const iconEditar = document.createElement("i");
     const iconEliminar = document.createElement("i");
-    iconInfo.classList = "fa-solid fa-circle-info";
+    iconInfo.classList = "fa-solid fa-circle-info me-1";
     iconInfo.style.color = "#3085d6";
-    iconEditar.classList = "fa-solid fa-pencil ms-2";
+    iconEditar.classList = "fa-solid fa-pencil me-1";
     iconEditar.style.color = "#ffa500";
-    iconEliminar.classList = "fa-solid fa-trash ms-2";
+    iconEliminar.classList = "fa-solid fa-trash ";
     iconEliminar.style.color = "#d33";
 
     buttonInfo.appendChild(iconInfo);
@@ -116,6 +117,7 @@ export const cargarPacienteTabla = (paciente) => {
       <p><b>Obra social:</b> ${paciente.os}</p>
       <p><b>Teléfono:</b> ${paciente.telefono}</p>
       <p><b>Domicilio:</b> ${paciente.domicilio}</p>`,
+      icon: "info",
     });
 
   }

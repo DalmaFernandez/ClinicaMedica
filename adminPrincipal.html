@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cargar Turnos</title>
+    <title>Cargar Pacientes</title>
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -21,7 +21,7 @@
   <body>
     <header class="shadow">
       <nav
-        class="navbar navbar-expand-lg bg-dark navbar-dark " 
+        class="navbar navbar-expand-lg bg-dark navbar-dark d-flex justify-content-center"" 
       >
         <div class="container">
           
@@ -50,16 +50,18 @@
               class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 d-flex align-items-center"
             >
               <li class="nav-item">
-                <a class="nav-link" href="adminPrincipal.html">TURNOS PROGRAMADOS</a>
+                <a class="nav-link linkActivo" href="#">TURNOS PROGRAMADOS</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " aria-current="page" href="crudPacientes.html"
                   >PACIENTES</a
                 >
               </li>
-              
+              <!-- <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">MEDICOS</a>
+              </li> -->
               <li class="nav-item">
-                <a class="nav-link linkActivo" aria-current="page" href="#"
+                <a class="nav-link" aria-current="page" href="crudTurnos.html"
                   >GESTION DE TURNOS</a
                 >
               </li>
@@ -80,106 +82,44 @@
         </div>
       </nav>
     </header>
-    <main id="mainAdmin" class="py-4 mainAdmin ">
-      
-      <section class="bg-white formulario container text-dark py-3 px-5 rounded-0 shadow-lg">
-        <div class="text-center">
-          <h2>Formulario de turnos</h2>
-          <hr />
-        </div>
-        <form class="row" id="formTurno">
-          <div class="mb-3 col-md-6 col-sm-12">
-            <label class="mb-2 text-dark">Paciente</label>
-            <select class="form-select" id="selectPaciente">
-              <option value="0">Seleccione un paciente</option>
-            </select>
-            <div id="selectPaciente__feedback" class="invalid-feedback">
-              Por favor, seleccione un paciente
-            </div>
-          </div>
-          <div class="mb-3 col-md-6 col-sm-12">
-            <label class="mb-2 text-dark">Especialidad</label>
-            <select class="form-select" id="selectEspecialidad">
-              <option value="0">Seleccione una especialidad</option>
-              <option value="Cardiología">Cardiología</option>
-              <option value="Dermatología">Dermatología</option>
-              <option value="Ginecología">Ginecología</option>
-              <option value="Odontología">Odontología</option>
-              <option value="Pediatría">Pediatría</option>
-              <option value="Traumatología">Traumatología</option>
-            </select>
-            <div id="selectEspecialidad__feedback" class="invalid-feedback">
-              Por favor, seleccione una especialidad
-            </div>
-          </div>
-          <div class="mb-3 col-md-6 col-sm-12">
-            <label class="mb-2 text-dark">Médico</label>
-            <select class="form-select" id="selectMedico">
-              <option value="0">Seleccione un médico</option>
-            </select>
-            <div id="selectMedico__feedback" class="invalid-feedback">
-              Por favor, seleccione un médico
-            </div>  
-          </div>
-          <div class="mb-3 col-md-6 col-sm-12">
-            <label for="" class="d-block">Fecha</label>
-            <input id="fechaTurno" type="date" class="form-control" />
-            <div id="fechaTurno__feedback" class="invalid-feedback">
-              Por favor, seleccione una fecha
-            </div>
-          </div>
+    <main id="mainAdmin" class="">
 
-          <div class="mb-3 col-md-6 col-sm-12">
-            <label class="mb-2 text-dark">Horario</label>
-            <select class="form-select" id="selectHorario">
-              <option value="0">Seleccione el horario</option>
-              <!-- <option value="9:00">9:00</option>
-              <option value="10:00">10:00</option>
-              <option value="11:00">11:00</option>
-              <option value="12:00">12:00</option> -->
-
-            </select>
-            <div id="selectHorario__feedback" class="invalid-feedback">
-              Por favor, seleccione un horario
+      <section class="container">
+        <section>
+          <h2>Turnos programados</h2>
+          <hr class="mx-auto">
+        </section>
+        <section>
+          <h3>Filtrar por médico</h3>
+          <form>
+            <div class="mb-3 col-md-6 col-sm-12">
+              <label class="mb-2 text-dark">Médico</label>
+              <select class="form-select" id="selectMedico">
+                <option value="0">Seleccione un médico</option>
+              </select>
+              <div id="selectMedico__feedback" class="invalid-feedback">
+                Por favor, seleccione un médico
+              </div>
             </div>
+          </form>
+        </section>
+        <section id="turnosPrincipal" class="row">
+          <!-- <div class="card px-0 col-4" >
+            <div class="card-header">
+              Featured
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">An item</li>
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+            </ul>
           </div>
-          <div class="mb-3 col-md-6 col-sm-12">
-            <label for="notasTurno" class="form-label"
-              >Notas (opcional)</label
-            >
-            <textarea
-              class="form-control"
-              id="notasTurno"
-              rows="3"
-            ></textarea>
-          </div>
-          <div class="text-center">
-            <button id="cargarTurno" class="btn-verde" type="submit">
-              Cargar
-            </button>
-          </div>
-        </form>
-      </section>
-      <hr />
-      <section class="container table-responsive">
-
-        <table class="table table-sm table-light table-striped table-bordered ">
-          <thead>
-            <tr>
-              <!-- <th scope="col">N°</th> -->
-              <th scope="col">Paciente</th>
-              <!-- <th scope="col">Especialidad</th> -->
-              <th scope="col">Médico</th>
-              <th scope="col">Fecha</th>
-              <th scope="col">Hora</th>
-              <!-- <th scope="col">Notas</th> -->
-              <th scope="col">Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="tbody_turnos"></tbody>
-        </table>
+   -->
+  
+        </section>
       </section>
     </main>
+    
     <footer class="bg-dark opacity-75 text-light  pt-4">
       <section class="container">
         <div class=" row mx-auto">
@@ -272,7 +212,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="./js/adminTurnos.js"></script>
-    <script type="module" src="./js/appAdmin.js"></script>
+    <!-- <script type="module" src="./js/adminPaciente.js"></script> -->
+  <script type="module" src="./js/appAdmin.js"></script>
   </body>
 </html>
