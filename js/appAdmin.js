@@ -32,30 +32,19 @@ for (let i = 0; i < volverAInicio.length; i++) {
 
 let turnos = [];
 let turnosLS = JSON.parse(localStorage.getItem("Lista de Turnos"));
-if (turnosLS != null) {
+const tablaTurnos = document.getElementById("turnosPrincipal");
+if (turnosLS.length > 0) {
     turnos = turnosLS;
+    
+
 }else{
     const mensaje = document.createElement("p");
     mensaje.innerText = "No hay turnos programados";
     mensaje.classList.add("text-center");
+    tablaTurnos.appendChild(mensaje);
 }
-
-// turnos.sort((a, b) => {
-//     if (a.fecha > b.fecha) {
-//       return 1;
-//     }
-//     if  (a.fecha < b.fecha) {
-//       return -1;
-//     }
-//     // if  ( a.hora > b.hora) {
-//     //     return 1;
-//     // } if (a.hora < b.hora) {
-//     //     return -1;
-//     // }
-//     return 0;
-//     });
-
-turnos.sort((a,b)=>a.hora.split(":")[0]-b.hora.split(":")[0]);
+const mostrarTurnos = (turnos) => {
+    turnos.sort((a,b)=>a.hora.split(":")[0]-b.hora.split(":")[0]);
 
 turnos.sort((a, b) => {
     if (a.fecha > b.fecha) {
@@ -68,11 +57,11 @@ turnos.sort((a, b) => {
     return 0;
     });
 
-const tablaTurnos = document.getElementById("turnosPrincipal");
+
 
 turnos.forEach((turno) => {
     const divCard = document.createElement("div");
-    divCard.classList.add("p-1", "col-4");
+    divCard.classList.add("p-1", "col-md-4","col-sm-12");
     const card = document.createElement("div");
     card.classList = "card px-0";
     const cardHeader = document.createElement("div");
@@ -105,6 +94,81 @@ turnos.forEach((turno) => {
     divCard.appendChild(card);
     tablaTurnos.appendChild(divCard);
 });
+};
+mostrarTurnos(turnos);
+
+const formPaciente = document.getElementById("formFiltroPaciente");
+const campoFiltroPaciente = document.getElementById("filtroPaciente");
+const formMedico = document.getElementById("formFiltroMedico");
+const campoFiltroMedico = document.getElementById("filtroMedico");
+const botonFiltraPaciente = document.getElementById("buttonFiltrarPaciente");
+const botonFiltraMedico = document.getElementById("buttonFiltrarMedico");
+
+const opcionesPaciente = () => {
+    let pacientes = JSON.parse(localStorage.getItem("Lista de pacientes"));
+    console.log(pacientes);
+    const campoFiltroPaciente = document.getElementById("filtroPaciente");
+    pacientes.forEach((paciente) => {
+        const opcionPaciente = document.createElement("option");
+        opcionPaciente.value = paciente.apellido + ", " + paciente.nombre;
+        opcionPaciente.innerText = paciente.apellido + ", " + paciente.nombre;
+        campoFiltroPaciente.appendChild(opcionPaciente);
+    });
+};
+
+const opcionesMedico = () => {
+    let medicos = JSON.parse(localStorage.getItem("Lista de medicos"));
+    console.log(medicos);
+    const campoFiltroMedico = document.getElementById("filtroMedico");
+    medicos.forEach((medico) => {
+        const opcionMedico = document.createElement("option");
+        opcionMedico.value = medico.nombre;
+        opcionMedico.innerText = "Dr/a. " + medico.nombre + " - " + medico.especialidad;
+        campoFiltroMedico.appendChild(opcionMedico);
+    });
+};
+
+opcionesPaciente();
+opcionesMedico();
+
+formMedico.addEventListener("submit", (e) => {
+    e.preventDefault();
+    tablaTurnos.innerHTML = "";
+    const filtroMedico = campoFiltroMedico.value;
+    console.log(filtroMedico);
+  let  turnosFiltrados = turnos.filter((turno) => {
+        return turno.medico === filtroMedico 
+    });
+    console.log(turnosFiltrados);
+    if (turnosFiltrados.length > 0) {
+    mostrarTurnos(turnosFiltrados);
+    }else{
+        const mensaje = document.createElement("p");
+        mensaje.innerText = "No hay turnos programados para el médico seleccionado";
+        mensaje.classList.add("text-center");
+        tablaTurnos.appendChild(mensaje);
+    }
+   
+});
+
+formPaciente.addEventListener("submit", (e) => {
+    e.preventDefault();
+    tablaTurnos.innerHTML = "";
+    const filtroPaciente = campoFiltroPaciente.value;
+    console.log(filtroPaciente);
+    let turnosFiltrados = turnos.filter((turno) => {
+        return turno.paciente === filtroPaciente
+    });
+    console.log(turnosFiltrados);
+    if (turnosFiltrados.length > 0) {
+        mostrarTurnos(turnosFiltrados);
+    }else{
+        const mensaje = document.createElement("p");
+        mensaje.innerText = "No hay turnos programados para el paciente seleccionado";
+        mensaje.classList.add("text-center");
+        tablaTurnos.appendChild(mensaje);
+    }
+});
 
 
 
@@ -112,16 +176,3 @@ turnos.forEach((turno) => {
 
 
 
-
-
-
-/* <div class="card px-0 col-4" >
-<div class="card-header">
-  Featured
-</div>
-<ul class="list-group list-group-flush">
-  <li class="list-group-item">An item</li>
-  <li class="list-group-item">A second item</li>
-  <li class="list-group-item">A third item</li>
-</ul>
-</div> */

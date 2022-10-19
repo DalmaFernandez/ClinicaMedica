@@ -23,6 +23,14 @@ let nota = "";
 
 
 const especialidades = ["Cardiología", "Dermatología", "Ginecología", "Odontología", "Pediatría", "Traumatología"];
+const cardiologo = new Medico("123456", "Juan Perez", "Cardiología", "123456789");
+const dermatologo = new Medico("123457", "Maria Lopez", "Dermatología", "123456789");
+const ginecologo = new Medico("654322", "Ana Martinez", "Ginecología", "987654321");
+const odontologo = new Medico("987654", "Jose Fernandez", "Odontología", "123456789");
+const pediatra = new Medico("987655", "Luis Rodriguez", "Pediatría", "123456789");
+const traumatologo = new Medico("654321", "Pedro Gomez", "Traumatología", "987654321");
+let medicos = [cardiologo, dermatologo, ginecologo, odontologo, pediatra, traumatologo];
+localStorage.setItem("Lista de medicos", JSON.stringify(medicos));
 
 
 let turnosLS = JSON.parse(localStorage.getItem("Lista de Turnos"));

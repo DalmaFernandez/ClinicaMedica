@@ -84,25 +84,49 @@
     </header>
     <main id="mainAdmin" class="">
 
-      <section class="container">
-        <section>
+      <section class="container my-5">
+        <section class="text-center ">
           <h2>Turnos programados</h2>
           <hr class="mx-auto">
         </section>
-        <section>
-          <h3>Filtrar por médico</h3>
-          <form>
+        <section class="row mb-3">
+          <form id="formFiltroMedico" class="col-md-6 col-sm-12 mb-2">
+            <h4>Filtrar por médico</h4>
             <div class="mb-3 col-md-6 col-sm-12">
               <label class="mb-2 text-dark">Médico</label>
-              <select class="form-select" id="selectMedico">
+              <select class="form-select w-100" id="filtroMedico">
                 <option value="0">Seleccione un médico</option>
               </select>
               <div id="selectMedico__feedback" class="invalid-feedback">
                 Por favor, seleccione un médico
               </div>
             </div>
+            <div class="text-start ">
+              <button id="buttonFiltrarMedico" class="btn-verde text-light" type="submit">
+                Buscar
+              </button>
+            </div>
           </form>
+          <form id="formFiltroPaciente" class="col-md-6 col-sm-12 mb-2">
+            <h4>Filtrar por paciente</h4>
+            <div class="mb-3 col-md-6 col-sm-12">
+              <label class="mb-2 text-dark">Paciente</label>
+              <select class="form-select" id="filtroPaciente">
+                <option value="0">Seleccione un paciente</option>
+              </select>
+              <div id="selectMedico__feedback" class="invalid-feedback">
+                Por favor, seleccione un médico
+              </div>
+            </div>
+            <div class="text-start ">
+              <button id="buttonFiltrarPaciente" class="btn-verde text-light" type="submit">
+                Buscar
+              </button>
+            </div>
+          </form>
+          
         </section>
+        <hr class="mx-auto">
         <section id="turnosPrincipal" class="row">
           <!-- <div class="card px-0 col-4" >
             <div class="card-header">

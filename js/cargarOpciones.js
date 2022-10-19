@@ -18,14 +18,7 @@ export const cargarMedicos = ()=> {
     campoMedico.innerHTML = `<option value="0">Seleccione un médico</option>`;
     let medico;
     let especialidad= campoEspecialidad.value;
-    const cardiologo = new Medico("123456", "Juan Perez", "Cardiología", "123456789");
-const dermatologo = new Medico("123457", "Maria Lopez", "Dermatología", "123456789");
-const ginecologo = new Medico("654322", "Ana Martinez", "Ginecología", "987654321");
-const odontologo = new Medico("987654", "Jose Fernandez", "Odontología", "123456789");
-const pediatra = new Medico("987655", "Luis Rodriguez", "Oftalmología", "123456789");
-const traumatologo = new Medico("654321", "Pedro Gomez", "Traumatología", "987654321");
-    let medicos = [cardiologo, dermatologo, ginecologo, odontologo, pediatra, traumatologo];
-    
+    let medicos = JSON.parse(localStorage.getItem("Lista de medicos"));
     switch (especialidad) {
         case "Cardiología":
             medico = medicos[0];
