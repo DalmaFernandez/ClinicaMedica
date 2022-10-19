@@ -21,14 +21,11 @@ formularioAcceso.addEventListener("submit",(e)=>{
     window.open("./adminPrincipal.html");
     sessionStorage.removeItem("acceso");
    window.location.reload();  
-    
-    //    botonAdmin.style.visibility = "hidden"
-    //     administrador.style.visibility= "visible"; //"visible"
-    }
-    else{
+    }else{
         campoClave.classList.add("is-invalid");
          
         
     }
-})
+});
+
 

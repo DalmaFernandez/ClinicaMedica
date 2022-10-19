@@ -87,7 +87,7 @@ export const opcionHorario = () => {
          
      });
      if(horariosDisponibles.length == 0){
-         horariosDisponibles = horarios;
+        // horariosDisponibles = horarios; PONER UN MJE QUE DIGA Q NO HAY TURNOS DISPONIBLES
      }
  
  

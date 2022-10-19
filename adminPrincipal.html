@@ -82,19 +82,19 @@
         </div>
       </nav>
     </header>
-    <main id="mainAdmin" class="">
+    <main id="mainAdmin">
 
-      <section class="container my-5">
+      <section class="container my-4">
         <section class="text-center ">
           <h2>Turnos programados</h2>
           <hr class="mx-auto">
         </section>
         <section class="row mb-3">
-          <form id="formFiltroMedico" class="col-md-6 col-sm-12 mb-2">
-            <h4>Filtrar por médico</h4>
-            <div class="mb-3 col-md-6 col-sm-12">
-              <label class="mb-2 text-dark">Médico</label>
-              <select class="form-select w-100" id="filtroMedico">
+          <form id="formFiltroMedico" class="col-md-4 col-sm-12 mb-4 ">
+            
+            <div class="mb-3 col-md-6 col-sm-12 w-100">
+              <label class="mb-2 text-dark"><i class="fa-solid fa-user-doctor me-1"></i>Filtrar por médico</label>
+              <select class="form-select" id="filtroMedico">
                 <option value="0">Seleccione un médico</option>
               </select>
               <div id="selectMedico__feedback" class="invalid-feedback">
@@ -103,30 +103,54 @@
             </div>
             <div class="text-start ">
               <button id="buttonFiltrarMedico" class="btn-verde text-light" type="submit">
-                Buscar
+                Aplicar filtro
               </button>
             </div>
           </form>
-          <form id="formFiltroPaciente" class="col-md-6 col-sm-12 mb-2">
-            <h4>Filtrar por paciente</h4>
-            <div class="mb-3 col-md-6 col-sm-12">
-              <label class="mb-2 text-dark">Paciente</label>
+          <form id="formFiltroPaciente" class="col-md-4 col-sm-12 mb-4">
+            
+            <div class="mb-3 col-md-6 col-sm-12 w-100">
+              <label class="mb-2 text-dark"><i class="fa-solid fa-hospital-user me-1"></i>Filtrar por paciente</label>
               <select class="form-select" id="filtroPaciente">
                 <option value="0">Seleccione un paciente</option>
               </select>
-              <div id="selectMedico__feedback" class="invalid-feedback">
+              <div id="selectPaciente__feedback" class="invalid-feedback">
                 Por favor, seleccione un médico
               </div>
             </div>
             <div class="text-start ">
               <button id="buttonFiltrarPaciente" class="btn-verde text-light" type="submit">
-                Buscar
+                Aplicar filtro
+              </button>
+            </div>
+          </form>
+          <form id="formFiltroFecha" class="col-md-4 col-sm-12 mb-4">
+            
+            <div class="mb-3 col-md-6 col-sm-12 w-100">
+              <label for="" class="form-label"><i class="fa-solid fa-calendar-days me-1"></i>Filtrar por fecha</label>
+              <input id="filtroFecha" type="date" class="form-control" />
+              <div id="filtroFecha__feedback" class="invalid-feedback">
+                Seleccione una fecha
+              </div>
+            </div>
+            <div class="text-start ">
+              <button id="buttonFiltrarFecha" class="btn-verde text-light" type="submit">
+                Aplicar filtro
+              </button>
+            </div>
+          </form>
+          <form id="formQuitarFiltros" class="col-md-2 col-sm-12 mb-1">
+            <div class="text-start ">
+              <button id="buttonQuitarFiltros" class="botonTarea text-dark" type="submit">
+                <i class="fa-solid fa-xmark me-1 text-danger"></i> Eliminar filtros
               </button>
             </div>
           </form>
           
+          
         </section>
         <hr class="mx-auto">
+        <div id="mjeFiltro"></div>
         <section id="turnosPrincipal" class="row">
           <!-- <div class="card px-0 col-4" >
             <div class="card-header">
@@ -142,6 +166,7 @@
   
         </section>
       </section>
+      
     </main>
     
     <footer class="bg-dark opacity-75 text-light  pt-4">

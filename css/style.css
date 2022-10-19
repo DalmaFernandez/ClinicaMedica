@@ -12,7 +12,7 @@
   background-color: rgba(0, 166, 203, 0.5);
 }
 .card-header {
-  background-color: rgba(0, 166, 203, 0.5);
+  background-color:  rgba(0, 166, 203, 0.63);
   color: white;
   font-weight: 900;
 }
@@ -36,6 +36,7 @@ padding: 0.45rem 1rem;
 background-color:  rgb(1, 144, 176);
  
 }
+
 #accederAdmin {
   position: fixed;
   z-index: 20000;

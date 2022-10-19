@@ -47,30 +47,31 @@ if (turnosLS != null) {
 
 opcionesPaciente();
 
-campoPaciente.addEventListener("change", () => {
+campoPaciente.addEventListener("blur", () => {
     validateSelector(campoPaciente.value, campoPaciente);  
     if (validateSelector(campoPaciente.value, campoPaciente)) {
         paciente = campoPaciente.value;
     }
 });
-campoEspecialidad.addEventListener("change", () => {
+campoEspecialidad.addEventListener("blur", () => {
     validateSelector(campoEspecialidad.value, campoEspecialidad);
     if (validateSelector(campoEspecialidad.value, campoEspecialidad)) {
         especialidad = campoEspecialidad.value;
         cargarMedicos();
     }
 });
-campoMedico.addEventListener("change", () => {
+campoMedico.addEventListener("blur", () => {
     validateSelector(campoMedico.value, campoMedico);
     if (validateSelector(campoMedico.value, campoMedico)) {
         medico = campoMedico.value;
     }
 });
-campoFecha.addEventListener("change", () => {
+campoFecha.addEventListener("blur", () => {
     validateDate(campoFecha.value, campoFecha);
     console.log(campoFecha.value);
     if(validateDate(campoFecha.value, campoFecha)) {
         fecha = campoFecha.value;
+        campoHora.innerHTML = `<option value="0">Seleccione el horario</option>`;
         opcionHorario();
     }
 });
@@ -84,7 +85,7 @@ campoHora.addEventListener("blur", () => {
     hora = campoHora.value;
     }
 });
-campoNota.addEventListener("change", () => {
+campoNota.addEventListener("blur", () => {
     nota= campoNota.value;
     console.log(nota);
 });
@@ -92,7 +93,7 @@ campoNota.addEventListener("change", () => {
 const agregarTurnoLS = (turno) => {
     turnos.unshift(turno);
     localStorage.setItem("Lista de Turnos", JSON.stringify(turnos));
-}
+};
 
 formularioTurno.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -137,7 +138,7 @@ formularioTurno.addEventListener("submit", (e) => {
             console.log(isEditando);
             
             const turnoId =Number(sessionStorage.getItem("idTurno"));
-            sessionStorage.removeItem("turnoId");
+            sessionStorage.removeItem("idTurno");
 
             const turnoIndice = turnos.findIndex((turno) => {
               return  turno.id === turnoId;
