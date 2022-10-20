@@ -12,7 +12,7 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <script
       src="https://kit.fontawesome.com/24cc370bda.js"
       crossorigin="anonymous"
@@ -20,19 +20,22 @@
   </head>
   <body>
     <header class="shadow">
-      <nav
-        class="navbar navbar-expand-lg bg-dark navbar-dark d-flex justify-content-center"" 
-      >
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
         <div class="container">
-          
-          <a id="" class="navbar-brand d-flex align-items-center volverAinicio" href="">
+          <a
+            id=""
+            class="navbar-brand d-flex align-items-center volverAinicio"
+            href="../index.html"
+          >
             <img
-              src="./assets/logo.png"
+              src="../assets/logo.png"
               alt="logo de la clinica"
               class="me-2 logo"
-              
             />
-            <h3 class="clinicaTitulo my-auto">Clínica Médica</h3>
+            <div>
+              <h3 class="clinicaTitulo my-auto">Salud Integral</h3>
+              <h6 class="my-auto">Clínica Médica</h6>
+            </div>
           </a>
           <button
             class="navbar-toggler"
@@ -50,50 +53,48 @@
               class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 d-flex align-items-center"
             >
               <li class="nav-item">
-                <a class="nav-link linkActivo" href="#">TURNOS PROGRAMADOS</a>
+                <a class="nav-link linkActivo" href="../views/administrador.html">TURNOS PROGRAMADOS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="crudPacientes.html"
+                <a class="nav-link " aria-current="page" href="../views/pacientes.html"
                   >PACIENTES</a
                 >
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">MEDICOS</a>
-              </li> -->
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="crudTurnos.html"
+                <a class="nav-link" aria-current="page" href="../views/turnos.html"
                   >GESTION DE TURNOS</a
                 >
               </li>
             </ul>
             <div class="d-flex justify-content-center">
               <button
-              type="button"
-              id="botonAdmin"
-              class="btn btn-secondary text-light rounded-0"
-              data-bs-toggle="modal"
-              data-bs-target="#accederAdmin"
-              disabled
-            >
-              ADMINISTRADOR
-            </button>
+                type="button"
+                id="botonAdmin"
+                class="btn btn-secondary text-light rounded-0"
+                data-bs-toggle="modal"
+                data-bs-target="#accederAdmin"
+                disabled
+              >
+                ADMINISTRADOR
+              </button>
             </div>
           </div>
         </div>
       </nav>
     </header>
     <main id="mainAdmin">
-
-      <section class="container my-4">
-        <section class="text-center ">
+      <section class="container my-3">
+        <section class="text-center">
           <h2>Turnos programados</h2>
-          <hr class="mx-auto">
+          <hr class="mx-auto" />
         </section>
         <section class="row mb-3">
-          <form id="formFiltroMedico" class="col-md-4 col-sm-12 mb-4 ">
-            
+          <form id="formFiltroMedico" class="col-md-4 col-sm-12 mb-4">
             <div class="mb-3 col-md-6 col-sm-12 w-100">
-              <label class="mb-2 text-dark"><i class="fa-solid fa-user-doctor me-1"></i>Filtrar por médico</label>
+              <label class="mb-2 text-dark"
+                ><i class="fa-solid fa-user-doctor me-1"></i>Filtrar por
+                médico</label
+              >
               <select class="form-select" id="filtroMedico">
                 <option value="0">Seleccione un médico</option>
               </select>
@@ -101,16 +102,22 @@
                 Por favor, seleccione un médico
               </div>
             </div>
-            <div class="text-start ">
-              <button id="buttonFiltrarMedico" class="btn-verde text-light" type="submit">
+            <div class="text-start">
+              <button
+                id="buttonFiltrarMedico"
+                class="btn-verde text-light"
+                type="submit"
+              >
                 Aplicar filtro
               </button>
             </div>
           </form>
           <form id="formFiltroPaciente" class="col-md-4 col-sm-12 mb-4">
-            
             <div class="mb-3 col-md-6 col-sm-12 w-100">
-              <label class="mb-2 text-dark"><i class="fa-solid fa-hospital-user me-1"></i>Filtrar por paciente</label>
+              <label class="mb-2 text-dark"
+                ><i class="fa-solid fa-hospital-user me-1"></i>Filtrar por
+                paciente</label
+              >
               <select class="form-select" id="filtroPaciente">
                 <option value="0">Seleccione un paciente</option>
               </select>
@@ -118,125 +125,141 @@
                 Por favor, seleccione un médico
               </div>
             </div>
-            <div class="text-start ">
-              <button id="buttonFiltrarPaciente" class="btn-verde text-light" type="submit">
+            <div class="text-start">
+              <button
+                id="buttonFiltrarPaciente"
+                class="btn-verde text-light"
+                type="submit"
+              >
                 Aplicar filtro
               </button>
             </div>
           </form>
           <form id="formFiltroFecha" class="col-md-4 col-sm-12 mb-4">
-            
             <div class="mb-3 col-md-6 col-sm-12 w-100">
-              <label for="" class="form-label"><i class="fa-solid fa-calendar-days me-1"></i>Filtrar por fecha</label>
+              <label for="" class="form-label"
+                ><i class="fa-solid fa-calendar-days me-1"></i>Filtrar por
+                fecha</label
+              >
               <input id="filtroFecha" type="date" class="form-control" />
               <div id="filtroFecha__feedback" class="invalid-feedback">
                 Seleccione una fecha
               </div>
             </div>
-            <div class="text-start ">
-              <button id="buttonFiltrarFecha" class="btn-verde text-light" type="submit">
+            <div class="text-start">
+              <button
+                id="buttonFiltrarFecha"
+                class="btn-verde text-light"
+                type="submit"
+              >
                 Aplicar filtro
               </button>
             </div>
           </form>
           <form id="formQuitarFiltros" class="col-md-2 col-sm-12 mb-1">
-            <div class="text-start ">
-              <button id="buttonQuitarFiltros" class="botonTarea text-dark" type="submit">
-                <i class="fa-solid fa-xmark me-1 text-danger"></i> Eliminar filtros
+            <div class="text-start">
+              <button
+                id="buttonQuitarFiltros"
+                class="botonTarea text-dark"
+                type="submit"
+              >
+                <i class="fa-solid fa-xmark me-1 text-danger"></i> Eliminar
+                filtros
               </button>
             </div>
           </form>
-          
-          
         </section>
-        <hr class="mx-auto">
+        <hr class="mx-auto" />
         <div id="mjeFiltro"></div>
-        <section id="turnosPrincipal" class="row">
-  
-        </section>
+        <section id="turnosPrincipal" class="row"></section>
       </section>
-      
     </main>
-    
-    <footer class="bg-dark opacity-75 text-light  pt-4">
-      <section class="container">
-        <div class=" row mx-auto">
-          <article class="col-sm-12 col-md-4 mt-2  ">
+
+    <footer class="bg-dark opacity-75 text-light pt-4">
+      <section class="container pb-2">
+        <div class="row mx-auto">
+          <article class="col-sm-12 col-md-4 mt-2">
             <a
-              class="navbar-brand d-flex align-items-center  justify-content-center volverAinicio"
-              href="./index.html"
+              class="navbar-brand d-flex align-items-center justify-content-center volverAinicio"
+              href="../index.html"
             >
               <img
-                src="./assets/logo.png"
+                src="../assets/logo.png"
                 alt="logo de la clinica"
                 class="me-2 logo"
               />
-              <h3 class="clinicaTitulo my-auto fs-4">Clínica Médica</h3>
+              <div>
+                <h3 class="clinicaTitulo my-auto">Salud Integral</h3>
+                <h6 class="my-auto">Clínica Médica</h6>
+              </div>
             </a>
-            <div class="RedesFooter mt-1 d-flex  justify-content-center">
-              <h5 class="my-auto ms-1 me-3">¡Seguinos!</h6>
-              <a  href="https://www.facebook.com"
-                ><i class="fa-brands text-secondary fa-square-facebook icons me-2 "></i
+            <div class="RedesFooter mt-1 d-flex justify-content-center">
+              <h5 class="my-auto ms-1 me-3">¡Seguinos!</h5>
+              <a href="https://www.facebook.com" class="volverAinicio">
+                <i class="fa-brands text-secondary fa-facebook icons me-2"></i
               ></a>
-              <a  href="https://www.twitter.com"
-                ><i class="fa-brands text-secondary fa-square-twitter icons me-2"></i
+              <a href="https://www.instagram.com" class="volverAinicio">
+                <i class="fa-brands text-secondary fa-instagram icons me-2"></i
               ></a>
-              <a  href="https://www.instagram.com"
-                ><i class="fa-brands text-secondary fa-square-instagram icons me-2"></i
+
+              <a href="https://web.whatsapp.com/" class="volverAinicio">
+                <i class="fa-brands text-secondary fa-whatsapp icons me-2"></i
+              ></a>
+
+              <a href="https://web.telegram.org/k/" class="volverAinicio">
+                <i class="fa-brands text-secondary fa-telegram icons me-2"></i
               ></a>
             </div>
-
-
-
-            
           </article>
+
           <article class="col-sm-12 col-md-4 mt-2 text-center">
-            <h5 class="footerTitulo">Contacto</h6>
-            
+            <h5 class="footerTitulo">Contacto</h5>
+
             <div class="d-flex justify-content-center">
               <div>
-                <i
-                  class="fa-solid fa-location-dot fa-1x  mb-1"
-                ></i>
+                <i class="fa-solid fa-location-dot fa-1x mb-1"></i>
               </div>
               <div class="mx-2">
-                <p class="mb-1 ">Gral. Paz 576 - San Miguel de Tucumán</p>
-                
+                <p class="mb-1">Gral. Paz 578 - San Miguel de Tucumán</p>
               </div>
             </div>
-            
+
             <div class="d-flex justify-content-center">
               <div>
-                <i class="fa-solid fa-phone fa-1x  mb-1"></i>
+                <i class="fa-solid fa-phone fa-1x mb-1"></i>
               </div>
               <div class="mx-2">
                 <p class="mb-1">(+54) 381 987 6543</p>
               </div>
             </div>
-            
-            <div class="d-flex justify-content-center ">
+
+            <div class="d-flex justify-content-center">
               <div>
-                <i class="fa-solid fa-envelope fa-1x  mb-1"></i>
+                <i class="fa-solid fa-envelope fa-1x mb-1"></i>
               </div>
               <div class="mx-2">
-                <a href="../views/error404.html" class="nav-link mb-1"
+                <a href="../views/error404.html" class="nav-link mb-1 volverAinicio"
                   >contacto@clinmed.com</a
                 >
               </div>
             </div>
-            
           </article>
           <article class="col-sm-12 col-md-4 mt-2 text-center">
-            <h5 class="footerTitulo">Información</h6>
-            
-            <a class="nav-link" href="">Preguntas frecuentes</a>
-            <a class="nav-link" href="">Horarios de atención</a>
-            <a class="nav-link" href="">Solicitar turno</a>
+            <h5 class="footerTitulo">Información</h5>
+
+            <a class="nav-link volverAinicio" href="../views/error404.html"
+              >Preguntas frecuentes</a
+            >
+            <a class="nav-link volverAinicio" href="../views/error404.html"
+              >Horarios de atención</a
+            >
+            <a class="nav-link volverAinicio" href="../views/error404.html"
+              >Solicitar turno</a
+            >
           </article>
         </div>
-        
       </section>
-      <section class="footer py-1 mt-2" >
+      <section class="footer py-1 mt-2">
         <p class="text-center text-light mb-0">
           &copy; Todos los derechos reservados
         </p>
@@ -251,6 +274,7 @@
     ></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- <script type="module" src="./js/adminPaciente.js"></script> -->
-  <script type="module" src="./js/appAdmin.js"></script>
+    <script type="module" src="../js/appAdmin.js"></script>
+    <script type="module" src="../js/adminPrincipal.js"></script>
   </body>
 </html>

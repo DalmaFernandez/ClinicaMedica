@@ -7,8 +7,11 @@
   width: 50px;
   height: 50px;
 }
+main{
+  padding: 90px  0 20px 0;
+}
 .mainAdmin {
-  /* margin-top: 50px; */
+  
   background-color: rgba(0, 166, 203, 0.5);
 }
 .card-header {
@@ -37,10 +40,6 @@ background-color:  rgb(1, 144, 176);
  
 }
 
-#accederAdmin {
-  position: fixed;
-  z-index: 20000;
-}
 .RedesFooter {
   font-size: 30px;
   
@@ -54,7 +53,7 @@ i{
   font-weight: 900;
 }
 .formulario{
-  /* background-color:rgba(0, 166, 203, 0.874) ; */
+  
   width:60vw ;
 }
 .botonTarea{
@@ -68,7 +67,7 @@ i{
     width: 95vw;
   }
   * {
-    font-size: small;
+    font-size: medium;
   }
   .logo {
     width: 40px;
