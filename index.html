@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clínica Médica</title>
+    <title>Salud Integral</title>
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -12,6 +12,7 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" href="./css/style.css" />
     <script
       src="https://kit.fontawesome.com/24cc370bda.js"
@@ -20,15 +21,20 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-light shadow d-flex justify-content-center">
-        <div class="container ">
+      <nav
+        class="navbar navbar-expand-lg bg-light shadow d-flex justify-content-center fixed-top"
+      >
+        <div class="container">
           <a class="navbar-brand d-flex align-items-center" href="./index.html">
             <img
               src="./assets/logo.png"
               alt="logo de la clinica"
               class="me-2 logo"
             />
-            <h3 class="clinicaTitulo my-auto ">Clínica Médica</h3>
+            <div>
+              <h3 class="clinicaTitulo my-auto">Salud Integral</h3>
+              <h6 class="my-auto">Clínica Médica</h6>
+            </div>
           </a>
           <button
             class="navbar-toggler"
@@ -42,111 +48,161 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarClinica">
-            <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+            <ul
+              class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 d-flex align-items-center"
+            >
               <li class="nav-item">
-                <a class="nav-link  linkActivo" href="./index.html">INICIO</a>
+                <a class="nav-link linkActivo" href="./index.html">INICIO</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="#"
-                  >CONTACTO</a
-                >
+                <a class="nav-link" aria-current="page" href="#">CONTACTO</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="#"
-                  >NOSOTROS</a
-                >
+                <a class="nav-link" aria-current="page" href="#">NOSOTROS</a>
               </li>
-              
             </ul>
-            
-            <button
-              type="button"
-              id="botonAdmin"
-              class=" btn-verde text-light rounded-0"
-              data-bs-toggle="modal"
-              data-bs-target="#accederAdmin"
-            >
-              ACCEDER COMO ADMINISTRADOR
-            </button>
-            <div
-              class="modal fade "
-              id="accederAdmin"
-              tabindex="-1"
-              aria-labelledby="accederAdministrador"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-dialog-centered ">
-                <div class="modal-content rounded-0 bg-white shadow">
-                  <div class="modal-header">
-                    <img class="logo me-2" src="./assets/logo.png" alt="logo" />
-                    <h1 class="modal-title fs-2 clinicaTitulo" id="tituloModal">
-                      Clínica Médica
-                    </h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <form id="formularioAcceso">
-                    <div class="modal-body">
-                      <div class="mb-3">
-                        <label for="nombrePaciente" class="form-label"
-                          >Ingrese su clave de acceso</label
-                        >
-                        <input
-                          type="password"
-                          class="form-control rounded-0 shadow"
-                          id="claveDeAcceso"
-                          placeholder=""
-                        />
-                        <div
-                          id="nombrePaciente__feedback"
-                          class="invalid-feedback"
-                        >
-                          Clave incorrecta.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        id="botonCancelar"
-                        type=""
-                        class="btn btn-secondary rounded-0"
-                        data-bs-dismiss="modal"
-                      >
-                        Cancelar
-                      </button>
-                      <button
-                        id="botonAcceso"
-                        type="submit"
-                        class="btn-verde text-light"
-                      >
-                        Acceder
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
+
+            <div class="text-center">
+              <button
+                type="button"
+                id="botonAdmin"
+                class="btn-verde text-light rounded-0"
+                data-bs-toggle="modal"
+                data-bs-target="#accederAdmin"
+              >
+                ACCEDER COMO ADMINISTRADOR
+              </button>
             </div>
           </div>
         </div>
       </nav>
-      
+      <div
+        class="modal fade"
+        id="accederAdmin"
+        tabindex="-1"
+        aria-labelledby="accederAdministrador"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content rounded-0 bg-white shadow">
+            <div class="modal-header">
+              <img class="logo me-2" src="./assets/logo.png" alt="logo" />
+              <h1 class="modal-title fs-2 clinicaTitulo" id="tituloModal">
+                Clínica Médica
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form id="formularioAcceso">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="nombrePaciente" class="form-label"
+                    >Ingresa tu clave de acceso:</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control rounded-0 shadow"
+                    id="claveDeAcceso"
+                    placeholder=""
+                  />
+                  <div id="nombrePaciente__feedback" class="invalid-feedback">
+                    Clave incorrecta.
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  id="botonCancelar"
+                  type=""
+                  class="btn btn-secondary rounded-0"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <button
+                  id="botonAcceso"
+                  type="submit"
+                  class="btn-verde text-light"
+                >
+                  Acceder
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </header>
-    <main class="py-5 container">
+    <main class="container">
       <h1>Hola</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga molestias vitae sed explicabo deserunt? Facilis veritatis et voluptatibus a? Eaque laboriosam fuga cupiditate iste velit minima cum voluptatem ipsum veritatis eum eveniet quidem architecto quis, repudiandae vel quia corporis neque sapiente quaerat delectus! Laborum, aut animi incidunt, officia dolor, impedit tempora sequi laboriosam assumenda dicta accusantium deleniti nesciunt explicabo velit eaque! Ut non alias necessitatibus animi temporibus ullam voluptatibus. Voluptates quis est illum nobis possimus sequi dolorem quam, blanditiis excepturi quod rerum placeat deserunt, odio ex ipsam aliquid illo esse aut sit velit laboriosam nisi! Nihil quia minus ipsum quasi error libero alias dolorem culpa. Illum dolore blanditiis sapiente eum odit magnam quisquam molestias, tenetur voluptatem corporis eaque atque ea neque beatae, nemo distinctio laudantium saepe maiores. Obcaecati nesciunt modi autem porro libero et. Dolorum exercitationem sed perferendis nesciunt laudantium veritatis, asperiores quas totam? Quo, repellendus suscipit? Amet voluptates at rem aut modi veniam harum blanditiis facilis deserunt voluptate neque, praesentium distinctio, id in! Explicabo expedita perferendis commodi veritatis quod! Culpa sed reiciendis totam asperiores ratione assumenda, quas quasi sint voluptates neque architecto vero deserunt saepe, consequatur error perferendis officia quam ea rem sapiente corrupti dicta dolores! Totam, hic fuga. Beatae corporis, minima dolorum debitis quo quidem quasi voluptatibus maxime dignissimos sapiente, adipisci tenetur nihil cum eos quis corrupti nisi error fugiat sed tempora sunt. Repudiandae sed perspiciatis doloremque voluptatibus quo voluptatum quaerat dolorum sint quasi unde ratione vitae voluptate rem aliquam accusamus, dolores harum, expedita similique molestiae maiores dolore doloribus soluta? Consectetur dicta laborum ipsa? Quo itaque, quia dolorum corrupti aliquam repellat maxime magni commodi facilis voluptates. Possimus repudiandae, consectetur voluptas autem earum deserunt ducimus adipisci tempore obcaecati et tenetur explicabo maxime dolorum quibusdam quidem porro dolor? Officia quaerat placeat odit voluptatibus itaque, quibusdam expedita fugiat provident nostrum sint doloribus libero in perspiciatis aliquam quod quia praesentium saepe odio deserunt! Alias animi nostrum, rerum laboriosam quam aperiam velit consequatur, accusantium eum dicta unde aut asperiores sit beatae, illum expedita. Voluptatem atque perferendis ratione iure provident doloremque numquam beatae repellendus, perspiciatis suscipit nemo nesciunt quibusdam autem quidem. Nemo iusto blanditiis autem expedita esse facilis! Modi explicabo, laboriosam magnam dolore maxime omnis amet voluptatem architecto, non unde nulla asperiores sit at ipsa praesentium odio rerum nostrum officia quos deserunt, dolor quas! Vero corporis nihil, libero magni tempora commodi autem sed necessitatibus, fugiat aperiam repellendus, suscipit tempore! Ullam qui repellat nesciunt molestiae nobis at fugiat beatae libero, quae quidem illum optio doloribus necessitatibus facilis quia asperiores iste quis accusantium reprehenderit aliquam voluptas quisquam tempora nulla incidunt? Nam dolor tempore totam necessitatibus magnam recusandae ex, saepe dolore mollitia atque consequatur, tempora a voluptates quos harum corrupti culpa beatae voluptatibus veniam aut officiis eum assumenda facilis accusamus. Autem asperiores, modi assumenda inventore repellendus consequatur obcaecati facilis quasi sequi, laborum eveniet perspiciatis nesciunt reprehenderit qui odio quae ad amet vero maxime rem possimus quibusdam dignissimos harum magnam. Assumenda sequi alias illum vel corporis quae error architecto natus esse dignissimos laborum officia nam sunt optio, perferendis cupiditate amet quos doloremque eius sit ipsum. Modi, ad doloremque asperiores voluptas molestiae ea non vitae harum voluptate perferendis corporis dignissimos sit itaque consequuntur, nesciunt beatae recusandae nisi molestias eius quisquam? Ducimus ab voluptates blanditiis sapiente dolore? Non laborum aperiam exercitationem perferendis odit ad excepturi distinctio facere nisi odio aspernatur consequuntur expedita, saepe atque minima doloribus nam itaque ipsam nostrum a. Quidem quaerat dignissimos nisi vitae nostrum omnis ea ut voluptatem porro sit fugiat dolore, ratione magni ipsam facilis nihil natus veritatis aperiam mollitia illum. Laborum quisquam nemo nostrum facilis consequuntur aut quae similique reprehenderit tenetur dolorum praesentium optio expedita delectus necessitatibus minus explicabo at maxime a ab adipisci, debitis pariatur. Optio dolorem adipisci, minus eius error aut labore a tenetur voluptates inventore, autem necessitatibus amet, earum eaque minima enim quibusdam unde provident! Laborum, qui ducimus necessitatibus voluptatum culpa modi fuga dignissimos voluptate quae non temporibus dolor dolorem aliquid dolores illum quo adipisci sapiente molestias blanditiis nemo. Delectus nesciunt repellendus deleniti. Non tempore nemo eius maxime temporibus distinctio vel assumenda adipisci ea. Incidunt numquam asperiores delectus reiciendis. Nihil recusandae quaerat molestiae tempora labore quas! Eligendi tempore non soluta quam culpa ex aspernatur rem rerum harum! Sint voluptatem cum non veritatis necessitatibus voluptatibus maiores odit doloremque exercitationem dolorum incidunt similique eveniet, quo reiciendis quasi aspernatur deserunt quas reprehenderit quod iusto voluptate voluptas natus. Debitis repudiandae officia, inventore dolorem iure, tempora corporis enim dignissimos commodi placeat sit veniam doloremque eaque beatae illum fugiat labore modi consequuntur nemo dolorum perferendis? Omnis odio reiciendis repellendus, ea aperiam officiis ad voluptatum soluta quidem. Dicta modi aspernatur ducimus temporibus dolor voluptatibus facilis similique accusamus veniam animi exercitationem suscipit incidunt architecto sed qui earum, quis voluptates neque necessitatibus voluptas. Vitae eum fugiat hic soluta non, accusantium cum laudantium eos esse incidunt ratione illum ipsam magni explicabo voluptate facilis praesentium culpa illo pariatur unde voluptatum ab veritatis. Rerum labore cupiditate laboriosam, deserunt tempora eius! Provident ab perferendis officiis ipsum, atque fugit quos alias, blanditiis eos cum similique minus facilis amet maiores expedita recusandae, tenetur dignissimos. Recusandae aliquam amet, ut nihil quasi consequatur error rerum fuga quisquam qui facere fugiat iusto expedita quam perferendis natus a rem tempore in veritatis ipsam corporis minima asperiores ducimus. Omnis molestias dolorum temporibus qui ea aliquam totam dolor, sit voluptatum. Quos repellendus rerum iusto et quidem mollitia repellat impedit porro sapiente debitis dolor id quia ipsum quod nesciunt, ullam laboriosam magni recusandae aperiam minima adipisci. Blanditiis iure ad laborum sunt id consequuntur rerum totam asperiores magnam, sapiente, ipsum culpa aspernatur eos rem commodi voluptatibus qui expedita, officiis odit. Veritatis veniam quas esse, atque, consequuntur at optio minima dolor laudantium consequatur quasi quaerat iusto vitae odit necessitatibus totam ratione incidunt temporibus iste quod recusandae! Ullam officia adipisci porro dolores debitis iste perferendis dolore, quaerat dicta molestias eveniet consectetur sed unde natus. Magni at est necessitatibus. Vel saepe incidunt facere fugiat debitis soluta voluptatem necessitatibus nobis, aut earum amet velit obcaecati in nulla qui ea beatae cum, labore veniam exercitationem. Saepe doloremque voluptates magnam assumenda!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+        aliquam repudiandae quibusdam odio unde id aut tempora sint officia
+        explicabo esse voluptas nam, neque omnis dignissimos alias qui ea
+        excepturi necessitatibus quaerat, vero tenetur. Tempora cum aliquam
+        dolor, atque quos saepe odit! Laborum modi, voluptatem, quaerat quam
+        numquam nam aspernatur assumenda nostrum eligendi earum voluptatum
+        repellat iure quo dolorum, veniam rerum neque ratione ipsa suscipit vero
+        ducimus adipisci labore? Aspernatur animi explicabo maiores iure,
+        facilis, beatae numquam dignissimos molestias impedit unde fugiat.
+        Cumque modi, ducimus inventore placeat molestiae dolorum nobis! Earum ad
+        animi saepe quidem mollitia ipsum? Dolorem eos atque voluptatum nostrum
+        sit voluptas? Nisi facere expedita, dolores, at, dolore nesciunt ducimus
+        maxime cum nam ea aliquid eum nihil sit consectetur aut accusantium hic
+        temporibus est maiores et libero? Ea ex maiores error molestias
+        reiciendis quisquam accusamus exercitationem quo nobis commodi,
+        voluptatibus beatae assumenda vel quia quis deleniti dolorum fugit ad
+        pariatur? Recusandae totam nihil nulla. Pariatur ea quam aliquam ex
+        magni neque tempore perferendis, libero consectetur, voluptas iure
+        blanditiis excepturi quas earum est hic amet harum accusantium quia
+        numquam quibusdam. Sapiente eum molestiae ad quod odio culpa id
+        dignissimos at animi repellat asperiores architecto, autem dolorem
+        aliquid dolor cupiditate saepe dolores laudantium, nisi tempore facilis
+        delectus a est? Quas ipsa cum animi eveniet voluptatem dicta nam aliquam
+        eum possimus in, voluptates excepturi assumenda doloremque culpa ex ad
+        labore iure repellat! Dicta ex adipisci itaque, odio blanditiis quasi
+        atque provident placeat ad. Atque, omnis. Unde, dicta voluptates nihil
+        ipsa possimus veritatis illum, quasi impedit, natus error explicabo
+        inventore similique exercitationem sunt temporibus obcaecati quibusdam.
+        Neque maxime quasi quos! Saepe laudantium facilis aliquid blanditiis
+        explicabo sunt fuga sint cumque quam rerum aliquam, provident veniam
+        consequuntur ducimus necessitatibus, optio adipisci in corrupti
+        perferendis ex illo distinctio, modi aspernatur. Pariatur enim tempore
+        consequuntur magni tenetur, saepe, impedit autem eos iusto voluptate
+        architecto iste amet culpa, odio dicta aperiam non est suscipit. Quis
+        error sint debitis ex sed aut nihil delectus accusamus eligendi, numquam
+        accusantium, atque ipsam officia quos aliquid dolorem, at aperiam
+        expedita perspiciatis voluptate voluptates veritatis? Architecto
+        voluptatem aperiam rerum deleniti magni quis at quisquam nesciunt
+        numquam ab, autem quaerat fugit, facilis, veritatis vitae praesentium
+        doloremque pariatur deserunt temporibus minima quas! Quisquam nulla
+        suscipit voluptatibus ea amet neque perspiciatis mollitia doloribus
+        delectus inventore illum itaque aut architecto, voluptatem velit autem
+        saepe laborum necessitatibus quasi consequuntur dolore consectetur
+        aperiam pariatur reiciendis. Odit in, nemo illum autem quas excepturi
+        voluptatum quasi consectetur consequuntur quia facilis corporis
+        laudantium nulla id quidem nihil alias. Tempora placeat atque explicabo
+        voluptates magni ex officia sapiente voluptate qui nam exercitationem,
+        repudiandae enim consequatur eos inventore necessitatibus accusamus
+        aspernatur quos iusto delectus incidunt hic tempore sequi. Iste
+        molestiae modi dolores, odio culpa sint deserunt facere laudantium!
+        Ullam voluptates, voluptate quo cum earum aperiam quae recusandae
+        pariatur harum sunt sit cumque eum. Laborum cum eum ipsum ducimus
+        pariatur debitis ea, placeat reprehenderit omnis fugit quos perspiciatis
+        iusto odio repellat ratione eius voluptatibus quia sed sapiente sint
+        alias soluta minus? Ut, dolorem.
       </p>
     </main>
-    <footer class="bg-dark opacity-75 text-light  pt-4">
-      <section class="container">
-        <div class=" row mx-auto">
-          <article class="col-sm-12 col-md-4 mt-2  ">
+
+    <footer class="bg-dark opacity-75 text-light pt-4">
+      <section class="container pb-2">
+        <div class="row mx-auto">
+          <article class="col-sm-12 col-md-4 mt-2">
             <a
-              class="navbar-brand d-flex align-items-center  justify-content-center "
+              class="navbar-brand d-flex align-items-center justify-content-center"
               href="./index.html"
             >
               <img
@@ -154,52 +210,54 @@
                 alt="logo de la clinica"
                 class="me-2 logo"
               />
-              <h3 class="clinicaTitulo my-auto fs-4">Clínica Médica</h3>
+              <div>
+                <h3 class="clinicaTitulo my-auto">Salud Integral</h3>
+                <h6 class="my-auto">Clínica Médica</h6>
+              </div>
             </a>
-            <div class="RedesFooter mt-1 d-flex  justify-content-center">
-              <h5 class="my-auto ms-1 me-3">¡Seguinos!</h6>
-              <a  href="https://www.facebook.com"
-                ><i class="fa-brands text-secondary fa-square-facebook icons me-2 "></i
+            <div class="RedesFooter mt-1 d-flex justify-content-center">
+              <h5 class="my-auto ms-1 me-3">¡Seguinos!</h5>
+              <a href="https://www.facebook.com">
+                <i class="fa-brands text-secondary fa-facebook icons me-2"></i
               ></a>
-              <a  href="https://www.twitter.com"
-                ><i class="fa-brands text-secondary fa-square-twitter icons me-2"></i
+              <a href="https://www.instagram.com"
+                ><i class="fa-brands text-secondary fa-instagram icons me-2"></i
               ></a>
-              <a  href="https://www.instagram.com"
-                ><i class="fa-brands text-secondary fa-square-instagram icons me-2"></i
+
+              <a href="https://web.whatsapp.com/"
+                ><i class="fa-brands text-secondary fa-whatsapp icons me-2"></i
+              ></a>
+
+              <a href="https://web.telegram.org/k/"
+                ><i class="fa-brands text-secondary fa-telegram icons me-2"></i
               ></a>
             </div>
-
-
-
-            
           </article>
+
           <article class="col-sm-12 col-md-4 mt-2 text-center">
-            <h5 class="footerTitulo">Contacto</h6>
-            
+            <h5 class="footerTitulo">Contacto</h5>
+
             <div class="d-flex justify-content-center">
               <div>
-                <i
-                  class="fa-solid fa-location-dot fa-1x  mb-1"
-                ></i>
+                <i class="fa-solid fa-location-dot fa-1x mb-1"></i>
               </div>
               <div class="mx-2">
-                <p class="mb-1 ">Gral. Paz 576 - San Miguel de Tucumán</p>
-                
+                <p class="mb-1">Gral. Paz 578 - San Miguel de Tucumán</p>
               </div>
             </div>
-            
+
             <div class="d-flex justify-content-center">
               <div>
-                <i class="fa-solid fa-phone fa-1x  mb-1"></i>
+                <i class="fa-solid fa-phone fa-1x mb-1"></i>
               </div>
               <div class="mx-2">
                 <p class="mb-1">(+54) 381 987 6543</p>
               </div>
             </div>
-            
-            <div class="d-flex justify-content-center ">
+
+            <div class="d-flex justify-content-center">
               <div>
-                <i class="fa-solid fa-envelope fa-1x  mb-1"></i>
+                <i class="fa-solid fa-envelope fa-1x mb-1"></i>
               </div>
               <div class="mx-2">
                 <a href="../views/error404.html" class="nav-link mb-1"
@@ -207,19 +265,23 @@
                 >
               </div>
             </div>
-            
           </article>
           <article class="col-sm-12 col-md-4 mt-2 text-center">
-            <h5 class="footerTitulo">Información</h6>
-            
-            <a class="nav-link" href="">Preguntas frecuentes</a>
-            <a class="nav-link" href="">Horarios de atención</a>
-            <a class="nav-link" href="">Solicitar turno</a>
+            <h5 class="footerTitulo">Información</h5>
+
+            <a class="nav-link" href="../views/error404.html"
+              >Preguntas frecuentes</a
+            >
+            <a class="nav-link" href="../views/error404.html"
+              >Horarios de atención</a
+            >
+            <a class="nav-link" href="../views/error404.html"
+              >Solicitar turno</a
+            >
           </article>
         </div>
-        
       </section>
-      <section class="footer py-1 mt-2" >
+      <section class="footer py-1 mt-2">
         <p class="text-center text-light mb-0">
           &copy; Todos los derechos reservados
         </p>
@@ -232,7 +294,7 @@
       integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./js/adminPaciente.js"></script>
+
     <script type="module" src="./js/app.js"></script>
   </body>
 </html>

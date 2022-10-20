@@ -5,7 +5,7 @@ mainAdmin.classList.add("d-none");
 if (acceso === "true"){
     mainAdmin.classList.remove("d-none");
 }else{
-    window.open("./index.html", "_self");
+    window.open("../index.html", "_self");
 }
 console.log(volverAInicio);
 
@@ -13,7 +13,7 @@ for (let i = 0; i < volverAInicio.length; i++) {
     volverAInicio[i].addEventListener("click", (e) => {
         e.preventDefault();
         Swal.fire({
-            title: "¿Estas seguro?",
+            title: "¿Estás seguro?",
             text: "Se cerrará el panel de administrador",
             icon: "warning",
             showCancelButton: true,
@@ -23,7 +23,7 @@ for (let i = 0; i < volverAInicio.length; i++) {
             cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.isConfirmed) {
-                window.open("./index.html", "_self");
+                window.open("../index.html", "_self");
                 sessionStorage.removeItem("acceso");    
     }
         });
