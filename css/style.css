@@ -46,3 +46,6 @@ i {
   /* background-color:rgba(0, 166, 203, 0.874) ; */
   width: 50vw;
 }
+ iframe{
+  height: 60vh;
+ }
