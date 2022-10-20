@@ -4,10 +4,20 @@ export const opcionesPaciente = () => {
     let pacientes = JSON.parse(localStorage.getItem("Lista de pacientes"));
     console.log(pacientes);
     const campoPaciente = document.getElementById("selectPaciente");
+    pacientes.sort((a, b) => {
+        if (a.apellido > b.apellido) {
+            return 1;
+        }
+        if (a.apellido < b.apellido) {
+            return -1;
+        }
+        return 0;
+    });
+   
     pacientes.forEach((paciente) => {
         const opcionPaciente = document.createElement("option");
-        opcionPaciente.value = paciente.apellido + ", " + paciente.nombre;
-        opcionPaciente.innerText = paciente.apellido + ", " + paciente.nombre;
+        opcionPaciente.value = paciente.apellido + ", " + paciente.nombre + " - DNI: " + paciente.dni ;
+        opcionPaciente.innerText = paciente.apellido + ", " + paciente.nombre + " - DNI: " + paciente.dni;
         campoPaciente.appendChild(opcionPaciente);
     });
 };

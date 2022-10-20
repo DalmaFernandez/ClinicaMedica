@@ -1,3 +1,5 @@
+import { Medico } from "./Medico.js";
+
 const acceso = sessionStorage.getItem("acceso");
 const volverAInicio = document.getElementsByClassName("volverAinicio");
 const mainAdmin = document.getElementById("mainAdmin");
@@ -30,12 +32,21 @@ for (let i = 0; i < volverAInicio.length; i++) {
     });
 }
 
+const cardiologo = new Medico("4152", "Alba Fernández, Juan", "Cardiología", "381895632");
+const dermatologo = new Medico("3569", "D'Orta, Martín", "Dermatología", "381555444");
+const ginecologo = new Medico("6543", "Gonzalez, Jenny", "Ginecología", "381789654");
+const odontologo = new Medico("9876", "Fernández, Dalma", "Odontología", "381231654");
+const pediatra = new Medico("2244", "Amin, Ezequiel", "Pediatría", "381620123");
+const traumatologo = new Medico("6543", "Martinez, Jimena", "Traumatología", "381789000");
+let medicos = [cardiologo, dermatologo, ginecologo, odontologo, pediatra, traumatologo];
+localStorage.setItem("Lista de medicos", JSON.stringify(medicos));
+
 let turnos = [];
 let turnosLS = JSON.parse(localStorage.getItem("Lista de Turnos"));
 const tablaTurnos = document.getElementById("turnosPrincipal");
-if (turnosLS.length > 0) {
+console.log(tablaTurnos);
+if (turnosLS!==null) {
     turnos = turnosLS;
-    
 
 }else{
     const mensaje = document.createElement("p");
@@ -117,15 +128,28 @@ const botonQuitarFiltros = document.getElementById("buttonQuitarFiltros");
 
 
 const opcionesPaciente = () => {
-    let pacientes = JSON.parse(localStorage.getItem("Lista de pacientes"));
+    let pacientes = [];
+    pacientes = JSON.parse(localStorage.getItem("Lista de pacientes"));
     console.log(pacientes);
     const campoFiltroPaciente = document.getElementById("filtroPaciente");
-    pacientes.forEach((paciente) => {
-        const opcionPaciente = document.createElement("option");
-        opcionPaciente.value = paciente.apellido + ", " + paciente.nombre;
-        opcionPaciente.innerText = paciente.apellido + ", " + paciente.nombre;
-        campoFiltroPaciente.appendChild(opcionPaciente);
-    });
+    if (pacientes!==null) {
+        pacientes.sort((a, b) => {
+            if (a.apellido > b.apellido) {
+                return 1;
+            }
+            if (a.apellido < b.apellido) {
+                return -1;
+            }
+            return 0;
+        });
+        pacientes.forEach((paciente) => {
+            const opcionPaciente = document.createElement("option");
+            opcionPaciente.value = paciente.apellido + ", " + paciente.nombre + " - DNI: " + paciente.dni;
+            opcionPaciente.innerText = paciente.apellido + ", " + paciente.nombre + " - DNI: " + paciente.dni;
+            campoFiltroPaciente.appendChild(opcionPaciente);
+        });
+        
+        } 
 };
 
 const opcionesMedico = () => {

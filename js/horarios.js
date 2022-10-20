@@ -7,3 +7,8 @@ console.log(numero2[0]);
 
 array.sort((a,b)=>a.split(":")[0]-b.split(":")[0]);
 console.log(array);
+
+const paciente = "Fernandez, Dalma (DNI: 12345678)";
+const paciente2 = paciente.split("(");
+console.log(paciente2[0]);
+
