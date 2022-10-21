@@ -157,7 +157,7 @@
           </div>
           <div class="mb-3 col-md-6 col-sm-12">
             <label for="notasTurno" class="form-label">Notas (opcional)</label>
-            <textarea class="form-control" id="notasTurno" rows="3"></textarea>
+            <textarea class="form-control" id="notasTurno" rows="1"></textarea>
           </div>
           <div class="text-center">
             <button id="cargarTurno" class="btn-verde text-light" type="submit">
@@ -166,8 +166,10 @@
           </div>
         </form>
       </section>
-      <hr />
+      
       <section class="container table-responsive">
+        <h2 class="text-center my-3">Lista de turnos</h2>
+        <hr class="mx-auto" />
         <table class="table table-sm table-light table-striped table-bordered">
           <thead>
             <tr>
@@ -276,6 +278,9 @@
           &copy; Todos los derechos reservados
         </p>
       </section>
+      <div id="button-up">
+        <i class="fa-solid fa-arrow-up-long"></i>
+      </div>
     </footer>
 
     <!-- JavaScript Bundle with Popper -->
@@ -287,5 +292,6 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="../js/adminTurnos.js"></script>
     <script type="module" src="../js/appAdmin.js"></script>
+    
   </body>
 </html>

@@ -11,6 +11,24 @@ const campoEmail = document.getElementById("emailPaciente");
 
 export const cargarDatosEnFormulario = (dni) => {
   // console.log(codigo)
+campoNombre.classList.remove("is-invalid");
+campoNombre.classList.remove("is-valid");
+campoApellido.classList.remove("is-invalid");
+campoApellido.classList.remove("is-valid");
+campoDNI.classList.remove("is-invalid");
+campoDNI.classList.remove("is-valid");
+campoFecha.classList.remove("is-invalid");
+campoFecha.classList.remove("is-valid");
+campoSexo.classList.remove("is-invalid");
+campoSexo.classList.remove("is-valid");
+campoObraSocial.classList.remove("is-invalid");
+campoObraSocial.classList.remove("is-valid");
+campoTelefono.classList.remove("is-invalid");
+campoTelefono.classList.remove("is-valid");
+campoDomicilio.classList.remove("is-invalid");
+campoDomicilio.classList.remove("is-valid");
+campoEmail.classList.remove("is-invalid");
+campoEmail.classList.remove("is-valid");
 
   const pacientes = JSON.parse(localStorage.getItem("Lista de pacientes"));
 

@@ -1,4 +1,11 @@
 import { actualizarTabla } from "./adminTurnos.js";
+const campoPaciente = document.getElementById("selectPaciente");
+const campoEspecialidad = document.getElementById("selectEspecialidad");
+const campoMedico = document.getElementById("selectMedico");
+const campoFecha = document.getElementById("fechaTurno");
+const campoHora = document.getElementById("selectHorario");
+const formularioTurno = document.getElementById("formTurno");
+
 
 export const eliminarTurno = (turnoId) => {
     const turnos = JSON.parse(localStorage.getItem("Lista de Turnos"));
@@ -18,6 +25,8 @@ export const eliminarTurno = (turnoId) => {
         cancelButtonText: "Cancelar",
     }).then((result) => {
         if (result.isConfirmed) {
+
+
             turnos.splice(turnoAEliminarIndice, 1);
             localStorage.setItem("Lista de Turnos", JSON.stringify(turnos));
             actualizarTabla();

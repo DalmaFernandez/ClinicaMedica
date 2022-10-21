@@ -1,5 +1,6 @@
 import { cargarDatosEnFormulario } from "./editarTurno.js";
 import { eliminarTurno } from "./eliminarTurno.js";
+import { mostrarFecha } from "./fecha.js";
 
 export const cargarTurnoTabla = (turno) => {
     const tablaTurnos= document.getElementById("tbody_turnos");
@@ -18,7 +19,7 @@ export const cargarTurnoTabla = (turno) => {
     tdMedico.innerText ="Dr/a. " + turno.medico + " - " + turno.especialidad;
     tr.appendChild(tdMedico);
     const tdFecha = document.createElement("td");
-    tdFecha.innerText = turno.fecha;
+    tdFecha.innerText = mostrarFecha(turno.fecha);
     tr.appendChild(tdFecha);
     const tdHora = document.createElement("td");
     tdHora.innerText = turno.hora;
@@ -74,7 +75,7 @@ const mostrarInfo = (turno) => {
         <p><b>Paciente:</b> ${turno.paciente}</p>
         <p><b>Especialidad:</b>  ${turno.especialidad}</p>
         <p><b>Médico:</b> Dr/a. ${turno.medico}</p>
-        <p><b>Fecha:</b> ${turno.fecha}</p>
+        <p><b>Fecha:</b> ${mostrarFecha(turno.fecha)}</p>
         <p><b>Hora:</b> ${turno.hora}</p>
         <p><b>Nota:</b> ${turno.nota}</p>`,
         icon: "info",

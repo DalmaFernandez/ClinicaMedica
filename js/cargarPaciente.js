@@ -1,5 +1,6 @@
 import { cargarDatosEnFormulario } from "./editarPac.js";
 import { deletePaciente } from "./eliminarPac.js";
+import { mostrarFecha } from "./fecha.js";
 
 export const cargarPacienteTabla = (paciente) => {
     const tbody = document.getElementById("tbody__admin");
@@ -112,7 +113,7 @@ export const cargarPacienteTabla = (paciente) => {
       html: `<p><b>Nombre:</b> ${paciente.nombre}</p>
       <p><b>Apellido:</b> ${paciente.apellido}</p>
       <p><b>DNI:</b> ${paciente.dni}</p>
-      <p><b>Fecha de nacimiento:</b> ${paciente.fn}</p>
+      <p><b>Fecha de nacimiento:</b> ${mostrarFecha(paciente.fn)}</p>
       <p><b>Sexo:</b> ${paciente.sexo}</p>
       <p><b>Obra social:</b> ${paciente.os}</p>
       <p><b>Teléfono:</b> ${paciente.telefono}</p>

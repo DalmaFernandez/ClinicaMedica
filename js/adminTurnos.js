@@ -13,6 +13,8 @@ const campoPaciente = document.getElementById("selectPaciente");
 const campoEspecialidad = document.getElementById("selectEspecialidad");
 const campoMedico = document.getElementById("selectMedico");
 const campoFecha = document.getElementById("fechaTurno");
+campoFecha.setAttribute("min", new Date().toISOString().split("T")[0]);
+
 const campoHora = document.getElementById("selectHorario");
 const campoNota = document.getElementById("notasTurno");
 
@@ -51,9 +53,18 @@ campoEspecialidad.addEventListener("blur", () => {
   }
 });
 campoMedico.addEventListener("blur", () => {
+  campoFecha.value = "";
+  campoFecha.classList.remove("is-valid");
+  campoFecha.classList.remove("is-invalid");
+  campoHora.value = "0";
+  campoHora.innerHTML = `<option value="0">Seleccione un horario</option>`;
+  campoHora.classList.remove("is-valid");
+  campoHora.classList.remove("is-invalid");
+
   validateSelector(campoMedico.value, campoMedico);
   if (validateSelector(campoMedico.value, campoMedico)) {
     medico = campoMedico.value;
+    
   }
 });
 campoFecha.addEventListener("blur", () => {
@@ -128,13 +139,26 @@ formularioTurno.addEventListener("submit", (e) => {
       });
     } else {
       console.log(isEditando);
-
+      
       const turnoId = Number(sessionStorage.getItem("idTurno"));
       sessionStorage.removeItem("idTurno");
+
+      turnos = JSON.parse(localStorage.getItem("Lista de Turnos"));
 
       const turnoIndice = turnos.findIndex((turno) => {
         return turno.id === turnoId;
       });
+
+      if(turnoIndice === -1){
+        Swal.fire({
+          title: "Error!",
+          text: "No se ha encontrado el turno",
+          icon: "error",
+        });
+        
+      }else{
+
+
       console.log(turnos[turnoIndice]);
       turnos[turnoIndice].paciente = paciente;
       turnos[turnoIndice].especialidad = especialidad;
@@ -150,8 +174,11 @@ formularioTurno.addEventListener("submit", (e) => {
         icon: "success",
       });
 
-      botonCargar.innerText = "Cargar";
+      
+
     }
+    botonCargar.innerText = "Cargar";
+  }
 
     actualizarTabla();
     // Resetear formulario

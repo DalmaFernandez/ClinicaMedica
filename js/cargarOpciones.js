@@ -66,6 +66,7 @@ export const opcionHorario = () => {
   const campoHora = document.getElementById("selectHorario");
   const campoFecha = document.getElementById("fechaTurno");
   const campoMedico = document.getElementById("selectMedico");
+  
 
   let horarios = ["8:00", "9:00", "10:00", "11:00", "17:00", "18:00", "19:00"];
   let horariosOcupados = [];

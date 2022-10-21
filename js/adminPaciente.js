@@ -16,6 +16,7 @@ const campoNombre = document.getElementById("nombrePaciente");
 const campoApellido = document.getElementById("apellidoPaciente");
 const campoDNI = document.getElementById("dniPaciente");
 const campoFecha = document.getElementById("fechaNacimiento");
+campoFecha.setAttribute("max", new Date().toISOString().split("T")[0]);
 const campoSexo = document.getElementById("selectSexo");
 const campoObraSocial = document.getElementById("selectObraSocial");
 const campoTelefono = document.getElementById("telefonoPaciente");
@@ -180,10 +181,19 @@ formularioPaciente.addEventListener("submit", (e) => {
       const dniEdit = sessionStorage.getItem("dni del paciente a editar");
       console.log(dniEdit);
       sessionStorage.removeItem("dni del paciente a editar");
+      pacientes = JSON.parse(localStorage.getItem("Lista de pacientes"));
 
       const pacienteIndice = pacientes.findIndex((elemento) => {
         return elemento.dni === dniEdit;
       });
+      if (pacienteIndice === -1) {
+        Swal.fire({
+          title: "Error!",
+          text: "No se ha encontrado el paciente",
+          icon: "error",
+        });
+        
+      } else {
       console.log(pacienteIndice);
       // modificando en el arreglo pacientes un solo elemento, el del paciente que tiene el dniEdit (guardado el SS)
       pacientes[pacienteIndice].nombre = nombre;
@@ -204,6 +214,7 @@ formularioPaciente.addEventListener("submit", (e) => {
         text: "Los datos del paciente fueron modificados",
         icon: "success",
       });
+    }
 
       buttonCargar.innerText = "Cargar";
     }

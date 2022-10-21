@@ -32,6 +32,27 @@ for (let i = 0; i < volverAInicio.length; i++) {
 }
 
 
+document.getElementById("button-up").addEventListener("click",scrollUp);
+
+export function scrollUp() {
+  let currentScroll = document.documentElement.scrollTop;
+  if (currentScroll > 0) {
+    
+    window.scrollTo(0, currentScroll - currentScroll / 1);
+  }
+}
+
+
+const buttonUp = document.getElementById("button-up");
+
+window.onscroll = function () {
+  let scroll = document.documentElement.scrollTop;
+  if (scroll > 5) {
+    buttonUp.style.transform = "scale(1)";
+  }else if(scroll < 5){
+    buttonUp.style.transform = "scale(0)";
+  }
+};
 
 
 
