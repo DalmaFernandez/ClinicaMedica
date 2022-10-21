@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="acerca del blog, miembros del equipo" />
+  <meta name="author" content="grupo4">
+  <meta name="keywords" content="clinica,salud,turno" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/styleAcercadeFooter.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://kit.fontawesome.com/10942c11e8.js" crossorigin="anonymous"></script>
+  <title>Nosotros</title>
+</head>
+
+<body>
+  
+  <header>
+    <nav
+      class="navbar navbar-expand-lg bg-light shadow d-flex justify-content-center fixed-top"
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+          <img
+            src="../assets/logo.png"
+            alt="logo de la clinica"
+            class="me-2 logo"
+          />
+          <div>
+            <h3 class="clinicaTitulo my-auto">Salud Integral</h3>
+            <h6 class="my-auto">Clínica Médica</h6>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarClinica"
+          aria-controls="navbarClinica"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarClinica">
+          <ul
+            class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 d-flex align-items-center"
+          >
+            <li class="nav-item">
+              <a class="nav-link " href="../index.html">INICIO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../views/contacto.html">CONTACTO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link linkActivo" aria-current="page" href="../views/acercade.html">NOSOTROS</a>
+            </li>
+          </ul>
+
+          <div class="text-center">
+            <button
+              type="button"
+              id="botonAdmin"
+              class="btn-verde text-light rounded-0 invisible"
+              data-bs-toggle="modal"
+              data-bs-target="#accederAdmin"
+            >
+              ACCEDER COMO ADMINISTRADOR
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="modal fade"
+      id="accederAdmin"
+      tabindex="-1"
+      aria-labelledby="accederAdministrador"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0 bg-white shadow">
+          <div class="modal-header">
+            <img class="logo me-2" src="./assets/logo.png" alt="logo" />
+            <h1 class="modal-title fs-2 clinicaTitulo" id="tituloModal">
+              Clínica Médica
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form id="formularioAcceso">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="nombrePaciente" class="form-label"
+                  >Ingresa tu clave de acceso:</label
+                >
+                <input
+                  type="password"
+                  class="form-control rounded-0 shadow"
+                  id="claveDeAcceso"
+                  placeholder=""
+                />
+                <div id="nombrePaciente__feedback" class="invalid-feedback">
+                  Clave incorrecta.
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                id="botonCancelar"
+                type=""
+                class="btn btn-secondary rounded-0"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                id="botonAcceso"
+                type="submit"
+                class="btn-verde text-light"
+              >
+                Acceder
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="container ">
+      <div class=" mt-2 py-3 text-dark row">
+        <section class="col-lg-6">
+          <div id="main__section__titulosDiv ">
+            <h2 class="textverde text-center ">NUESTRA MISION
+            </h2>
+            <hr />
+            <p class="fs-5 fw-light">
+              Desarrollar la más completa red de asistencia médica, integrada, complementaria, de dirección política y
+              estratégica unificada y con capacidad suficiente para la atención de nuestros pacientes.
+            </p>
+          </div>
+        </section>
+        <article class="col-lg-6 mb-5">
+          <img class="img_acercade my-1 w-100" src="../img/doctor-looking-for-information-in-the-database.jpg"
+            alt="imagen dr computadora" />
+        </article>
+        <hr />
+        <div class="col-lg-12">
+          <section class="d-flex">
+            <div class="div_acercade_linea me-3"></div>
+            <article>
+              <p class="fs-4 fst-italic fw-light">
+                "Somos una Red Integrada que evoluciona con vos. Trabajamos en equipo superándonos constantemente para
+                brindarte la mejor experiencia en salud. Siempre."
+              </p>
+                          </article>
+          </section>
+        </div>
+        <hr />
+        <article class="col-lg-6 my-5">
+          <img class="img_acercade w-100" src="../img/team-of-young-specialist-doctors-standing-in-the-corridor-of-the-hospital.jpg" alt="imagen medicos pasillo" />
+        </article>
+        <section class="col-lg-6">
+          <section>
+            <h2 class="col-lg-12 mt-5 textverde text-center">NUESTRA VISION</h2>
+            <hr />
+            <p class="fs-5 fw-light">
+              Crecer y competir en base a la calidad y seguridad asistencial, la actualización e innovación
+              científica/tecnológica, y el desarrollo de las personas que conforman nuestro equipo. 
+            </p>
+
+          </section>
+
+
+      </div>
+    </section>
+
+    <section class=" container-fluid col-lg-12 mt-5">
+      <h2 class="textverde text-center">NUESTRO EQUIPO</h2>
+      <hr />
+    </section>
+    <section class="container-fluid">
+      <div>
+        <div class="row text-center d-flex justify-content-center flex-wrap">
+                  <article class="col-lg-2  col-md-4 col-sm-6">
+            <img src="../img/editor3.jpg" alt="foto_DALMA" class="img1 shadow-sm  my-3" />
+            <h6 class="text-center fs-5 ">Dalma Fernandez</h6>
+          </article>
+          <article class="col-lg-2  col-md-4 col-sm-6">
+            <img src="../img/fotojuanpi.png" alt="foto_JUANPI" class="img1 shadow-sm  my-3" />
+            <h6 class="text-center fs-5 ">Juan Pablo Alba Fernandez</h6>
+          </article>
+          <article class="col-lg-2  col-md-4 col-sm-6">
+            <img src="../img/fotomartin.PNG" alt="foto_MARTIN" class="img1 shadow-sm  my-3" />
+            <h6 class="text-center fs-5 ">Martin D´Orta</h6>
+          </article>
+          <article class="col-lg-2  col-md-4 col-sm-6">
+            <img src="../img/jennyfoto_1.png" alt="foto_jenny" class="img1 shadow-sm  my-3" />
+            <h6 class="text-center fs-5 ">Jenny Gonzalez</h6>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-dark opacity-75 text-light pt-4">
+    <section class="container pb-2">
+      <div class="row mx-auto">
+        <article class="col-sm-12 col-md-4 mt-2">
+          <a
+            class="navbar-brand d-flex align-items-center justify-content-center"
+            href="../index.html"
+          >
+            <img
+              src="../assets/logo.png"
+              alt="logo de la clinica"
+              class="me-2 logo"
+            />
+            <div>
+              <h3 class="clinicaTitulo my-auto">Salud Integral</h3>
+              <h6 class="my-auto">Clínica Médica</h6>
+            </div>
+          </a>
+          <div class="RedesFooter mt-1 d-flex justify-content-center">
+            <h5 class="my-auto ms-1 me-3">¡Seguinos!</h5>
+            <a href="https://www.facebook.com">
+              <i class="fa-brands text-secondary fa-facebook icons me-2"></i
+            ></a>
+            <a href="https://www.instagram.com"
+              ><i class="fa-brands text-secondary fa-instagram icons me-2"></i
+            ></a>
+
+            <a href="https://web.whatsapp.com/"
+              ><i class="fa-brands text-secondary fa-whatsapp icons me-2"></i
+            ></a>
+
+            <a href="https://web.telegram.org/k/"
+              ><i class="fa-brands text-secondary fa-telegram icons me-2"></i
+            ></a>
+          </div>
+        </article>
+
+        <article class="col-sm-12 col-md-4 mt-2 text-center">
+          <h5 class="footerTitulo">Contacto</h5>
+
+          <div class="d-flex justify-content-center">
+            <div>
+              <i class="fa-solid fa-location-dot fa-1x mb-1"></i>
+            </div>
+            <div class="mx-2">
+              <p class="mb-1">Gral. Paz 578 - San Miguel de Tucumán</p>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <div>
+              <i class="fa-solid fa-phone fa-1x mb-1"></i>
+            </div>
+            <div class="mx-2">
+              <p class="mb-1">(+54) 381 987 6543</p>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <div>
+              <i class="fa-solid fa-envelope fa-1x mb-1"></i>
+            </div>
+            <div class="mx-2">
+              <a href="../views/error404.html" class="nav-link mb-1"
+                >contacto@clinmed.com</a
+              >
+            </div>
+          </div>
+        </article>
+        <article class="col-sm-12 col-md-4 mt-2 text-center">
+          <h5 class="footerTitulo">Información</h5>
+
+          <a class="nav-link" href="../views/error404.html"
+            >Preguntas frecuentes</a
+          >
+          <a class="nav-link" href="../views/error404.html"
+            >Horarios de atención</a
+          >
+          <a class="nav-link" href="../views/error404.html"
+            >Solicitar turno</a
+          >
+        </article>
+      </div>
+    </section>
+    <section class="footer py-1 mt-2">
+      <p class="text-center text-light mb-0">
+        &copy; Todos los derechos reservados
+      </p>
+    </section>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
