@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cargar Pacientes</title>
+    <title>Error 404</title>
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -12,21 +12,21 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style404.css">
     <script
       src="https://kit.fontawesome.com/24cc370bda.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <header class="shadow">
-      <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+    <header>
+      <nav
+        class="navbar navbar-expand-lg bg-light shadow d-flex justify-content-center fixed-top"
+      >
         <div class="container">
-          <a
-            id=""
-            class="navbar-brand d-flex align-items-center volverAinicio"
-            href=""
-          >
+          <a class="navbar-brand d-flex align-items-center" href="../index.html">
             <img
               src="../assets/logo.png"
               alt="logo de la clinica"
@@ -53,92 +53,121 @@
               class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 d-flex align-items-center"
             >
               <li class="nav-item">
-                <a class="nav-link" href="./index.html">TURNOS PROGRAMADOS</a>
+                <a class="nav-link" href="../index.html">INICIO</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link linkActivo" aria-current="page" href="#"
-                  >PACIENTES</a
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../views/contacto.html"
+                  >CONTACTO</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#"
-                  >GESTION DE TURNOS</a
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../views/acercade.html"
+                  >NOSOTROS</a
                 >
               </li>
             </ul>
-            <div class="d-flex justify-content-center">
+
+            <div class="text-center">
               <button
                 type="button"
                 id="botonAdmin"
-                class="btn btn-secondary text-light rounded-0"
+                class="btn-verde text-light rounded-0 invisible"
                 data-bs-toggle="modal"
                 data-bs-target="#accederAdmin"
-                disabled
               >
-                ADMINISTRADOR
+                ACCEDER COMO ADMINISTRADOR
               </button>
             </div>
           </div>
         </div>
       </nav>
+      <div
+        class="modal fade"
+        id="accederAdmin"
+        tabindex="-1"
+        aria-labelledby="accederAdministrador"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content rounded-0 bg-white shadow">
+            <div class="modal-header">
+              <img class="logo me-2" src="./assets/logo.png" alt="logo" />
+              <h1 class="modal-title fs-2 clinicaTitulo" id="tituloModal">
+                Clínica Médica
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form id="formularioAcceso">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="nombrePaciente" class="form-label"
+                    >Ingresa tu clave de acceso:</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control rounded-0 shadow"
+                    id="claveDeAcceso"
+                    placeholder=""
+                  />
+                  <div id="nombrePaciente__feedback" class="invalid-feedback">
+                    Clave incorrecta.
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  id="botonCancelar"
+                  type=""
+                  class="btn btn-secondary rounded-0"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <button
+                  id="botonAcceso"
+                  type="submit"
+                  class="btn-verde text-light"
+                >
+                  Acceder
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </header>
-    <main id="mainAdmin" class="container">
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
-        hic voluptatibus illum cum vel exercitationem dicta. Consequuntur
-        expedita, voluptas quae harum odit qui totam, ipsam porro animi commodi
-        quam aliquam sint explicabo ex accusantium dolores libero aperiam soluta
-        quis? Perspiciatis officiis neque odio consequatur eveniet nostrum quam
-        perferendis ipsam! Cupiditate odit, tempora voluptatem delectus repellat
-        aut ea optio quod itaque expedita sit dolorem fugiat rerum consequuntur
-        corporis qui consectetur, obcaecati ad veniam inventore voluptatibus
-        vitae maiores ullam architecto? Magnam, ratione reprehenderit laboriosam
-        fuga, minima ullam saepe, facilis beatae est blanditiis perspiciatis
-        quibusdam sint quae! Dolorem mollitia blanditiis qui provident cumque
-        porro fuga facilis fugiat placeat asperiores a ipsa distinctio atque
-        dolores quasi, eos iusto quam! Harum molestiae architecto, ullam aut
-        quod eligendi vel at fugiat porro voluptas consequuntur, unde
-        repellendus beatae id exercitationem nesciunt accusamus cupiditate
-        dolore, quibusdam eum? Voluptates hic earum ab dolor distinctio esse
-        ipsam temporibus eius aliquam. Quos, nobis ipsum! Ratione, deserunt
-        commodi, quam velit maxime distinctio recusandae error illo odit
-        voluptate dolor officiis debitis vel fuga et, quasi facilis consectetur?
-        Fugiat in suscipit rerum nesciunt sed sit incidunt non veniam nostrum
-        beatae, ullam assumenda fugit quae dolorum illo inventore labore maxime
-        adipisci voluptatum vitae. Amet qui perferendis facilis nisi harum?
-        Pariatur itaque recusandae hic veritatis ipsa dignissimos sint, voluptas
-        minus eius? Aspernatur modi qui voluptate tenetur. Dolore magnam, vero,
-        aperiam quia doloribus, optio a earum placeat facilis nemo eius impedit
-        suscipit. Repellendus laborum, cum autem porro a amet! Ratione itaque ab
-        non mollitia optio excepturi dolorum officia voluptate, repellendus vel,
-        sapiente accusantium? Dolor adipisci voluptatem, blanditiis atque id a
-        nihil omnis iste placeat? Quasi nulla sequi saepe nihil, veniam in
-        expedita esse numquam consectetur ipsum iste voluptas ad, eaque
-        consequatur modi labore, ullam dolorum deleniti perspiciatis. Delectus
-        nihil eveniet, molestiae nam ducimus officia excepturi rerum maiores
-        tenetur dolor deserunt alias! Repellendus maxime tempora illo accusamus
-        eum corrupti, doloribus libero, beatae explicabo est quasi! Illo ex
-        culpa eos est. Minima itaque natus accusamus hic pariatur deleniti
-        aliquam sunt ut est unde quia mollitia sint necessitatibus vero ipsam
-        quae saepe id, adipisci ipsum modi odio! Iusto pariatur praesentium
-        commodi error tempora. Vero dolor dolorem commodi non minus ipsam
-        distinctio veritatis, similique iste, modi voluptas deleniti esse vitae
-        enim voluptatibus vel dicta consequatur expedita. Culpa qui modi iure
-        voluptatibus explicabo odit aliquid corrupti. Inventore perspiciatis
-        nisi recusandae, atque eum totam corporis non tempora, ut qui molestiae
-        ipsam obcaecati. Eos, vero. Modi autem quam soluta aut! Odio explicabo
-        at esse veritatis molestiae perspiciatis, iure a nesciunt facere rem
-        accusantium laboriosam, aut vitae corrupti quibusdam reiciendis ea
-        itaque soluta amet quo eveniet illum, sed tenetur cum. Eum minus beatae
-        dolorum reprehenderit odit temporibus, laudantium, possimus veniam eos
-        inventore quo ad aliquam repudiandae magnam fugiat. Aut odio aliquam
-        neque nisi blanditiis suscipit, repellendus impedit esse. Nisi, sapiente
-        laboriosam! Unde praesentium velit autem provident reiciendis
-        consequatur sequi assumenda, necessitatibus sint ducimus dolorum
-        consequuntur, illo tempore magnam doloremque similique? Autem
-        reprehenderit dicta, repudiandae nemo quis deleniti nulla ducimus,
-        soluta possimus totam ex illo sequi?
-      </p>
+    <main id="mainError404">
+      <section class="positiom-relative text-center">
+        <img src="../assets/guantes.jpg" alt="" class="w-100 error404" id="error404_lg">
+        <img src="../assets/guantes2.jpg" alt="" class="w-100 error404" id="error404_sm">
+        
+        <div class="position-absolute text-light px-3 pb-3 titulo__portada__error bg-secondary opacity-75">
+          <div class="p-1">
+            <h3>Página no encontrada</h3>
+          </div>
+          <div class="pb-1">
+            <h4>ERROR 404</h4>
+          </div>
+          <div class="pb-1">
+            <h6>
+              Es posible que esta página haya sido eliminada o que la dirección
+              no exista.
+            </h6>
+          </div>
+          <a class="btn-verde text-light text-decoration-none" href="../index.html">Volver al Inicio</a>
+        </div>
+      </section>
     </main>
 
     <footer class="bg-dark opacity-75 text-light pt-4">
@@ -146,7 +175,7 @@
         <div class="row mx-auto">
           <article class="col-sm-12 col-md-4 mt-2">
             <a
-              class="navbar-brand d-flex align-items-center justify-content-center volverAinicio"
+              class="navbar-brand d-flex align-items-center justify-content-center"
               href="../index.html"
             >
               <img
@@ -238,8 +267,7 @@
       integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
       crossorigin="anonymous"
     ></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- <script type="module" src="./js/adminPaciente.js"></script> -->
-    <script type="module" src="../js/appAdmin.js"></script>
+
+    <script type="module" src="./js/app.js"></script>
   </body>
 </html>
