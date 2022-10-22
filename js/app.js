@@ -27,7 +27,7 @@ formularioAcceso.addEventListener("submit", (e) => {
 
 document.getElementById("button-up").addEventListener("click",scrollUp);
 
-export function scrollUp() {
+function scrollUp() {
   let currentScroll = document.documentElement.scrollTop;
   if (currentScroll > 0) {
     

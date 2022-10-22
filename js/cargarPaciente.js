@@ -1,3 +1,5 @@
+
+import { scrollUp } from "./appAdmin.js";
 import { cargarDatosEnFormulario } from "./editarPac.js";
 import { deletePaciente } from "./eliminarPac.js";
 import { mostrarFecha } from "./fecha.js";
@@ -65,6 +67,7 @@ export const cargarPacienteTabla = (paciente) => {
     };
 
     buttonEditar.onclick = () => {
+      scrollUp();
       cargarDatosEnFormulario(paciente.dni);
     }
   
@@ -75,11 +78,11 @@ export const cargarPacienteTabla = (paciente) => {
     const iconInfo = document.createElement("i");
     const iconEditar = document.createElement("i");
     const iconEliminar = document.createElement("i");
-    iconInfo.classList = "fa-solid fa-circle-info me-1";
+    iconInfo.classList = "fa-solid fa-circle-info me-1 mb-3 fa-lg";
     iconInfo.style.color = "#3085d6";
-    iconEditar.classList = "fa-solid fa-pencil me-1";
+    iconEditar.classList = "fa-solid fa-pencil me-1 mb-3 fa-lg";
     iconEditar.style.color = "#ffa500";
-    iconEliminar.classList = "fa-solid fa-trash ";
+    iconEliminar.classList = "fa-solid fa-trash mb-2 fa-lg";
     iconEliminar.style.color = "#d33";
 
     buttonInfo.appendChild(iconInfo);

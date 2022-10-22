@@ -6,6 +6,7 @@ import {
   validateName,
   validateNumber,
   validateSelector,
+  validateString,
 } from "./validators.js";
 
 //const paciente1 = new Paciente ("Dalma", "Fernandez", "5451564652","15/2/96", "F", "SS", "64982564","Buenos Aires 500", "dalma@gmail.com","nada");
@@ -53,7 +54,7 @@ if (pacientesLS !== null) {
 
 
 campoNombre.addEventListener("blur", (e) => {
-  validateName(e.target.value, campoNombre);
+  
   if (validateName(e.target.value, campoNombre)) {
     //  console.log(e);
     nombre = e.target.value;
@@ -96,7 +97,7 @@ campoTelefono.addEventListener("blur", (e) => {
 });
 
 campoDomicilio.addEventListener("blur", (e) => {
-  if (validateName(e.target.value, campoDomicilio)) {
+  if (validateString(e.target.value, campoDomicilio)) {
     domicilio = e.target.value;
   }
 });
@@ -147,7 +148,7 @@ formularioPaciente.addEventListener("submit", (e) => {
     validateNumber(dni, campoDNI) &&
     validateDate(fn, campoFecha) &&
     validateNumber(telefono, campoTelefono) &&
-    validateName(domicilio, campoDomicilio) &&
+    validateString(domicilio, campoDomicilio) &&
     validateEmail(email, campoEmail)
   ) {
     // si isEditando es false, estamos creando un nuevo paciente

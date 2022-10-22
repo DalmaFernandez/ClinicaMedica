@@ -1,3 +1,4 @@
+import { scrollUp } from "./appAdmin.js";
 import { cargarDatosEnFormulario } from "./editarTurno.js";
 import { eliminarTurno } from "./eliminarTurno.js";
 import { mostrarFecha } from "./fecha.js";
@@ -19,11 +20,11 @@ export const cargarTurnoTabla = (turno) => {
     tdMedico.innerText ="Dr/a. " + turno.medico + " - " + turno.especialidad;
     tr.appendChild(tdMedico);
     const tdFecha = document.createElement("td");
-    tdFecha.innerText = mostrarFecha(turno.fecha);
+    tdFecha.innerText = mostrarFecha(turno.fecha) + " - " + turno.hora + " hs.";
     tr.appendChild(tdFecha);
-    const tdHora = document.createElement("td");
-    tdHora.innerText = turno.hora;
-    tr.appendChild(tdHora);
+    // const tdHora = document.createElement("td");
+    // tdHora.innerText = turno.hora;
+    // tr.appendChild(tdHora);
     const tdNota = document.createElement("td");
     // tdNota.innerText = turno.nota;
     // tr.appendChild(tdNota);
@@ -41,6 +42,7 @@ export const cargarTurnoTabla = (turno) => {
         mostrarInfo(turno);
       };
     buttonEditar.onclick = () => {
+        scrollUp();
         cargarDatosEnFormulario(turno.id);
         };
     buttonEliminar.onclick = () => {
@@ -50,11 +52,11 @@ export const cargarTurnoTabla = (turno) => {
     const iconInfo = document.createElement("i");
     const iconEditar = document.createElement("i");
     const iconEliminar = document.createElement("i");
-    iconInfo.classList = "fa-solid fa-circle-info me-1";
+    iconInfo.classList = "fa-solid fa-circle-info me-1 mb-3 fa-lg";
     iconInfo.style.color = "#3085d6";
-    iconEditar.classList = "fa-solid fa-pencil me-1";
+    iconEditar.classList = "fa-solid fa-pencil me-1 mb-3 fa-lg";
     iconEditar.style.color = "#ffa500";
-    iconEliminar.classList = "fa-solid fa-trash ";
+    iconEliminar.classList = "fa-solid fa-trash  mb-2 fa-lg ";
     iconEliminar.style.color = "#d33";
 
     buttonInfo.appendChild(iconInfo);

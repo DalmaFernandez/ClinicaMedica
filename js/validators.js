@@ -1,14 +1,35 @@
 export const validateName = (valor, campo) => {
     // que no este vacio
-    if (valor.trim().length < 2) {
+    if (valor.trim().length < 3) {
       campo.classList.add("is-invalid");
       return false;
     }
+    const regex= /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/;
+    if (!regex.test(valor)) {
+      campo.classList.add("is-invalid");
+      return false;
+    }
+
     campo.classList.remove("is-invalid");
     campo.classList.add("is-valid");
     
     return true;
   };
+
+  export const validateString = (valor, campo) => {
+    // que no este vacio
+    if (valor.trim().length < 5) {
+      campo.classList.add("is-invalid");
+      return false;
+    }
+
+    campo.classList.remove("is-invalid");
+    campo.classList.add("is-valid");
+    
+    return true;
+  };
+
+
   
   export const validateNumber = (valor, campo) => {
     // que no este vacio

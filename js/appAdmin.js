@@ -1,4 +1,3 @@
-
 const acceso = sessionStorage.getItem("acceso");
 const volverAInicio = document.getElementsByClassName("volverAinicio");
 const mainAdmin = document.getElementById("mainAdmin");

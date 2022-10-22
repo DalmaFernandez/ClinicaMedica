@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cargar Pacientes</title>
+    <meta name="author" content="Juan Pablo Alba Fernandez, Jenny Gonzalez, Martin D'Orta, Dalma Fernández">
+    <meta name="description" content="Seccion de la vista de administrador destinada a gestion de pacientes">
+    <meta name="keywords" content="Clinica medica, salud, pacientes, medicos, turnos">
+    <title>Pacientes</title>
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -135,6 +138,8 @@
             </label>
             <input
               type="text"
+              minlength="7"
+              maxlength="8"
               class="form-control"
               id="dniPaciente"
               placeholder="29545651"
@@ -181,6 +186,8 @@
             <label for="telefonoPaciente" class="form-label">Teléfono</label>
             <input
               type="text"
+              minlength="8"
+              maxlength="13"
               class="form-control"
               id="telefonoPaciente"
               placeholder="3811234567"
