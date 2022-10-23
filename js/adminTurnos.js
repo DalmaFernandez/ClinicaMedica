@@ -64,12 +64,11 @@ campoMedico.addEventListener("blur", () => {
   validateSelector(campoMedico.value, campoMedico);
   if (validateSelector(campoMedico.value, campoMedico)) {
     medico = campoMedico.value;
-    
   }
 });
 campoFecha.addEventListener("blur", () => {
   validateDate(campoFecha.value, campoFecha);
-  console.log(campoFecha.value);
+
   if (validateDate(campoFecha.value, campoFecha)) {
     fecha = campoFecha.value;
     campoHora.innerHTML = `<option value="0">Seleccione el horario</option>`;
@@ -86,7 +85,6 @@ campoHora.addEventListener("blur", () => {
 });
 campoNota.addEventListener("blur", () => {
   nota = campoNota.value;
-  console.log(nota);
 });
 
 const agregarTurnoLS = (turno) => {
@@ -130,7 +128,6 @@ formularioTurno.addEventListener("submit", (e) => {
       );
       agregarTurnoLS(turno);
       cargarTurnoTabla(turno);
-      console.log(turno);
 
       Swal.fire({
         title: "Exito!",
@@ -138,8 +135,6 @@ formularioTurno.addEventListener("submit", (e) => {
         icon: "success",
       });
     } else {
-      console.log(isEditando);
-      
       const turnoId = Number(sessionStorage.getItem("idTurno"));
       sessionStorage.removeItem("idTurno");
 
@@ -149,36 +144,29 @@ formularioTurno.addEventListener("submit", (e) => {
         return turno.id === turnoId;
       });
 
-      if(turnoIndice === -1){
+      if (turnoIndice === -1) {
         Swal.fire({
           title: "Error!",
           text: "No se ha encontrado el turno",
           icon: "error",
         });
-        
-      }else{
+      } else {
+        turnos[turnoIndice].paciente = paciente;
+        turnos[turnoIndice].especialidad = especialidad;
+        turnos[turnoIndice].medico = medico;
+        turnos[turnoIndice].fecha = fecha;
+        turnos[turnoIndice].hora = hora;
+        turnos[turnoIndice].nota = nota;
 
-
-      console.log(turnos[turnoIndice]);
-      turnos[turnoIndice].paciente = paciente;
-      turnos[turnoIndice].especialidad = especialidad;
-      turnos[turnoIndice].medico = medico;
-      turnos[turnoIndice].fecha = fecha;
-      turnos[turnoIndice].hora = hora;
-      turnos[turnoIndice].nota = nota;
-
-      localStorage.setItem("Lista de Turnos", JSON.stringify(turnos));
-      Swal.fire({
-        title: "Exito!",
-        text: "El turno se ha editado correctamente",
-        icon: "success",
-      });
-
-      
-
+        localStorage.setItem("Lista de Turnos", JSON.stringify(turnos));
+        Swal.fire({
+          title: "Exito!",
+          text: "El turno se ha editado correctamente",
+          icon: "success",
+        });
+      }
+      botonCargar.innerText = "Cargar";
     }
-    botonCargar.innerText = "Cargar";
-  }
 
     actualizarTabla();
     // Resetear formulario
@@ -205,7 +193,6 @@ formularioTurno.addEventListener("submit", (e) => {
     campoFecha.classList.remove("is-valid");
     campoHora.classList.remove("is-valid");
   } else {
-    console.log(campoFecha.value);
     Swal.fire({
       title: "Error!",
       text: "Por favor, complete todos los campos",

@@ -1,3 +1,4 @@
+
 import { mostrarFecha } from "./fecha.js";
 import { Medico } from "./Medico.js";
 import { validateDate, validateSelector } from "./validators.js";
@@ -45,7 +46,7 @@ localStorage.setItem("Lista de medicos", JSON.stringify(medicos));
 let turnos = [];
 let turnosLS = JSON.parse(localStorage.getItem("Lista de Turnos"));
 const tablaTurnos = document.getElementById("turnosPrincipal");
-console.log(tablaTurnos);
+
 const mjeFiltro = document.getElementById("mjeFiltro");
 if (turnosLS !== null && turnosLS.length !== 0) {
   turnos = turnosLS;
@@ -54,7 +55,44 @@ if (turnosLS !== null && turnosLS.length !== 0) {
   mensaje.innerText = "No hay turnos programados";
   mensaje.classList.add("text-center", "fw-bold");
   mjeFiltro.appendChild(mensaje);
+  
 }
+
+
+const datosPaciente = (dni) => {
+  
+  let pacientesLS= JSON.parse(localStorage.getItem("Lista de pacientes"));
+  let paciente = pacientesLS.find((paciente) => paciente.dni === dni);
+  const buttonInfo = document.createElement("button");
+  buttonInfo.classList = "botonTarea";
+  buttonInfo.title = "Más información";
+  buttonInfo.onclick = () => {
+    mostrarInfo(paciente);
+  };
+  const iconInfo = document.createElement("i");
+  iconInfo.classList = "fa-solid fa-circle-info me-1 mb-3 fa-lg";
+  iconInfo.style.color = "#3085d6";
+  buttonInfo.appendChild(iconInfo);
+  return buttonInfo;
+};
+
+const mostrarInfo = (paciente) => {
+  Swal.fire({
+    title: "Información del paciente",
+    html: `<p><b>Nombre:</b> ${paciente.nombre}</p>
+      <p><b>Apellido:</b> ${paciente.apellido}</p>
+      <p><b>DNI:</b> ${paciente.dni}</p>
+      <p><b>Fecha de nacimiento:</b> ${mostrarFecha(paciente.fn)}</p>
+      <p><b>Sexo:</b> ${paciente.sexo}</p>
+      <p><b>Obra social:</b> ${paciente.os}</p>
+      <p><b>Teléfono:</b> ${paciente.telefono}</p>
+      <p><b>Domicilio:</b> ${paciente.domicilio}</p>`,
+    icon: "info",
+  });
+};
+
+
+
 
 const mostrarTurnos = (turnos) => {
   turnos.sort((a, b) => a.hora.split(":")[0] - b.hora.split(":")[0]);
@@ -88,8 +126,11 @@ const mostrarTurnos = (turnos) => {
     const lista = document.createElement("ul");
     lista.classList = "list-group list-group-flush";
     const item1 = document.createElement("li");
-    item1.classList = "list-group-item";
-    item1.innerText = "Paciente: " + turno.paciente;
+    item1.classList = "list-group-item d-flex justify-content-between";
+    
+    item1.innerText = "Paciente: " + turno.paciente.split("-")[0];
+    
+    item1.appendChild(datosPaciente(turno.paciente.split(": ")[1]));
     lista.appendChild(item1);
     const item2 = document.createElement("li");
     item2.classList = "list-group-item";
@@ -127,7 +168,7 @@ const formQuitarFiltros = document.getElementById("formQuitarFiltros");
 const opcionesPaciente = () => {
   let pacientes = [];
   pacientes = JSON.parse(localStorage.getItem("Lista de pacientes"));
-  console.log(pacientes);
+  
   const campoFiltroPaciente = document.getElementById("filtroPaciente");
   if (pacientes !== null) {
     pacientes.sort((a, b) => {
@@ -152,7 +193,7 @@ const opcionesPaciente = () => {
 
 const opcionesMedico = () => {
   let medicos = JSON.parse(localStorage.getItem("Lista de medicos"));
-  console.log(medicos);
+
   const campoFiltroMedico = document.getElementById("filtroMedico");
   medicos.forEach((medico) => {
     const opcionMedico = document.createElement("option");
@@ -196,12 +237,12 @@ formMedico.addEventListener("submit", (e) => {
   if (validateSelector(campoFiltroMedico.value, campoFiltroMedico)) {
     tablaTurnos.innerHTML = "";
     filtroMedico = campoFiltroMedico.value;
-    console.log(filtroMedico);
+    
     mjeFiltro.innerHTML = "";
     let turnosFiltrados = turnos.filter((turno) => {
       return turno.medico === filtroMedico;
     });
-    console.log(turnosFiltrados);
+    
     if (turnosFiltrados.length > 0) {
       const p = document.createElement("p");
       p.innerText = "Turnos programados Dr/a. " + filtroMedico;
@@ -237,12 +278,12 @@ formPaciente.addEventListener("submit", (e) => {
   if (validateSelector(campoFiltroPaciente.value, campoFiltroPaciente)) {
     tablaTurnos.innerHTML = "";
     filtroPaciente = campoFiltroPaciente.value;
-    console.log(filtroPaciente);
+    
     mjeFiltro.innerHTML = "";
     let turnosFiltrados = turnos.filter((turno) => {
       return turno.paciente === filtroPaciente;
     });
-    console.log(turnosFiltrados);
+    
     if (turnosFiltrados.length > 0) {
       const p = document.createElement("p");
       p.innerText = "Turnos programados para " + filtroPaciente;
@@ -277,13 +318,13 @@ formFecha.addEventListener("submit", (e) => {
   if (validateDate(campoFiltroFecha.value, campoFiltroFecha)) {
     tablaTurnos.innerHTML = "";
     filtroFecha = campoFiltroFecha.value;
-    console.log(filtroFecha);
+    
     mjeFiltro.innerHTML = "";
 
     let turnosFiltrados = turnos.filter((turno) => {
       return turno.fecha === filtroFecha;
     });
-    console.log(turnosFiltrados);
+    
     if (turnosFiltrados.length > 0) {
       const p = document.createElement("p");
       p.innerText =

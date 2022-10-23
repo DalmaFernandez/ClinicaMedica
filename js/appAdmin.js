@@ -7,7 +7,7 @@ if (acceso === "true"){
 }else{
     window.open("../index.html", "_self");
 }
-console.log(volverAInicio);
+
 
 for (let i = 0; i < volverAInicio.length; i++) {
     volverAInicio[i].addEventListener("click", (e) => {

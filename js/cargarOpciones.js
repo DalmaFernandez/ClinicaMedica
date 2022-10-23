@@ -1,6 +1,6 @@
 export const opcionesPaciente = () => {
   let pacientes = JSON.parse(localStorage.getItem("Lista de pacientes"));
-  console.log(pacientes);
+
   if (pacientes !== null) {
     const campoPaciente = document.getElementById("selectPaciente");
     pacientes.sort((a, b) => {
@@ -53,8 +53,7 @@ export const cargarMedicos = () => {
     default:
       break;
   }
-  console.log(especialidad);
-  console.log(medico);
+  
 
   const opcionMedico = document.createElement("option");
   opcionMedico.value = medico.nombre;
@@ -74,31 +73,27 @@ export const opcionHorario = () => {
   let fecha = campoFecha.value;
   let turnosLS = JSON.parse(localStorage.getItem("Lista de Turnos"));
   let turnosOcupados = [];
-  console.log(turnosLS);
-  console.log(fecha);
-  console.log(campoMedico.value);
+ 
   if (turnosLS != null) {
     turnosOcupados = turnosLS.filter((turno) => {
       return turno.fecha == fecha && turno.medico == campoMedico.value;
     });
   }
-  console.log("turnosOcupados");
-  console.log(turnosOcupados);
+
   turnosOcupados.forEach((turno) => {
     horariosOcupados.push(turno.hora);
   });
-  console.log(horariosOcupados);
+
 
   horarios.forEach((horario) => {
-    console.log(horariosOcupados.includes(horario));
-    console.log(horario);
+    
     if (!horariosOcupados.includes(horario)) {
       horariosDisponibles.push(horario);
     }
   });
  
 
-  console.log(horariosDisponibles);
+  
   horariosDisponibles.forEach((horario) => {
     const opcionHorario = document.createElement("option");
     opcionHorario.value = horario;

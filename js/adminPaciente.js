@@ -9,8 +9,6 @@ import {
   validateString,
 } from "./validators.js";
 
-//const paciente1 = new Paciente ("Dalma", "Fernandez", "5451564652","15/2/96", "F", "SS", "64982564","Buenos Aires 500", "dalma@gmail.com","nada");
-//console.log(paciente1);
 const formularioPaciente = document.getElementById("formPaciente");
 
 const campoNombre = document.getElementById("nombrePaciente");
@@ -39,7 +37,6 @@ let email = "";
 let pacientesLSJSON = localStorage.getItem("Lista de pacientes");
 
 let pacientesLS = JSON.parse(pacientesLSJSON);
-//console.log(pacientesLS)
 
 let pacientes = [];
 
@@ -51,12 +48,8 @@ if (pacientesLS !== null) {
   });
 }
 
-
-
 campoNombre.addEventListener("blur", (e) => {
-  
   if (validateName(e.target.value, campoNombre)) {
-    //  console.log(e);
     nombre = e.target.value;
   }
 });
@@ -80,7 +73,7 @@ campoFecha.addEventListener("blur", (e) => {
 
 campoSexo.addEventListener("blur", (e) => {
   if (validateSelector(e.target.value, campoSexo)) {
-sexo = e.target.value;
+    sexo = e.target.value;
   }
 });
 
@@ -108,17 +101,10 @@ campoEmail.addEventListener("blur", (e) => {
   }
 });
 
-
-
-
 const agregarPacienteALS = (paciente) => {
-  // agrego contacto a la lista
   pacientes.unshift(paciente);
-  //console.log(pacientes)
 
-  // JavaScript Object Notation
   const pacientesJSON = JSON.stringify(pacientes);
-  //console.log(pacientesJSON);
 
   localStorage.setItem("Lista de pacientes", pacientesJSON);
 };
@@ -140,8 +126,7 @@ formularioPaciente.addEventListener("submit", (e) => {
   telefono = campoTelefono.value;
   domicilio = campoDomicilio.value;
   email = campoEmail.value;
-  
-  
+
   if (
     validateName(nombre, campoNombre) &&
     validateName(apellido, campoApellido) &&
@@ -162,10 +147,8 @@ formularioPaciente.addEventListener("submit", (e) => {
         os,
         telefono,
         domicilio,
-        email,
-        
+        email
       );
-
 
       agregarPacienteALS(paciente);
       Swal.fire({
@@ -176,11 +159,8 @@ formularioPaciente.addEventListener("submit", (e) => {
     } else {
       //esta editando el paciente y ya tenemos valores cargados en el formulario
 
-      
-
-
       const dniEdit = sessionStorage.getItem("dni del paciente a editar");
-      console.log(dniEdit);
+
       sessionStorage.removeItem("dni del paciente a editar");
       pacientes = JSON.parse(localStorage.getItem("Lista de pacientes"));
 
@@ -193,29 +173,26 @@ formularioPaciente.addEventListener("submit", (e) => {
           text: "No se ha encontrado el paciente",
           icon: "error",
         });
-        
       } else {
-      console.log(pacienteIndice);
-      // modificando en el arreglo pacientes un solo elemento, el del paciente que tiene el dniEdit (guardado el SS)
-      pacientes[pacienteIndice].nombre = nombre;
-      pacientes[pacienteIndice].apellido = apellido;
-      pacientes[pacienteIndice].dni = dni;
-      pacientes[pacienteIndice].fn = fn;
-      pacientes[pacienteIndice].sexo = sexo;
-      pacientes[pacienteIndice].os = os;
-      pacientes[pacienteIndice].telefono = telefono;
-      pacientes[pacienteIndice].domicilio = domicilio;
-      pacientes[pacienteIndice].email = email;
-      
+        // modificando en el arreglo pacientes un solo elemento, el del paciente que tiene el dniEdit (guardado en SS)
+        pacientes[pacienteIndice].nombre = nombre;
+        pacientes[pacienteIndice].apellido = apellido;
+        pacientes[pacienteIndice].dni = dni;
+        pacientes[pacienteIndice].fn = fn;
+        pacientes[pacienteIndice].sexo = sexo;
+        pacientes[pacienteIndice].os = os;
+        pacientes[pacienteIndice].telefono = telefono;
+        pacientes[pacienteIndice].domicilio = domicilio;
+        pacientes[pacienteIndice].email = email;
 
-      localStorage.setItem("Lista de pacientes", JSON.stringify(pacientes));
+        localStorage.setItem("Lista de pacientes", JSON.stringify(pacientes));
 
-      Swal.fire({
-        title: "Exito",
-        text: "Los datos del paciente fueron modificados",
-        icon: "success",
-      });
-    }
+        Swal.fire({
+          title: "Exito",
+          text: "Los datos del paciente fueron modificados",
+          icon: "success",
+        });
+      }
 
       buttonCargar.innerText = "Cargar";
     }
@@ -232,7 +209,6 @@ formularioPaciente.addEventListener("submit", (e) => {
     campoDomicilio.value = "";
     campoEmail.value = "";
 
-
     nombre = "";
     apellido = "";
     dni = "";
@@ -242,7 +218,6 @@ formularioPaciente.addEventListener("submit", (e) => {
     telefono = "";
     domicilio = "";
     email = "";
-    
 
     campoNombre.classList.remove("is-valid");
     campoApellido.classList.remove("is-valid");
@@ -253,8 +228,6 @@ formularioPaciente.addEventListener("submit", (e) => {
     campoTelefono.classList.remove("is-valid");
     campoDomicilio.classList.remove("is-valid");
     campoEmail.classList.remove("is-valid");
-   
-
   } else {
     Swal.fire({
       title: "Error",

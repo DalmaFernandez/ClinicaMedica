@@ -10,7 +10,7 @@ const campoEmail = document.getElementById("emailPaciente");
 
 
 export const cargarDatosEnFormulario = (dni) => {
-  // console.log(codigo)
+
 campoNombre.classList.remove("is-invalid");
 campoNombre.classList.remove("is-valid");
 campoApellido.classList.remove("is-invalid");
