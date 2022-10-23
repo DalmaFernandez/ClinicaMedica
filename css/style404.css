@@ -1,0 +1,36 @@
+#mainError404 {
+    padding: 77px 0 0px 0;
+  
+  }
+  .error404 {
+    height: 90vh;
+    object-fit: cover;
+  }
+  .titulo__portada__error {
+    top: 20rem;
+    right: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    
+    #error404_lg {
+      display: none;
+    }
+    #mainError404 {
+      padding: 72px 0 0px 0;
+    
+    }
+    .titulo__portada__error {
+      top: 20rem;
+      right: 0.5rem;
+      left: 0.5rem;
+    }
+  }
+  
+  
+  @media screen and (min-width: 768px) {
+  
+    #error404_sm {
+      display: none;
+    }
+  }
