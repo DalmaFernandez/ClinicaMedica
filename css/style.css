@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Bebas+Neue&family=Quicksand:wght@400&display=swap");
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+main{
+  padding: 90px 0 20px 0;
+}
+.mainAdmin {
+  background-color: rgba(0, 166, 203, 0.5);
+}
+.card-header {
+  background-color: rgba(0, 166, 203, 0.63);
+  color: white;
+  font-weight: 900;
+}
+.footer {
+  background-color: rgb(1, 144, 176);
+}
+
+.linkActivo {
+  color: rgb(0, 165, 203);
+  font-weight: 700;
+}
+.btn-verde {
+  background-color: rgb(0, 165, 203);
+
+  border-style: none;
+  padding: 0.45rem 1rem;
+}
+.btn-verde:hover {
+  background-color: rgb(1, 144, 176);
+}
+
+.RedesFooter {
+  font-size: 30px;
+}
+i {
+  color: rgb(1, 144, 176);
+}
+.footerTitulo {
+  color: rgb(1, 144, 176);
+  font-weight: 900;
+}
+.formulario {
+  width: 60vw;
+}
+.botonTarea {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .formulario {
+    width: 95vw;
+  }
+  * {
+    font-size: medium;
+  }
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+}

@@ -1,0 +1,82 @@
+#mainInicio {
+  padding: 90px 0 0 0;
+}
+.carouselimgs {
+  height: 90vh;
+  object-fit: cover;
+}
+
+.botonSacarTurno {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 166, 203, 0.863);
+  padding: 0.5rem 1.75rem;
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: xx-large;
+  text-shadow: 1px 1px 10px rgba(25, 25, 25, 0.666);
+}
+
+.main__section__imagenesInformativas {
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.main_section_seccionInfoh4 {
+  color: rgb(0, 170, 208);
+}
+.main__section__seccionInfohr {
+  color: rgb(0, 77, 105);
+}
+
+.botonseccionInfo{
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 166, 203, 0.863);
+  padding: 0.5rem 1.75rem;
+}
+
+.cuadroInfo {
+  background-color: rgb(1, 144, 176);
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 100%;
+}
+#noticiasInicio {
+  background-image: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(0, 166, 203, 0.734)
+    ),
+    url(../assets/imgClinica2.webp);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+.card-img-top {
+  height: 30vh;
+  object-fit: cover;
+}
+
+.cardInicio {
+  height: 50vh;
+}
+
+@media screen and (max-width: 576px) {
+  .cuadroInfo {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+
+  .carouselimgs {
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carouselimgs {
+    height: 50vh;
+  }
+}
