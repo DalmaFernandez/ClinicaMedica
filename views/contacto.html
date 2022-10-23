@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="author"
+      content="Juan Pablo Alba Fernandez, Jenny Gonzalez, Martin D'Orta, Dalma Fernández"
+    />
+    <meta
+      name="description"
+      content="Pagina de contacto con Salud Integral Clinica medica"
+    />
+    <meta
+      name="keywords"
+      content="Clinica medica, salud, pacientes, medicos, turnos, contacto"
+    />
+    <title>Contacto</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/styleContacto.css" />
+    <script
+      src="https://kit.fontawesome.com/24cc370bda.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg bg-light shadow d-flex justify-content-center fixed-top"
+      >
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center"
+            href="../index.html"
+          >
+            <img
+              src="../assets/logo.png"
+              alt="logo de la clinica"
+              class="me-2 logo"
+            />
+            <div>
+              <h3 class="clinicaTitulo my-auto">Salud Integral</h3>
+              <h6 class="my-auto">Clínica Médica</h6>
+            </div>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarClinica"
+            aria-controls="navbarClinica"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarClinica">
+            <ul
+              class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 d-flex align-items-center"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">INICIO</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link linkActivo"
+                  aria-current="page"
+                  href="../views/contacto.html"
+                  >CONTACTO</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../views/acercade.html"
+                  >NOSOTROS</a
+                >
+              </li>
+            </ul>
+            <div class="text-center">
+              <button
+                type="button"
+                id="botonAdmin"
+                class="btn-verde text-light rounded-0 invisible"
+                data-bs-toggle="modal"
+                data-bs-target="#accederAdmin"
+              >
+                ACCEDER COMO ADMINISTRADOR
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="modal fade"
+        id="accederAdmin"
+        tabindex="-1"
+        aria-labelledby="accederAdministrador"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content rounded-0 bg-white shadow">
+            <div class="modal-header">
+              <img class="logo me-2" src="./assets/logo.png" alt="logo" />
+              <h1 class="modal-title fs-2 clinicaTitulo" id="tituloModal">
+                Clínica Médica
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form id="formularioAcceso">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="nombrePaciente" class="form-label"
+                    >Ingresa tu clave de acceso:</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control rounded-0 shadow"
+                    id="claveDeAcceso"
+                    placeholder=""
+                  />
+                  <div id="nombrePaciente__feedback" class="invalid-feedback">
+                    Clave incorrecta.
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  id="botonCancelar"
+                  type=""
+                  class="btn btn-secondary rounded-0"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <button
+                  id="botonAcceso"
+                  type="submit"
+                  class="btn-verde text-light"
+                >
+                  Acceder
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="mainContacto">
+      <div id="fondo_contacto">
+        <section class="container py-4 text-dark d-flex justify-content-center">
+          <article class="row">
+            <h2 class="text-center">Cómo podemos Ayudarte?</h2>
+            <h4 class="text-center">Envíanos tu consulta</h4>
+          </article>
+        </section>
+        <section class="container text-dark pb-3">
+          <article class="row">
+            <form class="mb-3 col-sm-12 col-md-6 mt-3 id" id="formularioContacto">
+              <div class="mb-3">
+                <label for="campoNombre" class="form-label">Tu Nombre</label>
+                <input
+                  type="text"
+                  class="form-control shadow rounded-0"
+                  id="campoNombre"
+                  placeholder="Juan Perez"
+                  minlength="3"
+                  maxlength="50"
+                  required
+                />
+                <div id="CampoNombre__feedback" class="invalid-feedback">
+                  Ingrese un nombre válido
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="campoEmail" class="form-label">Tu Email</label>
+                <input
+                  type="email"
+                  class="form-control shadow rounded-0"
+                  id="campoEmail"
+                  placeholder="juanperez@gmail.com"
+                  required
+                />
+                <div id="CampoEmail__feedback" class="invalid-feedback">
+                  Ingrese un Email válido
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="mb-2">Tu Mensaje</label>
+                <textarea
+                  required
+                  class="form-control shadow rounded-0 text-dark"
+                  placeholder="Escribe tu mensaje aquí"
+                  id="campoMensaje"
+                  rows="6"
+                  minlength="5"
+                  maxlength="200"
+                ></textarea>
+                <div id="CampoMensaje__feedback" class="invalid-feedback">
+                  Ingrese un Mensaje válido
+                </div>
+              </div>
+              <div class="mb-3 text-end">
+                <button class="btn-verde btn-light text-light" type="submit">
+                  ENVIAR
+                </button>
+              </div>
+            </form>
+            <div class="mb-3 col-sm-12 col-md-6">
+              <div class="mb-3 col-sm-12 col-md-12">
+                <h4 class="w-100 text-center dark">Nos encontramos en:</h4>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.1133025692448!2d-65.20940568511858!3d-26.836348356497073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0ef228d361%3A0xd32c1d98f9664db4!2sGral.%20Paz%20578%2C%20T4000BLL%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1666191512307!5m2!1ses-419!2sar"
+                allowfullscreen=""
+                referrerpolicy="no-referrer-when-downgrade"
+                class="w-100"
+              ></iframe>
+            </div>
+          </article>
+        </section>
+      </div>
+      <section class="container text-center my-4">
+        <h3>Programa tu turno tambien en nuestras redes sociales</h3>
+        <hr class="px-5" />
+        <div class="d-flex justify-content-center flex-wrap">
+          <a
+            class="justify-content-center align-items-center mx-3"
+            href="https://www.facebook.com"
+          >
+            <i class="fa-brands fa-facebook fa-3x"></i>
+          </a>
+          <a
+            class="justify-content-center align-items-center mx-3"
+            href="https://www.instagram.com"
+          >
+            <i class="fa-brands fa-instagram fa-3x"></i>
+          </a>
+          <a
+            class="justify-content-center align-items-center mx-3"
+            href="https://web.whatsapp.com/"
+          >
+            <i class="fa-brands fa-whatsapp fa-3x"></i>
+          </a>
+          <a
+            class="justify-content-center align-items-center mx-3"
+            href="https://web.telegram.org/k/"
+          >
+            <i class="fa-brands fa-telegram fa-3x"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-dark opacity-75 text-light pt-4">
+      <section class="container pb-2">
+        <div class="row mx-auto">
+          <article class="col-sm-12 col-md-4 mt-2">
+            <a
+              class="navbar-brand d-flex align-items-center justify-content-center"
+              href="../index.html"
+            >
+              <img
+                src="../assets/logo.png"
+                alt="logo de la clinica"
+                class="me-2 logo"
+              />
+              <div>
+                <h3 class="clinicaTitulo my-auto">Salud Integral</h3>
+                <h6 class="my-auto">Clínica Médica</h6>
+              </div>
+            </a>
+            <div class="RedesFooter mt-1 d-flex justify-content-center">
+              <h5 class="my-auto ms-1 me-3">¡Seguinos!</h5>
+              <a href="https://www.facebook.com">
+                <i class="fa-brands text-secondary fa-facebook icons me-2"></i
+              ></a>
+              <a href="https://www.instagram.com"
+                ><i class="fa-brands text-secondary fa-instagram icons me-2"></i
+              ></a>
+
+              <a href="https://web.whatsapp.com/"
+                ><i class="fa-brands text-secondary fa-whatsapp icons me-2"></i
+              ></a>
+
+              <a href="https://web.telegram.org/k/"
+                ><i class="fa-brands text-secondary fa-telegram icons me-2"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="col-sm-12 col-md-4 mt-2 text-center">
+            <h5 class="footerTitulo">Contacto</h5>
+
+            <div class="d-flex justify-content-center">
+              <div>
+                <i class="fa-solid fa-location-dot fa-1x mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <p class="mb-1">Gral. Paz 578 - San Miguel de Tucumán</p>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <div>
+                <i class="fa-solid fa-phone fa-1x mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <p class="mb-1">(+54) 381 987 6543</p>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <div>
+                <i class="fa-solid fa-envelope fa-1x mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <a href="../views/error404.html" class="nav-link mb-1"
+                  >contacto@clinmed.com</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="col-sm-12 col-md-4 mt-2 text-center">
+            <h5 class="footerTitulo">Información</h5>
+
+            <a class="nav-link" href="../views/error404.html"
+              >Preguntas frecuentes</a
+            >
+            <a class="nav-link" href="../views/error404.html"
+              >Horarios de atención</a
+            >
+            <a class="nav-link" href="../views/error404.html"
+              >Solicitar turno</a
+            >
+          </article>
+        </div>
+      </section>
+      <div id="button-up">
+        <i class="fa-solid fa-arrow-up-long"></i>
+      </div>
+      <section class="footer py-1 mt-2">
+        <p class="text-center text-light mb-0">
+          &copy; Todos los derechos reservados
+        </p>
+      </section>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/contacto.js"></script>    
+  </body>
+</html>
