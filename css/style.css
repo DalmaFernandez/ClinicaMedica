@@ -7,12 +7,29 @@
   width: 50px;
   height: 50px;
 }
+main {
+  padding: 90px 0 20px 0;
+}
+
 .mainAdmin {
-  /* margin-top: 50px; */
-  background-color: rgba(0, 166, 203, 0.5);
+  background-image: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(0, 166, 203, 0.734)
+    ),
+    url(../assets/blur-hospital.jpg);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+.card-header {
+  color: white;
+  font-weight: 900;
 }
 .footer {
-  background-color: rgb(1, 144, 176);
+  background-color: rgba(0, 0, 0, 0.786);
 }
 
 .linkActivo {
@@ -28,10 +45,7 @@
 .btn-verde:hover {
   background-color: rgb(1, 144, 176);
 }
-#accederAdmin {
-  position: fixed;
-  z-index: 20000;
-}
+
 .RedesFooter {
   font-size: 30px;
 }
@@ -43,9 +57,48 @@ i {
   font-weight: 900;
 }
 .formulario {
-  /* background-color:rgba(0, 166, 203, 0.874) ; */
-  width: 50vw;
+  width: 60vw;
 }
- iframe{
-  height: 60vh;
- }
+.botonTarea {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .formulario {
+    width: 90vw;
+  }
+  * {
+    font-size: medium;
+  }
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+#button-up{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgb(1, 144, 176);
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  display: flex;
+  cursor: pointer;
+  z-index: 999;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.fa-arrow-up-long{
+  color: white;
+  font-size: 20px;
+  margin: auto;
+}

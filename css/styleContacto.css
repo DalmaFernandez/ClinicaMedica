@@ -1,0 +1,19 @@
+iframe{
+    height: 49vh;
+   }
+  
+  
+   #fondo_contacto{
+    background-image: url(../assets/blur-hospital.jpg);
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  
+   }
+   #mainContacto {
+    
+        padding: 70px 0 20px 0;
+      
+   }
