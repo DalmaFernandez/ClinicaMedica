@@ -1,0 +1,38 @@
+#mainInicio {
+    padding: 90px 0 0 0;   
+}
+.cuadroInfo{
+    background-color:rgb(1, 144, 176) ;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 100%;
+}
+#noticiasInicio {
+    background-image: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 166, 203, 0.734)
+      ),
+      url(../assets/fondoNoticias.jpg);
+  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .card-img-top {
+    height: 30vh;
+    object-fit: cover;
+  }
+
+  .cardInicio {
+    height: 50vh;
+  }
+  
+@media screen and (max-width: 576px) {
+    .cuadroInfo{
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+}
+  
