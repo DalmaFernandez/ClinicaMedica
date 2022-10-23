@@ -65,7 +65,7 @@ const datosPaciente = (dni) => {
   let paciente = pacientesLS.find((paciente) => paciente.dni === dni);
   const buttonInfo = document.createElement("button");
   buttonInfo.classList = "botonTarea";
-  buttonInfo.title = "Más información";
+  buttonInfo.title = "Información del paciente";
   buttonInfo.onclick = () => {
     mostrarInfo(paciente);
   };
@@ -90,9 +90,6 @@ const mostrarInfo = (paciente) => {
     icon: "info",
   });
 };
-
-
-
 
 const mostrarTurnos = (turnos) => {
   turnos.sort((a, b) => a.hora.split(":")[0] - b.hora.split(":")[0]);
