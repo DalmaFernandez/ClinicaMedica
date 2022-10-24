@@ -18,7 +18,7 @@ export const validateName = (valor, campo) => {
 
   export const validateString = (valor, campo) => {
     // que no este vacio
-    if (valor.trim().length < 5) {
+    if (valor.trim().length < 4) {
       campo.classList.add("is-invalid");
       return false;
     }

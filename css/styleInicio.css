@@ -1,26 +1,21 @@
 #mainInicio {
-  padding: 90px 0 0 0;
+  padding: 78px 0 0 0;
 }
 .carouselimgs {
-  height: 90vh;
+  height: 89vh;
   object-fit: cover;
 }
 
-.botonSacarTurno {
-  color: rgb(255, 255, 255);
-  background-color: rgba(0, 166, 203, 0.863);
-  padding: 0.5rem 1.75rem;
-  font-size: 2rem;
-}
-
-h5 {
-  font-size: xx-large;
-  text-shadow: 1px 1px 10px rgba(25, 25, 25, 0.666);
+.carousel-caption {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.247);
+  left: 0%;
+  font-size: 1.5rem;
 }
 
 .main__section__imagenesInformativas {
   object-fit: cover;
-  border-radius: 1rem;
+  border-radius: 0%;
 }
 
 .main_section_seccionInfoh4 {
@@ -28,12 +23,6 @@ h5 {
 }
 .main__section__seccionInfohr {
   color: rgb(0, 77, 105);
-}
-
-.botonseccionInfo{
-  color: rgb(255, 255, 255);
-  background-color: rgba(0, 166, 203, 0.863);
-  padding: 0.5rem 1.75rem;
 }
 
 .cuadroInfo {
@@ -78,5 +67,15 @@ h5 {
 @media screen and (max-width: 768px) {
   .carouselimgs {
     height: 50vh;
+  }
+  #mainInicio {
+    padding: 73px 0 0 0;
+  }
+  .tituloCarousel {
+    font-size: 1.3rem;
+  }
+  .botonSacarTurno {
+    padding: 0.5rem 1.75rem;
+    font-size: 1.1rem;
   }
 }
