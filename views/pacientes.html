@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Juan Pablo Alba Fernandez, Jenny Gonzalez, Martin D'Orta, Dalma Fernández">
+    <meta name="description" content="Seccion de la vista de administrador destinada a gestion de pacientes">
+    <meta name="keywords" content="Clinica medica, salud, pacientes, medicos, turnos">
+    <title>Pacientes</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/24cc370bda.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/24cc370bda.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="shadow">
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+        <div class="container">
+          <a
+            id=""
+            class="navbar-brand d-flex align-items-center volverAinicio"
+            href="../index.html"
+          >
+            <img
+              src="../assets/logo.png"
+              alt="logo de la clinica"
+              class="me-2 logo"
+            />
+            <div>
+              <h3 class="clinicaTitulo my-auto">Salud Integral</h3>
+              <h6 class="my-auto">Clínica Médica</h6>
+            </div>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarClinica"
+            aria-controls="navbarClinica"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarClinica">
+            <ul
+              class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 d-flex align-items-center"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link "
+                  href="../views/administrador.html"
+                  >TURNOS PROGRAMADOS</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link linkActivo"
+                  aria-current="page"
+                  href="../views/pacientes.html"
+                  >PACIENTES</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../views/turnos.html"
+                  >GESTION DE TURNOS</a
+                >
+              </li>
+            </ul>
+            <div class="d-flex justify-content-center">
+              <button
+                type="button"
+                id="botonAdmin"
+                class="btn btn-secondary text-light rounded-0"
+                data-bs-toggle="modal"
+                data-bs-target="#accederAdmin"
+                disabled
+              >
+                ADMINISTRADOR
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="mainAdmin" class=" mainAdmin ">
+      <section
+        class="bg-white formulario container text-dark my-2 py-3 px-4 rounded-0 shadow-lg "
+      >
+        <div class="text-center">
+          <h2>Formulario de pacientes</h2>
+          <hr />
+        </div>
+        <form class="row" id="formPaciente">
+          <div class="mb-3 col-md-6 col-sm-12">
+            <label for="nombrePaciente" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombrePaciente"
+              placeholder="Juan"
+            />
+            <div id="nombrePaciente__feedback" class="invalid-feedback">
+              Ingrese un nombre válido
+            </div>
+          </div>
+          <div class="mb-3 col-md-6 col-sm-12">
+            <label for="apellidoPaciente" class="form-label">Apellido</label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellidoPaciente"
+              placeholder="Perez"
+            />
+            <div id="nombrePaciente__feedback" class="invalid-feedback">
+              Ingrese un apellido válido
+            </div>
+          </div>
+          <div class="mb-3 col-md-6 col-sm-12">
+            <label for="dniPaciente" class="form-label"
+              >DNI (sin puntos)
+            </label>
+            <input
+              type="text"
+              minlength="7"
+              maxlength="8"
+              class="form-control"
+              id="dniPaciente"
+              placeholder="29545651"
+            />
+            <div id="dniPaciente__feedback" class="invalid-feedback">
+              Ingrese un DNI válido
+            </div>
+          </div>
+          <div class="mb-3 col-md-6 col-sm-12">
+            <label for="" class="form-label">Fecha de nacimiento</label>
+            <input id="fechaNacimiento" type="date" class="form-control" />
+            <div id="fechaNacimiento__feedback" class="invalid-feedback">
+              Seleccione una fecha
+            </div>
+          </div>
+          <div class="mb-3 col-md-6 col-sm-12">
+            <label class="form-label">Sexo</label>
+
+            <select class="form-select" id="selectSexo">
+              <option value="0">Seleccione una opcion</option>
+              <option value="F">F</option>
+              <option value="M">M</option>
+              <option value="Otro">Otro</option>
+            </select>
+            <div id="selectSexo__feedback" class="invalid-feedback">
+              Seleccione una opción
+            </div>
+          </div>
+          <div class="mb-3 col-md-6 col-sm-12">
+            <label class="form-label">Obra Social</label>
+
+            <select class="form-select" id="selectObraSocial">
+              <option value="0">Seleccione una opcion</option>
+              <option value="Subsidio de Salud">Subsidio de Salud</option>
+              <option value="OSDE">OSDE</option>
+              <option value="PRENSA">PRENSA</option>
+              <option value="OSPIA">OSPIA</option>
+              <option value="Particular">Particular</option>
+            </select>
+            <div id="selectObraSocial__feedback" class="invalid-feedback">
+              Seleccione una opción
+            </div>
+          </div>
+          <div class="mb-3 col-md-6 col-sm-12">
+            <label for="telefonoPaciente" class="form-label">Teléfono</label>
+            <input
+              type="text"
+              minlength="8"
+              maxlength="13"
+              class="form-control"
+              id="telefonoPaciente"
+              placeholder="3811234567"
+            />
+            <div id="telefonoPaciente__feedback" class="invalid-feedback">
+              Ingrese un telefono válido
+            </div>
+          </div>
+          <div class="mb-3 col-md-6 col-sm-12">
+            <label for="domicilioPaciente" class="form-label">Domicilio</label>
+            <input
+              type="text"
+              class="form-control"
+              id="domicilioPaciente"
+              placeholder="Gral. Paz 589, S.M. de Tucumán - 4000"
+            />
+            <div id="nombrePaciente__feedback" class="invalid-feedback">
+              Ingrese un domicilio válido
+            </div>
+          </div>
+          <div class="mb-3 col-md-6 col-sm-12">
+            <label for="emailPaciente" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailPaciente"
+              placeholder="juanperez@gmail.com"
+            />
+            <div id="emailPaciente__feedback" class="invalid-feedback">
+              Ingrese un email válido
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button
+              id="buttonCargar"
+              class="btn-verde text-light"
+              type="submit"
+            >
+              Cargar
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="container table-responsive">
+        <h2 class="text-center my-3">Lista de pacientes</h2>
+        <hr class="mx-auto" />
+
+        <table class="table table-sm table-light table-striped table-bordered">
+          <thead class=" ">
+            <tr>
+              <th scope="col">Apellido y nombre</th>
+              <th scope="col">DNI</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Obra Social</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody__admin"></tbody>
+        </table>
+      </section>
+    </main>
+    <footer class="bg-dark opacity-75 text-light pt-4">
+      <section class="container pb-2">
+        <div class="row mx-auto">
+          <article class="col-sm-12 col-md-4 mt-2">
+            <a
+              class="navbar-brand d-flex align-items-center justify-content-center volverAinicio"
+              href="../index.html"
+            >
+              <img
+                src="../assets/logo.png"
+                alt="logo de la clinica"
+                class="me-2 logo"
+              />
+              <div>
+                <h3 class="clinicaTitulo my-auto">Salud Integral</h3>
+                <h6 class="my-auto">Clínica Médica</h6>
+              </div>
+            </a>
+            <div class="RedesFooter mt-1 d-flex justify-content-center">
+              <h5 class="my-auto ms-1 me-3">¡Seguinos!</h5>
+              <a href="https://www.facebook.com" class="volverAinicio">
+                <i class="fa-brands text-secondary fa-facebook icons me-2"></i
+              ></a>
+              <a href="https://www.instagram.com" class="volverAinicio">
+                <i class="fa-brands text-secondary fa-instagram icons me-2"></i
+              ></a>
+
+              <a href="https://web.whatsapp.com/" class="volverAinicio">
+                <i class="fa-brands text-secondary fa-whatsapp icons me-2"></i
+              ></a>
+
+              <a href="https://web.telegram.org/k/" class="volverAinicio">
+                <i class="fa-brands text-secondary fa-telegram icons me-2"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="col-sm-12 col-md-4 mt-2 text-center">
+            <h5 class="footerTitulo">Contacto</h5>
+
+            <div class="d-flex justify-content-center">
+              <div>
+                <i class="fa-solid fa-location-dot fa-1x mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <p class="mb-1">Gral. Paz 578 - San Miguel de Tucumán</p>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <div>
+                <i class="fa-solid fa-phone fa-1x mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <p class="mb-1">(+54) 381 987 6543</p>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <div>
+                <i class="fa-solid fa-envelope fa-1x mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <a
+                  href="../views/error404.html"
+                  class="nav-link mb-1 volverAinicio"
+                  >contacto@clinmed.com</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="col-sm-12 col-md-4 mt-2 text-center">
+            <h5 class="footerTitulo">Información</h5>
+
+            <a class="nav-link volverAinicio" href="../views/error404.html"
+              >Preguntas frecuentes</a
+            >
+            <a class="nav-link volverAinicio" href="../views/error404.html"
+              >Horarios de atención</a
+            >
+            <a class="nav-link volverAinicio" href="../views/error404.html"
+              >Solicitar turno</a
+            >
+          </article>
+        </div>
+      </section>
+      <div id="button-up">
+        <i class="fa-solid fa-arrow-up-long"></i>
+      </div>
+      <section class="footer py-1 mt-2">
+        <p class="text-center text-light mb-0">
+          &copy; Todos los derechos reservados
+        </p>
+      </section>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/adminPaciente.js"></script>
+    <script type="module" src="../js/appAdmin.js"></script>
+    
+  </body>
+</html>

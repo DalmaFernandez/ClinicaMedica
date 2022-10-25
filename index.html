@@ -1,12 +1,673 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="author"
+      content="Juan Pablo Alba Fernandez, Jenny Gonzalez, Martin D'Orta, Dalma Fernández"
+    />
+    <meta
+      name="description"
+      content="Pagina principal de Salud Integral Clinica Médica"
+    />
+    <meta
+      name="keywords"
+      content="Clinica medica, salud, pacientes, medicos, turnos, pagina de inicio"
+    />
+    <title>Salud Integral</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/styleInicio.css" />
+    <script
+      src="https://kit.fontawesome.com/24cc370bda.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg bg-light shadow d-flex justify-content-center fixed-top"
+      >
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="./index.html">
+            <img
+              src="./assets/logo.png"
+              alt="logo de la clinica"
+              class="me-2 logo"
+            />
+            <div>
+              <h3 class="clinicaTitulo my-auto">Salud Integral</h3>
+              <h6 class="my-auto">Clínica Médica</h6>
+            </div>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarClinica"
+            aria-controls="navbarClinica"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarClinica">
+            <ul
+              class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 d-flex align-items-center"
+            >
+              <li class="nav-item">
+                <a class="nav-link linkActivo" href="./index.html">INICIO</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="./views/contacto.html"
+                  >CONTACTO</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="./views/acercade.html"
+                  >NOSOTROS</a
+                >
+              </li>
+            </ul>
+
+            <div class="text-center">
+              <button
+                type="button"
+                id="botonAdmin"
+                class="btn-verde text-light rounded-0"
+                data-bs-toggle="modal"
+                data-bs-target="#accederAdmin"
+              >
+                ACCEDER COMO ADMINISTRADOR
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="modal fade"
+        id="accederAdmin"
+        tabindex="-1"
+        aria-labelledby="accederAdministrador"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content rounded-0 bg-white shadow">
+            <div class="modal-header">
+              <img class="logo me-2" src="./assets/logo.png" alt="logo" />
+              <h1 class="modal-title fs-2 clinicaTitulo" id="tituloModal">
+                Clínica Médica
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form id="formularioAcceso">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="nombrePaciente" class="form-label"
+                    >Ingresa tu clave de acceso:</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control rounded-0 shadow"
+                    id="claveDeAcceso"
+                    placeholder=""
+                  />
+                  <div id="nombrePaciente__feedback" class="invalid-feedback">
+                    Clave incorrecta.
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  id="botonCancelar"
+                  type=""
+                  class="btn btn-secondary rounded-0"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <button
+                  id="botonAcceso"
+                  type="submit"
+                  class="btn-verde text-light"
+                >
+                  Acceder
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="mainInicio">
+      <section class="">
+        <div>
+          <div
+            id="carouselExampleCaptions"
+            class="carousel slide"
+            data-bs-ride="false"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="assets/carouselImg1.webp"
+                  class="d-block w-100 carouselimgs"
+                  alt="Doctor y paciente con mascarillas"
+                />
+                <div class="carousel-caption d-md-block">
+                  <h5 class="tituloCarousel">
+                    Excelentes pediatras para cuidar la salud de tus hijos.
+                  </h5>
+                  <p></p>
+                  <a href="../views/error404.html">
+                    <button type="button" class="btn-verde text-light">
+                      SACÁ TURNO
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="assets/carouselImg2.webp"
+                  class="d-block w-100 carouselimgs"
+                  alt="Dentista atendiendo a una paciente"
+                />
+                <div class="carousel-caption d-md-block">
+                  <h5 class="tituloCarousel">
+                    Contamos con odontólogos que cuidaran de tu salud bucal.
+                  </h5>
+                  <p></p>
+                  <a href="../views/error404.html">
+                    <button type="button" class="btn-verde text-light">
+                      SACÁ TURNO
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="assets/carouselImg3.webp"
+                  class="d-block w-100 carouselimgs"
+                  alt="Paciente siendo estudiada con una resonancia magnética"
+                />
+                <div class="carousel-caption d-md-block">
+                  <h5 class="tituloCarousel">
+                    Diagnóstico por imágenes:<br />Tomografía / Ecografia /
+                    Radiografía.
+                  </h5>
+                  <a href="../views/error404.html">
+                    <button type="button" class="btn-verde text-light">
+                      SACÁ TURNO
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="assets/carouselImg4.jpg"
+                  class="d-block w-100 carouselimgs"
+                  alt="Doctora y su paciente sostiendose las manos"
+                />
+                <div class="carousel-caption d-md-block">
+                  <h5 class="tituloCarousel">
+                    Cumplimos 10 años<br />brindando Salud Integral a nuestros
+                    pacientes.
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="container my-3 py-2 main_section_seccionInformativa">
+        <article class="row">
+          <div
+            class="col-lg-6 col-sm-12 d-flex flex-column justify-content-evenly"
+          >
+            <h4 class="main_section_seccionInfoh4 pt-4">
+              Clinica / Traumatología
+            </h4>
+            <h2>Demanda Espontánea</h2>
+            <hr class="main__section__seccionInfohr" />
+            <p>
+              <b>Consultá un especialista médico de manera inmediata!</b> <br />
+              Este servicio es exclusivo para pacientes que presenten patologías
+              agudas que requieran una atención médica en el día, aunque no
+              revista urgencia. No debe reemplazar la consulta con el médico
+              especialista.
+            </p>
+            <a href="../views/error404.html">
+              <button type="button" class="btn-verde text-light">
+                LEER MÁS +
+              </button></a
+            >
+          </div>
+          <div class="col-lg-6 col-sm-12">
+            <img
+              class="main__section__imagenesInformativas w-100 mt-4"
+              src="assets/descriptionImg1.webp"
+              alt="Enfermera tomando la presión de una paciente"
+            />
+          </div>
+        </article>
+      </section>
+      <section class="container mt-5 mb-1 py-2 main_section_seccionInformativa">
+        <article class="row">
+          <div class="col-lg-6 col-sm-12">
+            <img
+              class="main__section__imagenesInformativas w-100"
+              src="assets/descriptionImg2.webp"
+              alt="Doctor alegre en un pasillo de clinica con una paciente"
+            />
+          </div>
+          <div
+            class="col-lg-6 col-sm-12 d-flex flex-column justify-content-evenly"
+          >
+            <h4 class="main_section_seccionInfoh4 pt-4">
+              Nuestros Profesionales
+            </h4>
+            <h2>Especialistas con trayectoria</h2>
+            <hr class="main__section__seccionInfohr" />
+            <p>
+              Contamos con un gran equipo de profesionales, técnicos y
+              administrativos, quienes trabajan para hacer de
+              <b>Salud Integral</b>, un centro de referencia en salud y así
+              aportar con lo mejor para nuestra Región.
+            </p>
+            <a href="../views/error404.html">
+              <button type="button" class="btn-verde text-light">
+                LEER MÁS +
+              </button></a
+            >
+          </div>
+        </article>
+      </section>
+      <section class="container mt-4">
+        <article class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6 p-0 text-light my-1">
+            <div class="cuadroInfo p-3 shadow-lg">
+              <div class="d-flex text-light justify-content-center">
+                <i class="fa-solid fa-user-doctor text-light fa-2x me-1"></i>
+                <h4 class="my-auto">Especialidades</h4>
+              </div>
+              <hr class="text-light" />
+              <div class="px-auto">
+                <ul>
+                  <li>Cardiología</li>
+                  <li>Dermatología</li>
+                  <li>Ginecología</li>
+                  <li>Odontología</li>
+                  <li>Pediatría</li>
+                  <li>Traumatología</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 p-0 text-light my-1">
+            <div class="cuadroInfo p-3 shadow-lg">
+              <div class="d-flex text-light justify-content-center">
+                <i class="fa-solid fa-clock text-light fa-2x me-1"></i>
+
+                <h4 class="my-auto">Horarios</h4>
+              </div>
+              <hr class="text-light" />
+              <div class="px-auto">
+                <h6>Atención completa todos los días.</h6>
+                <h6>Lunes a Domingos</h6>
+                <ul>
+                  <li>8:00 a 12:00 hs</li>
+                  <li>17:00 a 20:00 hs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 p-0 text-light my-1">
+            <div class="cuadroInfo p-3 shadow-lg">
+              <div class="d-flex text-light justify-content-center">
+                <i class="fa-solid fa-hospital-user text-light fa-2x me-1"></i>
+                <h4 class="my-auto">Obras Sociales</h4>
+              </div>
+              <hr class="text-light" />
+              <div class="px-auto">
+                <ul>
+                  <li>Subsidio de Salud</li>
+                  <li>OSDE</li>
+                  <li>PRENSA</li>
+                  <li>OSPIA</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 p-0 text-light my-1">
+            <div class="cuadroInfo p-3 shadow-lg">
+              <div class="d-flex text-light justify-content-center">
+                <i class="fa-solid fa-clipboard-list text-light fa-2x me-1"></i>
+                <h4 class="my-auto">Turnos</h4>
+              </div>
+              <hr class="text-light" />
+              <div class="px-auto">
+                <h6>Solicitá turno con profesionales de excelencia.</h6>
+                <ul>
+                  <li>(+54) 381 987 6543</li>
+                  <li>contacto@clinmed.com</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="container my-3 py-2 main_section_seccionInformativa">
+        <article class="row">
+          <div class="col-lg-6 col-sm-12 d-flex flex-column justify-content-evenly">
+            <h4 class="main_section_seccionInfoh4 pt-4">
+              Nuestras Instalaciones
+            </h4>
+            <h2>Equipamiento de úlitma generación</h2>
+            <hr class="main__section__seccionInfohr" />
+            <p>
+              Con el objetivo de
+              <b>mejorar la calidad de vida y la recuperación</b> de nuestros
+              pacientes, Salud Integral cuenta con los equipos y la tecnología
+              más alta, en términos de equipamiento médico. Garantizando así la
+              asistencia, diagnóstico y control seguro a nuestros pacientes.
+            </p>
+            <a href="../views/error404.html">
+              <button type="button" class="btn-verde text-light">
+                LEER MÁS +
+              </button></a
+            >
+          </div>
+          <div
+            class="col-lg-6 col-sm-12 "
+          >
+            <img
+              class="main__section__imagenesInformativas w-100 mt-4"
+              src="assets/descriptionImg4.webp"
+              alt="Grupo de doctores trabajando con diferentes análisis médicos"
+            />
+          </div>
+        </article>
+      </section>
+      <section class="container mt-5 mb-2 py-2 main_section_seccionInformativa">
+        <article class="row">
+          <div class="col-lg-6 col-sm-12">
+            <img
+              class="main__section__imagenesInformativas w-100"
+              src="assets/descriptionImg3.webp"
+              alt="Grupo de doctores en una sala preparandose para una cirugía"
+            />
+          </div>
+          <div
+            class="col-lg-6 col-sm-12 d-flex flex-column justify-content-evenly"
+          >
+            <h4 class="main_section_seccionInfoh4 pt-4">Cirugía General</h4>
+            <h2>Diagnóstico y tratamiento de enfermedades</h2>
+            <hr class="main__section__seccionInfohr" />
+            <p>
+              <b>La Cirugía General </b> utiliza técnicas manuales y
+              herramientas quirúrgicas para intervenir al paciente con el fin de
+              modificar, reparar, reconstruir alguna parte del cuerpo o en su
+              defecto para detectar algún problema que exámenes simples no hayan
+              podido detectar.
+            </p>
+            <div class="">
+              <a href="../views/error404.html">
+                <button type="button" class="btn-verde text-light">
+                  LEER MÁS +
+                </button></a
+              >
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="mt-4" id="noticiasInicio">
+        <article class="container py-5">
+          <article class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+              <a class="nav-link" href="../views/error404.html">
+                <div class="card border-0 rounded-0 shadow-lg cardInicio">
+                  <img
+                    src="../assets/cardImg1.webp"
+                    class="card-img-top rounded-0"
+                    alt="medico en el consultorio"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Conocé a los profesionales médicos de Salud Integral.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+              <a class="nav-link" href="../views/error404.html">
+                <div class="card border-0 rounded-0 shadow-lg cardInicio">
+                  <img
+                    src="../assets/cardImg2.webp"
+                    class="card-img-top rounded-0"
+                    alt="planilla de test de COVID-19"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Toda la información que necesitas sobre los test de
+                      COVID-19.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+              <a class="nav-link" href="../views/error404.html">
+                <div class="card border-0 rounded-0 shadow-lg cardInicio">
+                  <img
+                    src="../assets/cardImg3.webp"
+                    class="card-img-top rounded-0"
+                    alt="medico realizando ecografia"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Diagnóstico por Imágenes. Gran inauguración 2023.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+              <a class="nav-link" href="../views/acercade.html">
+                <div class="card border-0 rounded-0 shadow-lg cardInicio">
+                  <img
+                    src="../assets/cardImg4.webp"
+                    class="card-img-top rounded-0"
+                    alt="Médico y pacientes sonriendo"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">Conocé más sobre nosotros.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </article>
+        </article>
+      </section>
+    </main>
+
+    <footer class="bg-dark opacity-75 text-light pt-4">
+      <section class="container pb-2">
+        <div class="row mx-auto">
+          <article class="col-sm-12 col-md-4 mt-2">
+            <a
+              class="navbar-brand d-flex align-items-center justify-content-center"
+              href="./index.html"
+            >
+              <img
+                src="./assets/logo.png"
+                alt="logo de la clinica"
+                class="me-2 logo"
+              />
+              <div>
+                <h3 class="clinicaTitulo my-auto">Salud Integral</h3>
+                <h6 class="my-auto">Clínica Médica</h6>
+              </div>
+            </a>
+            <div class="RedesFooter mt-1 d-flex justify-content-center">
+              <h5 class="my-auto ms-1 me-3">¡Seguinos!</h5>
+              <a href="https://www.facebook.com">
+                <i class="fa-brands text-secondary fa-facebook icons me-2"></i
+              ></a>
+              <a href="https://www.instagram.com"
+                ><i class="fa-brands text-secondary fa-instagram icons me-2"></i
+              ></a>
+
+              <a href="https://web.whatsapp.com/"
+                ><i class="fa-brands text-secondary fa-whatsapp icons me-2"></i
+              ></a>
+
+              <a href="https://web.telegram.org/k/"
+                ><i class="fa-brands text-secondary fa-telegram icons me-2"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="col-sm-12 col-md-4 mt-2 text-center">
+            <h5 class="footerTitulo">Contacto</h5>
+
+            <div class="d-flex justify-content-center">
+              <div>
+                <i class="fa-solid fa-location-dot fa-1x mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <p class="mb-1">Gral. Paz 578 - San Miguel de Tucumán</p>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <div>
+                <i class="fa-solid fa-phone fa-1x mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <p class="mb-1">(+54) 381 987 6543</p>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <div>
+                <i class="fa-solid fa-envelope fa-1x mb-1"></i>
+              </div>
+              <div class="mx-2">
+                <a href="../views/error404.html" class="nav-link mb-1"
+                  >contacto@clinmed.com</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="col-sm-12 col-md-4 mt-2 text-center">
+            <h5 class="footerTitulo">Información</h5>
+
+            <a class="nav-link" href="../views/error404.html"
+              >Preguntas frecuentes</a
+            >
+            <a class="nav-link" href="../views/error404.html"
+              >Horarios de atención</a
+            >
+            <a class="nav-link" href="../views/error404.html"
+              >Solicitar turno</a
+            >
+          </article>
+        </div>
+      </section>
+      <div id="button-up">
+        <i class="fa-solid fa-arrow-up-long"></i>
+      </div>
+      <section class="footer py-1 mt-2">
+        <p class="text-center text-light mb-0">
+          &copy; Todos los derechos reservados
+        </p>
+      </section>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
 </html>
