@@ -1,6 +1,6 @@
 # Bienvenido al repositorio de Salud Integral Clínica Médica
 ### Introducción:
-Esta es la página web de la Clínica médica Salud Integral. Los usuarios pacientes pueden ver información general sobre la clínica y los usuarios administradores tienen acceso a la gestión de pacientes y turnos.
+Este es el repositorio de la página web de la Clínica médica Salud Integral. En esta página los usuarios pacientes pueden ver información general sobre la clínica y los usuarios administradores tienen acceso a la gestión de pacientes y turnos.
 La página cuenta con dos vistas principales: una vista informativa para cualquier persona y otra restrictiva al administrador del sistema. 
 ##### Vista informativa:
 La vista informativa es una página web que cuenta con tres secciones: 
@@ -38,7 +38,7 @@ https://saludintegral.netlify.app/
 
 ### Construído con:
 - HTML5
-- CSS
+- CSS3
 - JAVASCRIPT
 - BOOTSTRAP5
 - FONT AWESOME
