@@ -5,7 +5,7 @@ const formularioAcceso = document.getElementById("formularioAcceso");
 let acceso = false;
 let claveIngresada = "";
 
-campoClave.addEventListener("blur", (e) => {
+campoClave.addEventListener("change", (e) => {
   claveIngresada = e.target.value;
 });
 formularioAcceso.addEventListener("submit", (e) => {
@@ -15,12 +15,18 @@ formularioAcceso.addEventListener("submit", (e) => {
     sessionStorage.setItem("acceso", acceso);
     window.open("../views/administrador.html");
     sessionStorage.removeItem("acceso");
-
-    window.close();
+    campoClave.value = "";
+    window.close("../index.html");
   } else {
-    campoClave.classList.add("is-invalid");
+    campoClave.value = "";
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "La clave ingresada es incorrecta",
+      });
   }
 });
+
 
 
 
