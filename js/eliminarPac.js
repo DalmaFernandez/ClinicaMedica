@@ -29,6 +29,8 @@ export const deletePaciente = (dni) => {
         title: "Eliminado",
         text: "El paciente ha sido eliminado",
         icon: "success",
+      }).then(() => {
+        location.reload();
       });
     }
   });

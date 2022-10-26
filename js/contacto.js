@@ -27,7 +27,7 @@ campomensaje.addEventListener("blur", (e) => {
 
 formularioContacto.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(nombre, email, mensaje);
+
   if (
     validateName(nombre, camponombre) &&
     validateEmail(email, campoemail) &&
@@ -38,11 +38,10 @@ formularioContacto.addEventListener("submit", (e) => {
       title: "Mensaje enviado",
     });
     formularioContacto.reset();
-    nombre="";
-    email="";
-    mensaje="";
+    nombre = "";
+    email = "";
+    mensaje = "";
 
-    console.log(nombre, email, mensaje);
     camponombre.classList.remove("is-valid");
     campoemail.classList.remove("is-valid");
     campomensaje.classList.remove("is-valid");
@@ -52,5 +51,4 @@ formularioContacto.addEventListener("submit", (e) => {
       title: "Revise los campos",
     });
   }
-
 });

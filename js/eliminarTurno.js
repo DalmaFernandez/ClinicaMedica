@@ -34,10 +34,14 @@ export const eliminarTurno = (turnoId) => {
                 title: "Eliminado!",
                 text: "El turno ha sido eliminado",
                 icon: "success",
-            });
+            }).then(() => {
+                location.reload();
+            }
+            );
+
         }
-    }
-    );
+    });
 };
+
 
 
