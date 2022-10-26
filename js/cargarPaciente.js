@@ -104,7 +104,8 @@ const mostrarInfo = (paciente) => {
       <p><b>Sexo:</b> ${paciente.sexo}</p>
       <p><b>Obra social:</b> ${paciente.os}</p>
       <p><b>Teléfono:</b> ${paciente.telefono}</p>
-      <p><b>Domicilio:</b> ${paciente.domicilio}</p>`,
+      <p><b>Domicilio:</b> ${paciente.domicilio}</p>
+      <p><b>Email:</b> ${paciente.email}</p>`,
     icon: "info",
   });
 };
