@@ -50,9 +50,9 @@ https://saludintegral.netlify.app/
 - FONT AWESOME
 - SWEET ALERT 2
 ## Colaboradores:
-- Juan Pablo Alba Fernández
-- Jenny Gonzalez
-- Martín D'Orta
-- Dalma Fernández
+- Juan Pablo Alba Fernández: [JuanPiAlba](https://github.com/JuanPiAlba)
+- Jenny Gonzalez: [Jenny-gonzalez](https://github.com/Jenny-gonzalez)
+- Martín D'Orta: [MartinDorta](https://github.com/MartinDorta)
+- Dalma Fernández: [DalmaFernandez](https://github.com/DalmaFernandez)
 
 #### Fin.
