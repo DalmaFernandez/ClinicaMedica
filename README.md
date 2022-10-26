@@ -21,14 +21,17 @@ Esta sección tiene un formulario para que los usuarios puedan enviar consultas.
 Por otro lado, contiene un mapa funcional ubicado en la dirección de la clínica e iconos de acceso a las redes sociales de Salud Integral.
 
 - **Nosotros:**
-En esta sección se incluye la misión y la visión de Salud Integral. Se agregan imágenes ilustrativas. Termina con los nombre y las fotos de los miembros del equipo.
+En esta sección se incluye la misión y la visión de Salud Integral. Se agregan imágenes ilustrativas. Termina con los nombres y las fotos de los miembros del equipo.
+
+Tambíen se influye una página de error404 para los links no funcionales de la página. Contiene un botón para regresar a la página de inicio.
 
 ### Vista de Administrador:
 La vista de administrador cuenta con tres secciones:
 - **Turnos programados:** Muestra todos los turnos programados en forma de cards ordenados por fecha y hora (el más próximo primero). Se permite filtrar los turnos con selectores por médico, paciente o fecha. Si no hay turnos programados se muestra un mensaje de aviso. 
-- **Pacientes:** Esta sección contiene un formulario para crear y modificar pacientes. El formulario contiene los campos: *nombre, apellido, DNI, fecha de nacimiento, sexo, obra social, teléfono, domicilio y email*. Abajo del formulario se muestra una tabla con los siguientes datos: *Nombre y apellido, DNI, edad y Obra Social*, con una columna que contiene tres botones: el primero permite ver *más información* del paciente (toda la información cargada en el formulario), el segundo se puede usar para *editar* los datos del paciente y el tercero para *eliminar* el paciente.
+- **Pacientes:** Esta sección contiene un formulario para crear y modificar pacientes. El formulario contiene los campos: *nombre, apellido, DNI, fecha de nacimiento, sexo, obra social, teléfono, domicilio y email*. Abajo del formulario se muestra una tabla con los siguientes datos: *nombre y apellido, DNI, edad y obra social*, con una columna que contiene tres botones: el primero permite ver *más información* del paciente (toda la información cargada en el formulario), el segundo se puede usar para *editar* los datos del paciente y el tercero para *eliminar* el paciente.
 - **Gestión de turnos:** Esta sección contiene un formulario para crear y modificar turnos. El formulario contiene los campos: *paciente, especialidad, medico, fecha, horario y notas.*
 Todos los campos son selectores excepto el de notas.
+Las opciones de médicos se encuentran cargadas por defecto en el sitio.
 Abajo del formulario se muestra una tabla con los siguientes datos: *paciente, medico, fecha y hora*, y una columna que contiene tres botones: el primero permite ver *más información* del turno (toda la información cargada en el formulario), el segundo se puede usar para *editar* los turnos y el tercero para *eliminar*.
 
 ## Instrucciones para administradores:
