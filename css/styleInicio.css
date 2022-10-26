@@ -15,7 +15,7 @@ font-size: 1.5rem;
 }
 
 
-h5 {
+.tituloCarousel {
   font-size: xx-large;
   text-shadow: 1px 1px 10px rgba(25, 25, 25, 0.666);
 }
